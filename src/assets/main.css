@@ -1,15 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 @import 'tailwindcss';
 
 @theme {
-    --color-primary-50: #f4f7f7;
-    --color-primary-100: #e2ebeb;
-    --color-primary-200: #c9d8d7;
-    --color-primary-300: #94b2b2;
-    --color-primary-400: #76999a;
-    --color-primary-500: #5b7e7f;
-    --color-primary-600: #4e696c;
-    --color-primary-700: #44595a;
-    --color-primary-800: #3d4b4d;
-    --color-primary-900: #364243;
-    --color-primary-950: #21292b;
+  --color-primary-50: #f4f7f7;
+  --color-primary-100: #e2ebeb;
+  --color-primary-200: #c9d8d7;
+  --color-primary-300: #94b2b2;
+  --color-primary-400: #76999a;
+  --color-primary-500: #5b7e7f;
+  --color-primary-600: #4e696c;
+  --color-primary-700: #44595a;
+  --color-primary-800: #3d4b4d;
+  --color-primary-900: #364243;
+  --color-primary-950: #21292b;
+}
+
+html,
+body,
+#app {
+  font-family: 'Figtree', sans-serif;
+}
+
+@layer base {
+  h1 {
+    @apply text-4xl font-bold mb-4;
+  }
+  h2 {
+    @apply text-3xl font-semibold mb-3;
+  }
+  h3 {
+    @apply text-2xl font-semibold mb-2;
+  }
+  h4 {
+    @apply text-xl font-medium mb-2;
+  }
+  h5 {
+    @apply text-lg font-medium mb-1;
+  }
+  h6 {
+    @apply text-base font-medium mb-1;
+  }
+  p {
+    @apply mb-4 leading-relaxed;
+  }
+  a {
+    @apply text-primary-600 hover:text-primary-800 underline;
+  }
+  ul,
+  ol {
+    @apply mb-4 pl-5;
+  }
+  ul {
+    @apply list-disc;
+  }
+  ol {
+    @apply list-decimal;
+  }
+  li {
+    @apply mb-1;
+  }
 }
