@@ -16,7 +16,10 @@
       <li><a href="">test</a></li>
     </ul>
     <Button label="Submit" />
+    <Icon icon="line-md:arrow-align-center" class="w-30 h-30" />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Icon } from '@iconify/vue'
+</script>
