@@ -1,5 +1,8 @@
 <template>
-  <div class="bg-red-600 w-30 h-30">
+  <div class="bg-primary-950/20 w-30 h-30">
     <p>Hello, World!</p>
+    <Button label="Submit" />
   </div>
 </template>
+
+<script setup lang="ts"></script>
