@@ -16,21 +16,20 @@
         <SocialLinks :socials="mySocialLinks" :is-horizontal="true" />
       </div>
       <div class="hidden lg:flex lg:items-center lg:justify-center lg:mx-12">
-        <p v-if="images.length === 0" class="text-center">Loading images...</p>
-        <Carousel
-          v-else
-          :value="images"
-          :numVisible="1"
-          :numScroll="1"
-          :autoplayInterval="2000"
-          circular
-        >
+        <Carousel :value="images" :numVisible="1" :numScroll="1" :autoplayInterval="2000" circular>
           <template #item="slotProps">
             <img
               :src="slotProps.data.src"
               :alt="slotProps.data.fileName"
               class="w-full h-auto rounded-lg shadow-lg"
             />
+          </template>
+          <template #empty>
+            <p>Bilder konnte nicht geladen werden!</p>
+            <Button onclick="location.reload()">
+              Neu laden
+              <Icon icon="mdi:reload" class="w-5 h-5"></Icon>
+            </Button>
           </template>
         </Carousel>
       </div>
@@ -44,6 +43,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { Icon } from '@iconify/vue'
+import type { Image } from '@/types/image'
 import { useAuthenticatedUserProfile } from '@/composables/useAuthenticatedUserProfile'
 import { useAuthenticatedUserRepos } from '@/composables/useAuthenticatedUserRepos'
 import { useAuthenticatedUserStarred } from '@/composables/useAuthenticatedUserStarred'
@@ -54,19 +54,19 @@ const mySocialLinks: Social[] = [
   { icon: 'bxl:github', link: 'https://github.com/bedlinger', name: 'GitHub' },
   { icon: 'bxl:gmail', link: 'mailto:beni.edlinger+portfolio@gmail.com', name: 'Email' },
 ]
-const images = ref<{ src: string; fileName: string | undefined }[]>([])
+const images = ref<Image[]>([])
 const { user, isLoadingUser, errorUser, fetchUser } = useAuthenticatedUserProfile()
 const { repos, isLoadingRepos, errorRepos, fetchRepos } = useAuthenticatedUserRepos()
 const { starred, isLoadingStarred, errorStarred, fetchStarred } = useAuthenticatedUserStarred()
 
 const loadImages = async () => {
   const imageModules = import.meta.glob('@/assets/index/*.(png|jpg|jpeg|gif|svg)')
-  const loadedImages = []
+  const loadedImages: Image[] = []
   for (const path in imageModules) {
     const module = await imageModules[path]()
     loadedImages.push({
       src: (module as { default: string }).default,
-      fileName: path.split('/').pop(),
+      fileName: path.split('/').pop() || 'unknown',
     })
   }
   return loadedImages.sort(() => Math.random() - 0.5)
