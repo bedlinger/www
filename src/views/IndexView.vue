@@ -20,7 +20,11 @@
           <a href="https://github.com/bedlinger" target="_blank" rel="noopener noreferrer">
             <Icon icon="bxl:github" class="icon" style="color: var(--color-primary-600)" />
           </a>
-          <a href="mailto:beni.edlinger@gmail.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="mailto:beni.edlinger+portfolio@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Icon icon="bxl:gmail" class="icon" style="color: var(--color-primary-600)" />
           </a>
         </span>
@@ -54,8 +58,14 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { Icon } from '@iconify/vue'
+import { useAuthenticatedUserProfile } from '@/composables/useAuthenticatedUserProfile'
+import { useAuthenticatedUserRepos } from '@/composables/useAuthenticatedUserRepos'
+import { useAuthenticatedUserStarred } from '@/composables/useAuthenticatedUserStarred'
 
 const images = ref<{ src: string; fileName: string | undefined }[]>([])
+const { user, isLoadingUser, errorUser, fetchUser } = useAuthenticatedUserProfile()
+const { repos, isLoadingRepos, errorRepos, fetchRepos } = useAuthenticatedUserRepos()
+const { starred, isLoadingStarred, errorStarred, fetchStarred } = useAuthenticatedUserStarred()
 
 const loadImages = async () => {
   const imageModules = import.meta.glob('@/assets/index/*.(png|jpg|jpeg|gif|svg)')
@@ -72,5 +82,8 @@ const loadImages = async () => {
 
 onMounted(async () => {
   images.value = await loadImages()
+  await fetchUser()
+  await fetchRepos()
+  await fetchStarred()
 })
 </script>
