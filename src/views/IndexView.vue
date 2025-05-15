@@ -13,7 +13,7 @@
           to building robust software solutions. I'm particularly enthusiastic about web development
           and thrive on bringing innovative digital projects to life.
         </p>
-        <SocialLinks :socials="mySocialLinks" :is-horizontal="true" />
+        <SocialLinks :socials="socialLinks" :is-horizontal="true" />
       </div>
       <div class="hidden lg:flex lg:items-center lg:justify-center lg:mx-12">
         <Carousel :value="images" :numVisible="1" :numScroll="1" :autoplayInterval="2000" circular>
@@ -49,15 +49,11 @@ import type { Image } from '@/types/image'
 import { useAuthenticatedUserProfile } from '@/composables/useAuthenticatedUserProfile'
 import { useAuthenticatedUserRepos } from '@/composables/useAuthenticatedUserRepos'
 import { useAuthenticatedUserStarred } from '@/composables/useAuthenticatedUserStarred'
-import type { Social } from '@/types/social'
+import { useSocialLinks } from '@/composables/useSocialLinks'
 
 const topSection = ref<HTMLElement | null>(null)
 const githubSection = ref<HTMLElement | null>(null)
-const mySocialLinks: Social[] = [
-  { icon: 'bxl:linkedin-square', link: 'https://www.linkedin.com/in/bedlinger', name: 'LinkedIn' },
-  { icon: 'bxl:github', link: 'https://github.com/bedlinger', name: 'GitHub' },
-  { icon: 'bxl:gmail', link: 'mailto:beni.edlinger+portfolio@gmail.com', name: 'Email' },
-]
+const { socialLinks } = useSocialLinks()
 const images = ref<Image[]>([])
 const { user, isLoadingUser, errorUser, fetchUser } = useAuthenticatedUserProfile()
 const { repos, isLoadingRepos, errorRepos, fetchRepos } = useAuthenticatedUserRepos()
