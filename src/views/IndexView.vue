@@ -26,10 +26,6 @@
           </template>
           <template #empty>
             <p>Bilder konnte nicht geladen werden!</p>
-            <Button :onclick="refreshPage()">
-              Neu laden
-              <Icon icon="mdi:reload" class="w-5 h-5"></Icon>
-            </Button>
           </template>
         </Carousel>
       </div>
@@ -42,7 +38,6 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
 import { Icon } from '@iconify/vue'
 import type { Image } from '@/types/image'
 import { useAuthenticatedUserProfile } from '@/composables/useAuthenticatedUserProfile'
@@ -50,7 +45,6 @@ import { useAuthenticatedUserRepos } from '@/composables/useAuthenticatedUserRep
 import { useAuthenticatedUserStarred } from '@/composables/useAuthenticatedUserStarred'
 import type { Social } from '@/types/social'
 
-const router = useRouter()
 const mySocialLinks: Social[] = [
   { icon: 'bxl:linkedin-square', link: 'https://www.linkedin.com/in/bedlinger', name: 'LinkedIn' },
   { icon: 'bxl:github', link: 'https://github.com/bedlinger', name: 'GitHub' },
@@ -72,9 +66,6 @@ const loadImages = async () => {
     })
   }
   return loadedImages.sort(() => Math.random() - 0.5)
-}
-const refreshPage = () => {
-  router.go(0)
 }
 
 onMounted(async () => {
