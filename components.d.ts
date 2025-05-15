@@ -12,5 +12,6 @@ declare module 'vue' {
     Carousel: typeof import('primevue/carousel')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SocialLinks: typeof import('./src/components/SocialLinks.vue')['default']
   }
 }

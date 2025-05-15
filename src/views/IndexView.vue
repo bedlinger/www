@@ -13,21 +13,7 @@
           to building robust software solutions. I'm particularly enthusiastic about web development
           and thrive on bringing innovative digital projects to life.
         </p>
-        <span class="flex flex-row gap-6">
-          <a href="https://www.linkedin.com/in/bedlinger" target="_blank" rel="noopener noreferrer">
-            <Icon icon="bxl:linkedin-square" class="icon" style="color: var(--color-primary-600)" />
-          </a>
-          <a href="https://github.com/bedlinger" target="_blank" rel="noopener noreferrer">
-            <Icon icon="bxl:github" class="icon" style="color: var(--color-primary-600)" />
-          </a>
-          <a
-            href="mailto:beni.edlinger+portfolio@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon icon="bxl:gmail" class="icon" style="color: var(--color-primary-600)" />
-          </a>
-        </span>
+        <SocialLinks :socials="mySocialLinks" :is-horizontal="true" />
       </div>
       <div class="hidden lg:flex lg:items-center lg:justify-center lg:mx-12">
         <p v-if="images.length === 0" class="text-center">Loading images...</p>
@@ -61,7 +47,13 @@ import { Icon } from '@iconify/vue'
 import { useAuthenticatedUserProfile } from '@/composables/useAuthenticatedUserProfile'
 import { useAuthenticatedUserRepos } from '@/composables/useAuthenticatedUserRepos'
 import { useAuthenticatedUserStarred } from '@/composables/useAuthenticatedUserStarred'
+import type { Social } from '@/types/social'
 
+const mySocialLinks: Social[] = [
+  { icon: 'bxl:linkedin-square', link: 'https://www.linkedin.com/in/bedlinger', name: 'LinkedIn' },
+  { icon: 'bxl:github', link: 'https://github.com/bedlinger', name: 'GitHub' },
+  { icon: 'bxl:gmail', link: 'mailto:beni.edlinger+portfolio@gmail.com', name: 'Email' },
+]
 const images = ref<{ src: string; fileName: string | undefined }[]>([])
 const { user, isLoadingUser, errorUser, fetchUser } = useAuthenticatedUserProfile()
 const { repos, isLoadingRepos, errorRepos, fetchRepos } = useAuthenticatedUserRepos()
