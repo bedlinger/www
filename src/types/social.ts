@@ -3,7 +3,3 @@ export interface Social {
   link: string
   name?: string // optional for accessibility
 }
-export interface SocialLinkProps {
-  socials: Social[]
-  isHorizontal?: boolean
-}
