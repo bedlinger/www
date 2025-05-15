@@ -1,5 +1,5 @@
 <template>
-  <section id="begin">
+  <section ref="topSection" class="relative">
     <div class="flex justify-center items-center lg:grid lg:grid-cols-2 lg:gap-4">
       <div class="flex flex-col justify-center mx-12">
         <h1 class="flex items-center text-left">
@@ -30,8 +30,14 @@
         </Carousel>
       </div>
     </div>
+    <div
+      class="hidden lg:absolute lg:bottom-2 lg:left-1/2 lg:flex lg:items-center lg:justify-center lg:w-12 lg:h-12 lg:animate-bounce lg:bg-primary-50 lg:bg-contain lg:rounded-full lg:hover:cursor-pointer"
+      @click="goToSection('github')"
+    >
+      <Icon icon="mdi:chevron-triple-down" class="icon" style="color: var(--color-primary-600)" />
+    </div>
   </section>
-  <section id="github">
+  <section ref="githubSection">
     <p>text</p>
   </section>
 </template>
@@ -45,6 +51,8 @@ import { useAuthenticatedUserRepos } from '@/composables/useAuthenticatedUserRep
 import { useAuthenticatedUserStarred } from '@/composables/useAuthenticatedUserStarred'
 import type { Social } from '@/types/social'
 
+const topSection = ref<HTMLElement | null>(null)
+const githubSection = ref<HTMLElement | null>(null)
 const mySocialLinks: Social[] = [
   { icon: 'bxl:linkedin-square', link: 'https://www.linkedin.com/in/bedlinger', name: 'LinkedIn' },
   { icon: 'bxl:github', link: 'https://github.com/bedlinger', name: 'GitHub' },
@@ -66,6 +74,24 @@ const loadImages = async () => {
     })
   }
   return loadedImages.sort(() => Math.random() - 0.5)
+}
+const goToSection = (sectionRefName: string) => {
+  let sectionElement: HTMLElement | null = null
+
+  switch (sectionRefName) {
+    case 'top':
+      sectionElement = topSection.value
+      break
+    case 'github':
+      sectionElement = githubSection.value
+      break
+    default:
+      return
+  }
+
+  if (sectionElement) {
+    sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 }
 
 onMounted(async () => {
