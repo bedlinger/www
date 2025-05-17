@@ -1,8 +1,6 @@
 import octokit from '@/services/octokitService'
-import type { Endpoints } from '@octokit/types'
+import type { Repos } from '@/types/github'
 import { ref } from 'vue'
-
-type Repos = Endpoints['GET /user/repos']['response']['data']
 
 export function useAuthenticatedUserRepos() {
   const repos = ref<Repos | null>(null)

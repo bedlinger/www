@@ -1,8 +1,6 @@
 import octokit from '@/services/octokitService'
-import type { Endpoints } from '@octokit/types'
+import type { Starred } from '@/types/github'
 import { ref } from 'vue'
-
-type Starred = Endpoints['GET /user/starred']['response']['data']
 
 export function useAuthenticatedUserStarred() {
   const starred = ref<Starred | null>(null)

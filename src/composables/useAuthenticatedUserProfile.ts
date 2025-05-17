@@ -1,8 +1,6 @@
 import octokit from '@/services/octokitService'
-import type { Endpoints } from '@octokit/types'
+import type { User } from '@/types/github'
 import { ref } from 'vue'
-
-type User = Endpoints['GET /user']['response']['data']
 
 export function useAuthenticatedUserProfile() {
   const user = ref<User | null>(null)
