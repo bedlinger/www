@@ -22,13 +22,12 @@ export function useAuthenticatedUserLanguages() {
       } catch {
         continue
         // throw new Error(`Error fetching languages for repo ${repo.name}`)
-      } finally {
-        isLoadingLanguages.value = false
       }
     }
     if (languages.value && Object.keys(languages.value).length === 0) {
       errorLanguages.value = new Error('No languages found for the authenticated user')
     }
+    isLoadingLanguages.value = false
   }
 
   return {
