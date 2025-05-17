@@ -9,16 +9,14 @@ export function useAuthenticatedUserRepos() {
 
   const fetchRepos = async () => {
     isLoadingRepos.value = true
-    errorRepos.value = null
     try {
       const response = await octokit.request('GET /user/repos', {
         visibility: 'all',
         sort: 'updated',
       })
       repos.value = response.data
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (err: any) {
-      errorRepos.value = err
+    } catch {
+      errorRepos.value = new Error(`Error fetching user repos`)
     } finally {
       isLoadingRepos.value = false
     }

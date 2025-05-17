@@ -9,13 +9,11 @@ export function useAuthenticatedUserStarred() {
 
   const fetchStarred = async () => {
     isLoadingStarred.value = true
-    errorStarred.value = null
     try {
       const response = await octokit.request('GET /user/starred')
       starred.value = response.data
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (err: any) {
-      errorStarred.value = err
+    } catch {
+      errorStarred.value = new Error(`Error fetching starred repos`)
     } finally {
       isLoadingStarred.value = false
     }

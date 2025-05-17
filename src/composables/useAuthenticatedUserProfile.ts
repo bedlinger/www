@@ -9,13 +9,11 @@ export function useAuthenticatedUserProfile() {
 
   const fetchUser = async () => {
     isLoadingUser.value = true
-    errorUser.value = null
     try {
       const response = await octokit.request('GET /user')
       user.value = response.data
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (err: any) {
-      errorUser.value = err
+    } catch {
+      errorUser.value = new Error(`Error fetching user profile`)
     } finally {
       isLoadingUser.value = false
     }
