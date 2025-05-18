@@ -9,7 +9,7 @@ import { definePreset } from '@primeuix/themes'
 
 const app = createApp(App)
 
-const MyPreset = definePreset(Aura, {
+const WWWPreset = definePreset(Aura, {
   semantic: {
     primary: {
       50: '#f4f7f7',
@@ -30,7 +30,7 @@ const MyPreset = definePreset(Aura, {
 app.use(router)
 app.use(PrimeVue, {
   theme: {
-    preset: MyPreset,
+    preset: WWWPreset,
     options: {
       darkModeSelector: '.dark-mode',
     },
