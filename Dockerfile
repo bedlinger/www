@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:14
+FROM node:lts-alpine3.20
 
 # Set the working directory to /app
 WORKDIR /app
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Use an Nginx server to serve the application
-FROM nginx:1.19.0-alpine
+FROM nginx:stable-perl
 
 # Copy the built application files from the parent image
 COPY --from=0 /app/dist /usr/share/nginx/html
