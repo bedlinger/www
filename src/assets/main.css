@@ -40,7 +40,7 @@
     @apply text-base font-medium mb-1;
   }
   p {
-    @apply mb-4 leading-relaxed;
+    @apply mb-1 leading-relaxed;
   }
   a {
     @apply text-primary-600 hover:text-primary-800 underline;
@@ -69,5 +69,8 @@
   }
   .icon {
     @apply w-10 h-10;
+  }
+  .p-progressspinner-circle {
+    stroke: var(--color-primary-600) !important;
   }
 }

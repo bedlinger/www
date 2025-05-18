@@ -22,7 +22,7 @@ const scrollToTop = () => {
           <h3 class="text-2xl font-bold">Benjamin Edlinger</h3>
         </div>
         <button
-          class="flex items-center gap-2 text-primary-300 hover:text-white transition-colors duration-300"
+          class="flex items-center gap-2 text-primary-300 hover:text-white transition-colors duration-300 lg:hover:cursor-pointer"
           @click="scrollToTop"
         >
           <span>Back to top</span>
