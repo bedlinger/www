@@ -1,0 +1,9 @@
+services:
+  www-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bedlinger-www
+    ports:
+      - "8080:80"
+    restart: unless-stopped
