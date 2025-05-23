@@ -1,9 +1,20 @@
+version: '3.8'
+
 services:
-  portfolio:
-    container_name: portfolio
+  portfolio-app:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "8080:80"
-    restart: unless-stopped
+    container_name: "portfolio_bedlinger_at"
+    restart: "unless-stopped"
+    expose:
+      - "80"
+    environment:
+      VIRTUAL_HOST: "bedlinger.at,www.bedlinger.at"
+      LETSENCRYPT_HOST: "bedlinger.at,www.bedlinger.at"
+    networks:
+      - "web"
+
+networks:
+  web:
+    external: true
