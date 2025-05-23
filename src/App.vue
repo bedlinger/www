@@ -1,18 +1,3 @@
-<script setup lang="ts">
-import { Icon } from '@iconify/vue'
-import { useSocialLinks } from './composables/useSocialLinks'
-
-const currentYear = new Date().getFullYear()
-const { socialLinks } = useSocialLinks()
-
-const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  })
-}
-</script>
-
 <template>
   <RouterView />
   <footer class="bg-primary-900 text-white p-6">
@@ -39,3 +24,18 @@ const scrollToTop = () => {
     </div>
   </footer>
 </template>
+
+<script setup lang="ts">
+import { Icon } from '@iconify/vue'
+import { useSocialLinks } from './composables/useSocialLinks'
+
+const currentYear = new Date().getFullYear()
+const { socialLinks } = useSocialLinks()
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  })
+}
+</script>

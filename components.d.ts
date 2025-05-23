@@ -10,6 +10,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Avatar: typeof import('primevue/avatar')['default']
     Carousel: typeof import('primevue/carousel')['default']
+    GitHubSection: typeof import('./src/components/sections/GitHubSection.vue')['default']
     GitHubStatItem: typeof import('./src/components/GitHubStatItem.vue')['default']
     LanguageStatItem: typeof import('./src/components/LanguageStatItem.vue')['default']
     Message: typeof import('primevue/message')['default']
@@ -17,5 +18,6 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SocialLinks: typeof import('./src/components/SocialLinks.vue')['default']
+    TopSection: typeof import('./src/components/sections/TopSection.vue')['default']
   }
 }

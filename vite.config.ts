@@ -17,6 +17,23 @@ export default defineConfig({
       resolvers: [PrimeVueResolver()],
     }),
   ],
+  build: {
+    chunkSizeWarningLimit: 800,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          primevue: ['primevue'],
+          iconify: ['@iconify/vue'],
+          'github-api': [
+            '@/composables/useAuthenticatedUserProfile',
+            '@/composables/useAuthenticatedUserRepos',
+            '@/composables/useAuthenticatedUserLanguages',
+          ],
+          'vue-core': ['vue', 'vue-router'],
+        },
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
