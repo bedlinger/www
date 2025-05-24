@@ -2,7 +2,7 @@ import octokit from '@/services/octokitService'
 import type { Starred } from '@/types/github'
 import { ref } from 'vue'
 
-export function useAuthenticatedUserStarred() {
+export function useUserStarred() {
   const starred = ref<Starred | null>(null)
   const isLoadingStarred = ref(false)
   const errorStarred = ref<Error | null>(null)

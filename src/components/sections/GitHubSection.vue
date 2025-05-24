@@ -80,15 +80,14 @@
 </template>
 
 <script setup lang="ts">
-import { useAuthenticatedUserLanguages } from '@/composables/useAuthenticatedUserLanguages'
-import { useAuthenticatedUserProfile } from '@/composables/useAuthenticatedUserProfile'
-import { useAuthenticatedUserRepos } from '@/composables/useAuthenticatedUserRepos'
+import { useUserLanguages } from '@/composables/useUserLanguages'
+import { useUserProfile } from '@/composables/useUserProfile'
+import { useUserRepos } from '@/composables/useUserRepos'
 import { computed, onMounted } from 'vue'
 
-const { user, isLoadingUser, errorUser, fetchUser } = useAuthenticatedUserProfile()
-const { repos, fetchRepos } = useAuthenticatedUserRepos()
-const { sortedLanguages, isLoadingLanguages, errorLanguages, fetchLanguages } =
-  useAuthenticatedUserLanguages()
+const { user, isLoadingUser, errorUser, fetchUser } = useUserProfile()
+const { repos, fetchRepos } = useUserRepos()
+const { sortedLanguages, isLoadingLanguages, errorLanguages, fetchLanguages } = useUserLanguages()
 const topSixLanguages = computed(() => {
   if (sortedLanguages.value && sortedLanguages.value.length > 0) {
     return sortedLanguages.value.slice(0, 6)

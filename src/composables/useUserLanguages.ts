@@ -2,7 +2,7 @@ import octokit from '@/services/octokitService'
 import type { Language, Repos } from '@/types/github'
 import { ref, computed } from 'vue'
 
-export function useAuthenticatedUserLanguages() {
+export function useUserLanguages() {
   const languages = ref<Language[] | null>(null)
   const languageIcons = [
     { name: 'Vue', icon: 'devicon-plain:vuejs' },

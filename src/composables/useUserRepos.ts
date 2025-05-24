@@ -2,7 +2,7 @@ import octokit from '@/services/octokitService'
 import type { Repos } from '@/types/github'
 import { ref } from 'vue'
 
-export function useAuthenticatedUserRepos() {
+export function useUserRepos() {
   const repos = ref<Repos | null>(null)
   const isLoadingRepos = ref(false)
   const errorRepos = ref<Error | null>(null)
