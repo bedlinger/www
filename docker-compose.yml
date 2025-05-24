@@ -12,6 +12,7 @@ services:
     environment:
       VIRTUAL_HOST: "bedlinger.at,www.bedlinger.at"
       LETSENCRYPT_HOST: "bedlinger.at,www.bedlinger.at"
+      VIRTUAL_PORT: "80"
     networks:
       - "web"
 
