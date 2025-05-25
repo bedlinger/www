@@ -16,7 +16,7 @@
                 enthusiastic about web development and thrive on bringing innovative digital
                 projects to life.
             </p>
-            <SocialLinks :socials="socialLinks" :is-horizontal="true" />
+            <SocialLinks :socials="SOCIAL_LINKS" :is-horizontal="true" />
         </div>
         <div class="hidden lg:flex lg:items-center lg:justify-center lg:mx-12">
             <Carousel
@@ -55,10 +55,9 @@
 import { ref, onMounted } from 'vue'
 import { Icon } from '@iconify/vue'
 import type { Image } from '@/types/image'
-import { useSocialLinks } from '@/composables/useSocialLinks'
+import { SOCIAL_LINKS } from '@/types/social'
 import { SectionType } from '@/types/sections'
 
-const { socialLinks } = useSocialLinks()
 const images = ref<Image[]>([])
 
 const loadImages = async () => {

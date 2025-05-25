@@ -14,7 +14,7 @@
                     <Icon icon="mdi:arrow-up" class="w-5 h-5" />
                 </button>
                 <div class="flex flex-col items-center md:items-end gap-4">
-                    <SocialLinks :socials="socialLinks" :is-horizontal="true" />
+                    <SocialLinks :socials="SOCIAL_LINKS" :is-horizontal="true" />
                 </div>
             </div>
 
@@ -27,10 +27,9 @@
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
-import { useSocialLinks } from './composables/useSocialLinks'
+import { SOCIAL_LINKS } from './types/social'
 
 const currentYear = new Date().getFullYear()
-const { socialLinks } = useSocialLinks()
 
 const scrollToTop = () => {
     window.scrollTo({
