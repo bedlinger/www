@@ -68,11 +68,12 @@ async function computeTopLanguages() {
             `Error writing languages to file: ${error instanceof Error ? error.message : 'Unknown error'}`,
         )
     }
-    console.info('Languages computation completed successfully.')
+    console.info('Languages update completed successfully.')
 }
 
+console.info('---  Starting script to update top languages ---')
 computeTopLanguages()
-    .then(() => console.info('Script completed successfully.'))
+    .then(() => console.info('---  Script completed successfully ---'))
     .catch((error) => {
         console.error(error)
         process.exit(1)

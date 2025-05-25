@@ -31,7 +31,7 @@ jobs:
       - name: Compile TypeScript script
         run: npx tsc --esModuleInterop --target ES2022 --module NodeNext --moduleResolution NodeNext .github/scripts/updateTopLanguages.ts
 
-      - name: Run language computation script
+      - name: Run language update script
         run: node .github/scripts/updateTopLanguages.js
         env:
           WWW_PRODUCTION: ${{ secrets.WWW_PRODUCTION }}
