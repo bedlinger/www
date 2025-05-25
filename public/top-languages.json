@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-05-25T20:24:38.676Z",
+  "lastUpdated": "2025-05-25T21:09:36.006Z",
   "languages": [
     {
       "name": "C#",
@@ -8,7 +8,7 @@
     },
     {
       "name": "Vue",
-      "value": 436012,
+      "value": 436513,
       "icon": "devicon-plain:vuejs"
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "name": "TypeScript",
-      "value": 72599
+      "value": 72754
     },
     {
       "name": "Python",
