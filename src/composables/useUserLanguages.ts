@@ -3,61 +3,61 @@ import { LANGUAGE_ICONS, type Language, type Repos } from '@/types/github'
 import { ref, computed } from 'vue'
 
 export function useUserLanguages() {
-  const languages = ref<Language[] | null>(null)
-  const sortedLanguages = computed(() => {
-    if (!languages.value) {
-      return null
-    }
-    return languages.value.sort((a, b) => b.value - a.value)
-  })
-  const isLoadingLanguages = ref(false)
-  const errorLanguages = ref<Error | null>(null)
-
-  const fetchLanguages = async (repos: Repos) => {
-    if (!repos || repos.length === 0) {
-      return
-    }
-    languages.value = []
-    isLoadingLanguages.value = true
-    errorLanguages.value = null
-
-    const repoLanguages: Record<string, number>[] = []
-    for (const repo of repos) {
-      try {
-        const response = await octokit.request('GET /repos/{owner}/{repo}/languages', {
-          owner: repo.owner.login,
-          repo: repo.name,
-        })
-        repoLanguages.push(response.data as Record<string, number>)
-      } catch {
-        continue
-      }
-    }
-
-    for (const repoLanguage of repoLanguages) {
-      for (const [language, value] of Object.entries(repoLanguage)) {
-        const existingLanguage = languages.value?.find((lang) => lang.name === language)
-        if (existingLanguage) {
-          existingLanguage.value += value
-        } else {
-          const icon = LANGUAGE_ICONS.find((lang) => lang.name === language)?.icon
-          languages.value?.push({ name: language, value, icon })
+    const languages = ref<Language[] | null>(null)
+    const sortedLanguages = computed(() => {
+        if (!languages.value) {
+            return null
         }
-      }
+        return languages.value.sort((a, b) => b.value - a.value)
+    })
+    const isLoadingLanguages = ref(false)
+    const errorLanguages = ref<Error | null>(null)
+
+    const fetchLanguages = async (repos: Repos) => {
+        if (!repos || repos.length === 0) {
+            return
+        }
+        languages.value = []
+        isLoadingLanguages.value = true
+        errorLanguages.value = null
+
+        const repoLanguages: Record<string, number>[] = []
+        for (const repo of repos) {
+            try {
+                const response = await octokit.request('GET /repos/{owner}/{repo}/languages', {
+                    owner: repo.owner.login,
+                    repo: repo.name,
+                })
+                repoLanguages.push(response.data as Record<string, number>)
+            } catch {
+                continue
+            }
+        }
+
+        for (const repoLanguage of repoLanguages) {
+            for (const [language, value] of Object.entries(repoLanguage)) {
+                const existingLanguage = languages.value?.find((lang) => lang.name === language)
+                if (existingLanguage) {
+                    existingLanguage.value += value
+                } else {
+                    const icon = LANGUAGE_ICONS.find((lang) => lang.name === language)?.icon
+                    languages.value?.push({ name: language, value, icon })
+                }
+            }
+        }
+
+        if (languages.value.length === 0) {
+            errorLanguages.value = new Error('No languages found for the user')
+        }
+
+        isLoadingLanguages.value = false
     }
 
-    if (languages.value.length === 0) {
-      errorLanguages.value = new Error('No languages found for the user')
+    return {
+        languages,
+        sortedLanguages,
+        isLoadingLanguages,
+        errorLanguages,
+        fetchLanguages,
     }
-
-    isLoadingLanguages.value = false
-  }
-
-  return {
-    languages,
-    sortedLanguages,
-    isLoadingLanguages,
-    errorLanguages,
-    fetchLanguages,
-  }
 }

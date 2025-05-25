@@ -1,5 +1,5 @@
 export enum SectionType {
-  TOP = 'top',
-  GITHUB = 'github',
-  PROJECTS = 'projects',
+    TOP = 'top',
+    GITHUB = 'github',
+    PROJECTS = 'projects',
 }
