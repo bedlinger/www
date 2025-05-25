@@ -2,10 +2,12 @@ import { Octokit } from 'octokit';
 import fs from 'fs/promises';
 import path from 'path';
 import { LANGUAGE_ICONS } from '../../src/types/github.js';
+import { cwd } from 'process';
 const octokit = new Octokit({
     auth: process.env.GITHUB_TOKEN,
 });
 async function computeTopLanguages() {
+    console.log(cwd());
     let repos = null;
     try {
         console.info('Fetching user repositories...');
@@ -54,7 +56,7 @@ async function computeTopLanguages() {
     }
     languages.sort((a, b) => b.value - a.value);
     console.info('Languages computed successfully, writing to file...');
-    const filePath = path.join(__dirname, '../../public/top-languages.json');
+    const filePath = path.join(cwd(), '../../public/top-languages.json');
     try {
         await fs.writeFile(filePath, JSON.stringify(languages, null, 2));
         console.info(`Languages written to ${filePath}`);
