@@ -17,25 +17,25 @@
                         icon="mdi:account"
                         label="Owner"
                         :value="pinned.owner"
-                        class="bg-primary-600 transition-transform hover:scale-105"
+                        class="bg-primary-600"
                     />
                     <GitHubStatItem
                         icon="mdi:code-tags"
                         label="Language"
                         :value="pinned.languageName"
-                        class="bg-primary-600 transition-transform hover:scale-105"
+                        class="bg-primary-600"
                     />
                     <GitHubStatItem
                         icon="mdi:star-shooting"
                         label="Stars"
                         :value="pinned.stars"
-                        class="bg-primary-600 transition-transform hover:scale-105"
+                        class="bg-primary-600"
                     />
                     <GitHubStatItem
                         icon="mdi:source-branch"
                         label="Forks"
                         :value="pinned.forks"
-                        class="bg-primary-600 transition-transform hover:scale-105"
+                        class="bg-primary-600"
                     />
                 </div>
             </template>

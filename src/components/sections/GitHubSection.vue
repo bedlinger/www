@@ -33,25 +33,25 @@
                                   })
                                 : 'N/A'
                         "
-                        class="bg-primary-600 transition-transform hover:scale-105"
+                        class="bg-primary-600"
                     />
                     <GitHubStatItem
                         icon="mdi:source-repository"
                         :label="isMdScreen ? 'Public Repos' : 'Repos'"
                         :value="user?.public_repos"
-                        class="bg-primary-600 transition-transform hover:scale-105"
+                        class="bg-primary-600"
                     />
                     <GitHubStatItem
                         icon="mdi:account-group"
                         label="Followers"
                         :value="user?.followers"
-                        class="bg-primary-600 transition-transform hover:scale-105"
+                        class="bg-primary-600"
                     />
                     <GitHubStatItem
                         icon="mdi:eye"
                         label="Following"
                         :value="user?.following"
-                        class="bg-primary-600 transition-transform hover:scale-105"
+                        class="bg-primary-600"
                     />
                 </div>
             </div>
