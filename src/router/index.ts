@@ -9,6 +9,11 @@ const router = createRouter({
             name: 'index',
             component: IndexView,
         },
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'not-found',
+            component: () => import('@/views/NotFoundView.vue'),
+        },
     ],
 })
 
