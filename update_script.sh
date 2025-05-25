@@ -1,8 +1,8 @@
 # Make the script executable: chmod +x /bedlinger/scripts/update_script.sh
 
 # use `crontab -e` to add this script to the cron jobs with the following line:
-# 0 6 * * 0 /bedlinger/scripts/update_script.sh >> /var/log/cron_portfolio_update.log 2>&1
-
+# 0 1.5 * * 0 /bedlinger/scripts/update_script.sh >> /var/log/cron_portfolio_update.log 2>&1
+# This will run the script every Sunday at 01:30 AM and log output to /var/log/cron_portfolio_update.log
 
 #!/bin/bash
 

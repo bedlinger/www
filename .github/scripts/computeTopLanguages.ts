@@ -58,9 +58,8 @@ async function computeTopLanguages() {
     languages.sort((a, b) => b.value - a.value)
 
     console.info('Languages computed successfully, writing to file...')
-    const filePath = path.join(cwd(), './src/public/top-languages.json')
+    const filePath = path.join(cwd(), './public/top-languages.json')
     try {
-        await fs.mkdir(path.dirname(filePath), { recursive: true })
         await fs.writeFile(filePath, JSON.stringify(languages, null, 2))
         console.info(`Languages written to ${filePath}`)
     } catch (error) {
