@@ -84,7 +84,8 @@ import { computed, onMounted, onUnmounted, ref } from 'vue'
 const isMdScreen = ref(false)
 const { user, isLoadingUser, errorUser, fetchUser } = useUserProfile()
 const { repos, errorRepos, fetchRepos } = useUserRepos()
-const { sortedLanguages, isLoadingLanguages, errorLanguages, fetchLanguages } = useUserLanguages()
+const { sortedLanguages, isLoadingLanguages, errorLanguages, fetchLanguages, fetchLanguagesCache } =
+    useUserLanguages()
 const topSixLanguages = computed(() => {
     if (sortedLanguages.value && sortedLanguages.value.length > 0) {
         return sortedLanguages.value.slice(0, 6)
@@ -100,9 +101,13 @@ onMounted(async () => {
     updateScreenSize()
     window.addEventListener('resize', updateScreenSize)
     await fetchUser()
-    await fetchRepos()
-    if (repos.value && repos.value.length > 0) {
-        await fetchLanguages(repos.value)
+    try {
+        await fetchLanguagesCache()
+    } catch {
+        await fetchRepos()
+        if (repos.value && repos.value.length > 0) {
+            await fetchLanguages(repos.value)
+        }
     }
 })
 onUnmounted(() => {

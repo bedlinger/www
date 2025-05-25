@@ -10,6 +10,11 @@ export interface Language {
     icon?: string
 }
 
+export interface CachedLanguages {
+    lastUpdated: string
+    languages: Language[]
+}
+
 export const LANGUAGE_ICONS: { name: string; icon: string }[] = [
     { name: 'Vue', icon: 'devicon-plain:vuejs' },
     { name: 'C#', icon: 'devicon-plain:csharp' },

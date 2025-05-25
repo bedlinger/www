@@ -5,7 +5,7 @@ import { cwd } from 'process'
 import { LANGUAGE_ICONS, type Repos, type Language } from '../../src/types/github.js'
 
 const octokit = new Octokit({
-    auth: process.env.GITHUB_TOKEN,
+    auth: process.env.WWW_PRODUCTION,
 })
 
 async function computeTopLanguages() {

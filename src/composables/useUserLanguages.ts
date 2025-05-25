@@ -1,5 +1,6 @@
 import octokit from '@/services/octokitService'
-import { LANGUAGE_ICONS, type Language, type Repos } from '@/types/github'
+import { LANGUAGE_ICONS, type CachedLanguages, type Language, type Repos } from '@/types/github'
+import axios from 'axios'
 import { ref, computed } from 'vue'
 
 export function useUserLanguages() {
@@ -12,6 +13,38 @@ export function useUserLanguages() {
     })
     const isLoadingLanguages = ref(false)
     const errorLanguages = ref<Error | null>(null)
+
+    const fetchLanguagesCache = async () => {
+        isLoadingLanguages.value = true
+        try {
+            const response = await axios.get('/top-languages.json')
+            const cachedLanguages = response.data as CachedLanguages
+            if (
+                !cachedLanguages ||
+                !cachedLanguages.lastUpdated ||
+                !cachedLanguages.languages ||
+                !Array.isArray(cachedLanguages.languages) ||
+                cachedLanguages.languages.length === 0
+            ) {
+                throw new Error('Invalid cached languages data')
+            }
+
+            const lastUpdated = new Date(cachedLanguages.lastUpdated)
+            const now = new Date()
+            const diffInDays = Math.floor(
+                (now.getTime() - lastUpdated.getTime()) / (1000 * 60 * 60 * 24),
+            )
+            if (diffInDays > 7) {
+                throw new Error('Cache is older than 7 days')
+            }
+
+            languages.value = cachedLanguages.languages
+        } catch (error) {
+            throw new Error('Failed to fetch languages cache: ' + (error as Error).message)
+        } finally {
+            isLoadingLanguages.value = false
+        }
+    }
 
     const fetchLanguages = async (repos: Repos) => {
         if (!repos || repos.length === 0) {
@@ -58,6 +91,7 @@ export function useUserLanguages() {
         sortedLanguages,
         isLoadingLanguages,
         errorLanguages,
+        fetchLanguagesCache,
         fetchLanguages,
     }
 }
