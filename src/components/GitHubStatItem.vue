@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <span class="-mb-1 text-primary-100/50 flex flex-row items-center gap-1 text-sm">
+  <div class="w-full flex flex-col justify-between rounded-lg p-3">
+    <span class="text-primary-100/50 flex flex-row items-center gap-1 text-sm">
       <Icon :icon="icon" />
       {{ label }}
     </span>
-    <p class="ml-1 text-base">{{ value ?? 'N/A' }}</p>
+    <p class="text-base ml-0.5">{{ value ?? 'N/A' }}</p>
   </div>
 </template>
 

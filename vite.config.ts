@@ -25,9 +25,10 @@ export default defineConfig({
           primevue: ['primevue'],
           iconify: ['@iconify/vue'],
           'github-api': [
-            '@/composables/useAuthenticatedUserProfile',
-            '@/composables/useAuthenticatedUserRepos',
-            '@/composables/useAuthenticatedUserLanguages',
+            '@/composables/useUserProfile',
+            '@/composables/useUserRepos',
+            '@/composables/useUserLanguages',
+            '@/composables/useUserPinned'
           ],
           'vue-core': ['vue', 'vue-router'],
         },

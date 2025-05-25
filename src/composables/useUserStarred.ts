@@ -13,7 +13,7 @@ export function useUserStarred() {
       const response = await octokit.request('GET /user/starred')
       starred.value = response.data
     } catch {
-      errorStarred.value = new Error(`Error fetching starred repos`)
+      errorStarred.value = new Error(`Error fetching user starred repos`)
     } finally {
       isLoadingStarred.value = false
     }
