@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-05-25T19:12:11.974Z",
+  "lastUpdated": "2025-05-25T20:07:11.031Z",
   "languages": [
     {
       "name": "C#",
@@ -8,7 +8,7 @@
     },
     {
       "name": "Vue",
-      "value": 436313,
+      "value": 436420,
       "icon": "devicon-plain:vuejs"
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "name": "TypeScript",
-      "value": 71383
+      "value": 72754
     },
     {
       "name": "Python",
@@ -66,7 +66,7 @@
     },
     {
       "name": "Shell",
-      "value": 735
+      "value": 733
     },
     {
       "name": "Procfile",
