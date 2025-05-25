@@ -60,7 +60,8 @@ async function computeTopLanguages() {
     console.info('Languages computed successfully, writing to file...')
     const filePath = path.join(cwd(), './public/top-languages.json')
     try {
-        await fs.writeFile(filePath, JSON.stringify(languages, null, 2))
+        const data ={ lastUpdated: new Date().toISOString(), languages }
+        await fs.writeFile(filePath, JSON.stringify(data, null, 2))
         console.info(`Languages written to ${filePath}`)
     } catch (error) {
         throw new Error(
