@@ -31,6 +31,29 @@ This repository contains the source code for my personal portfolio website. I've
 - `types/`: TypeScript type definitions
 - `views/`: Page components
 
+## 🤖 GitHub Actions Workflow
+
+This project uses GitHub Actions to automatically update the programming languages statistics displayed on the website:
+
+### Update Top Languages Workflow
+
+The `update-top-languages.yml` workflow fetches and calculates the most used programming languages across all my GitHub repositories.
+
+- **Trigger Schedule**:
+
+  - Runs weekly on Saturdays at 11:00 PM UTC
+  - Runs on every push to the main branch
+  - Can be manually triggered through the GitHub interface
+
+- **Functionality**:
+  - Fetches all repositories using the GitHub API
+  - Calculates total bytes of code per language across all repositories
+  - Generates a sorted list of languages with their respective usage percentages
+  - Updates the `public/top-languages.json` file with the latest data
+  - Automatically commits and pushes the changes
+
+This automation ensures that the website always displays up-to-date information about my programming language usage without manual intervention.
+
 ## 📋 Getting Started
 
 ### Prerequisites
