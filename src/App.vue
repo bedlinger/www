@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
-import { SOCIAL_LINKS } from './types/social'
+import { SOCIAL_LINKS } from '@/types/social'
 
 const currentYear = new Date().getFullYear()
 
