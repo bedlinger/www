@@ -4,6 +4,11 @@ on:
   schedule:
     # Run weekly on Sunday at 1:00 AM Vienna time (11:00 PM UTC Saturday)
     - cron: '0 23 * * 6'
+    # Run on commit to main branch
+  push:
+    branches:
+      - main
+    # Allow manual trigger
   workflow_dispatch:
 
 jobs:
