@@ -1,4 +1,4 @@
-name: Compute Top Languages
+name: Update Top Languages
 
 on:
   schedule:
