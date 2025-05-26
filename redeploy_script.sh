@@ -19,4 +19,4 @@ docker-compose up -d --build
 
 echo "--- Portfolio redeployment finished at $(date) ---"
 
-# Make the script executable: chmod +x /home/bedlinger/www/redeploy_script.sh
+# Make the script executable: chmod +x /home/bedlinger/deployments/www/redeploy_script.sh
