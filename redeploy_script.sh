@@ -7,8 +7,15 @@ cd /home/bedlinger/deployments/www || { echo "Failed to cd into project director
 echo "Pulling latest changes from git..."
 git pull origin main
 
+echo "Shutting down existing Docker container..."
+docker-compose down
+if [ $? -ne 0 ]; then
+    echo "Failed to shut down Docker container. Exiting."
+    exit 1
+fi
+
 echo "Rebuilding and restarting Docker container..."
-docker-compose -f docker-compose.yml up -d --build
+docker-compose up -d --build
 
 echo "--- Portfolio redeployment finished at $(date) ---"
 
