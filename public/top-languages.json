@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-05-25T21:09:36.006Z",
+  "lastUpdated": "2025-05-26T10:39:31.347Z",
   "languages": [
     {
       "name": "C#",
@@ -28,7 +28,7 @@
     },
     {
       "name": "Java",
-      "value": 116753,
+      "value": 111418,
       "icon": "devicon-plain:java"
     },
     {
@@ -66,7 +66,7 @@
     },
     {
       "name": "Shell",
-      "value": 733
+      "value": 448
     },
     {
       "name": "Procfile",
