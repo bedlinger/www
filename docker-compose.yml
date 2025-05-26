@@ -1,12 +1,14 @@
 version: '3.8'
 
 services:
-  portfolio-app:
+  portfolio:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: "portfolio_bedlinger_at"
+    container_name: "portfolio"
     restart: "unless-stopped"
+    environment:
+      - VITE_GITHUB_TOKEN=GITHUB_TOKEN_PLACEHOLDER
     expose:
       - "80"
     environment:
