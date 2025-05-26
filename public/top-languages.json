@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-05-26T16:38:07.154Z",
+  "lastUpdated": "2025-05-26T17:24:07.952Z",
   "languages": [
     {
       "name": "C#",
@@ -63,10 +63,6 @@
     {
       "name": "AutoHotkey",
       "value": 1193
-    },
-    {
-      "name": "Shell",
-      "value": 614
     },
     {
       "name": "Procfile",
