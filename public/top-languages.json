@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-05-26T17:30:59.230Z",
+  "lastUpdated": "2025-05-31T23:14:15.495Z",
   "languages": [
     {
       "name": "C#",
@@ -8,7 +8,7 @@
     },
     {
       "name": "Vue",
-      "value": 436513,
+      "value": 437697,
       "icon": "devicon-plain:vuejs"
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "name": "TypeScript",
-      "value": 72754
+      "value": 80211
     },
     {
       "name": "Python",
@@ -57,7 +57,7 @@
     },
     {
       "name": "Dockerfile",
-      "value": 3679,
+      "value": 3917,
       "icon": "devicon-plain:docker"
     },
     {
