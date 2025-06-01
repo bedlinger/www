@@ -49,15 +49,15 @@ jobs:
             cd /home/${{ secrets.VPS_USERNAME }}/deployments/www
 
             echo "Pulling latest changes from git..."
-            git stash push --include-untracked
-            git checkout main
             git pull origin main
-            git stash pop || true
 
-            echo "Rebuilding and restarting Docker application..."
-            docker-compose -f docker-compose.yml up -d --build
+            echo "Shutting down existing Docker container..."
+            docker-compose down
 
             echo "Cleaning up old Docker images..."
-            docker image prune -af
+            docker image prune -f
+
+            echo "Building and starting Docker container..."
+            docker-compose up -d --build
 
             echo "--- Portfolio deployment on server finished at $(date) ---"
