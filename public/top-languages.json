@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2025-06-01T15:44:59.998Z",
+  "lastUpdated": "2025-06-07T23:15:49.979Z",
   "languages": [
     {
       "name": "C#",
-      "value": 440683,
+      "value": 440841,
       "icon": "devicon-plain:csharp"
     },
     {
       "name": "Vue",
-      "value": 437697,
+      "value": 437591,
       "icon": "devicon-plain:vuejs"
     },
     {
