@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-06-28T23:14:29.230Z",
+  "lastUpdated": "2025-07-05T23:14:34.252Z",
   "languages": [
     {
       "name": "C#",
@@ -13,12 +13,12 @@
     },
     {
       "name": "JavaScript",
-      "value": 324814,
+      "value": 324488,
       "icon": "devicon-plain:javascript"
     },
     {
       "name": "HTML",
-      "value": 169194,
+      "value": 157680,
       "icon": "devicon-plain:html5"
     },
     {
@@ -42,13 +42,17 @@
     },
     {
       "name": "CSS",
-      "value": 38548,
+      "value": 33965,
       "icon": "devicon-plain:css3"
     },
     {
       "name": "Go",
       "value": 15956,
       "icon": "devicon-plain:go"
+    },
+    {
+      "name": "Shell",
+      "value": 13761
     },
     {
       "name": "Rust",
@@ -59,10 +63,6 @@
       "name": "Dockerfile",
       "value": 3917,
       "icon": "devicon-plain:docker"
-    },
-    {
-      "name": "AutoHotkey",
-      "value": 1193
     },
     {
       "name": "Procfile",
