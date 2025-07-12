@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-07-05T23:14:34.252Z",
+  "lastUpdated": "2025-07-12T23:15:53.739Z",
   "languages": [
     {
       "name": "C#",
@@ -41,18 +41,22 @@
       "icon": "devicon-plain:python"
     },
     {
+      "name": "Shell",
+      "value": 36646
+    },
+    {
       "name": "CSS",
       "value": 33965,
       "icon": "devicon-plain:css3"
     },
     {
+      "name": "Lua",
+      "value": 22010
+    },
+    {
       "name": "Go",
       "value": 15956,
       "icon": "devicon-plain:go"
-    },
-    {
-      "name": "Shell",
-      "value": 13761
     },
     {
       "name": "Rust",
