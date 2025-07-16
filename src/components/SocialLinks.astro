@@ -1,14 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
+import type { Social } from "../types.ts";
 
 interface Props {
 	isHorizontal?: boolean;
 	iconSize?: number;
-}
-interface Social {
-	icon: string;
-	link: string;
-	name: string;
 }
 
 const { isHorizontal = true, iconSize = 40 } = Astro.props;
