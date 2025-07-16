@@ -1,0 +1,63 @@
+name: Deploy Portfolio to VPS
+
+on:
+  # Trigger this workflow when the "Update Top Languages" workflow completes successfully
+  workflow_run:
+    workflows: ["Update Top Languages"]
+    types:
+      - completed
+    branches:
+      - main
+
+  # Allow manual trigger
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for manual deployment'
+        required: false
+        default: 'Manual deployment triggered via GitHub Actions'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # Run this job if:
+    # 1. It was triggered by a successful "Update Top Languages" workflow run
+    # OR
+    # 2. It was triggered manually via workflow_dispatch
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.ref }}
+
+      - name: Deploy to VPS via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            echo "--- Starting portfolio deployment on server at $(date) ---"
+            echo "Triggered by: ${{ github.event_name }}"
+            echo "Actor: ${{ github.actor }}"
+            echo "Reason (if manual): ${{ github.event.inputs.reason }}"
+            echo "Triggering workflow (if applicable): ${{ github.event.workflow_run.workflow.name }} (Conclusion: ${{ github.event.workflow_run.conclusion }})"
+
+            cd /home/${{ secrets.VPS_USERNAME }}/deployments/www
+
+            echo "Pulling latest changes from git..."
+            git pull origin main
+
+            echo "Shutting down existing Docker container..."
+            docker-compose down
+
+            echo "Cleaning up old Docker images..."
+            docker image prune -f
+
+            echo "Building and starting Docker container..."
+            docker-compose up -d --build
+
+            echo "--- Portfolio deployment on server finished at $(date) ---"
