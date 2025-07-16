@@ -1,1 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 @import "tailwindcss";
+
+@theme {
+	--color-primary-50: #f1f9fa;
+	--color-primary-100: #dcf0f1;
+	--color-primary-200: #bee0e3;
+	--color-primary-300: #7ac0c6;
+	--color-primary-400: #5cabb4;
+	--color-primary-500: #40909a;
+	--color-primary-600: #387782;
+	--color-primary-700: #33616b;
+	--color-primary-800: #30525a;
+	--color-primary-900: #2c454d;
+	--color-primary-950: #192d33;
+}
+
+@layer base {
+	html,
+	body,
+	#app {
+		font-family: Figtree, monospace, Arial, Helvetica, sans-serif;
+	}
+
+	h1 {
+		@apply mb-4 text-4xl font-bold;
+	}
+
+	h2 {
+		@apply mb-3 text-3xl font-semibold;
+	}
+
+	h3 {
+		@apply mb-2 text-2xl font-semibold;
+	}
+
+	h4 {
+		@apply mb-2 text-xl font-medium;
+	}
+
+	h5 {
+		@apply mb-1 text-lg font-medium;
+	}
+
+	h6 {
+		@apply mb-1 text-base font-medium;
+	}
+
+	p {
+		@apply mb-1 leading-relaxed;
+	}
+
+	a {
+		@apply text-primary-600 hover:text-primary-800 underline;
+	}
+
+	ul,
+	ol {
+		@apply mb-4 pl-5;
+	}
+
+	ul {
+		@apply list-disc;
+	}
+
+	ol {
+		@apply list-decimal;
+	}
+
+	li {
+		@apply mb-1;
+	}
+
+	section {
+		@apply flex h-max min-h-screen items-center justify-center;
+	}
+
+	section:nth-of-type(even) {
+		@apply bg-primary-100;
+	}
+
+	section:nth-of-type(uneven) {
+		@apply bg-primary-50;
+	}
+}
