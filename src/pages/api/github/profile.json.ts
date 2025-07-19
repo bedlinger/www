@@ -1,33 +1,18 @@
 export const prerender = false;
-import octokit from "../../../services/octokitService";
-import { type User, RequestError } from "../../../types";
+import { getUserProfile } from "../../../services/githubService";
 
 export async function GET() {
-	try {
-		const response = await octokit.request("GET /user");
-		const user: User = response.data;
+	const { data, status, error } = await getUserProfile();
 
-		return new Response(JSON.stringify(user), {
-			status: 200,
-			headers: {
-				"Content-Type": "application/json",
-			},
-		});
-	} catch (error) {
-		if (error instanceof RequestError) {
-			return new Response(JSON.stringify({ message: error.message }), {
-				status: error.status,
-				headers: {
-					"Content-Type": "application/json",
-				},
-			});
-		}
-
-		return new Response(JSON.stringify({ message: "Internal Server Error" }), {
-			status: 500,
-			headers: {
-				"Content-Type": "application/json",
-			},
+	if (error) {
+		return new Response(JSON.stringify({ message: error }), {
+			status,
+			headers: { "Content-Type": "application/json" },
 		});
 	}
+
+	return new Response(JSON.stringify(data), {
+		status,
+		headers: { "Content-Type": "application/json" },
+	});
 }

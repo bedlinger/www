@@ -1,7 +1,0 @@
-import { Octokit } from "octokit";
-
-const octokit = new Octokit({
-	auth: import.meta.env.GITHUB_PAT,
-});
-
-export default octokit;
