@@ -1,6 +1,6 @@
 export const prerender = false;
-import octokit from "../../services/octokitService";
-import { type User, RequestError } from "../../types";
+import octokit from "../../../services/octokitService";
+import { type User, RequestError } from "../../../types";
 
 export async function GET() {
 	try {
