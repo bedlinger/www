@@ -1,3 +1,4 @@
+export const prerender = false;
 import octokit from "../../../services/octokitService";
 import {
 	RequestError,
