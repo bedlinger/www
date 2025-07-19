@@ -7,6 +7,21 @@ export interface Social extends Icon {
 	link: string;
 }
 
+export const LANGUAGE_ICONS: Icon[] = [
+	{ name: "Vue", icon: "vuejs" },
+	{ name: "C#", icon: "csharp" },
+	{ name: "Java", icon: "java" },
+	{ name: "JavaScript", icon: "javascript" },
+	{ name: "Kotlin", icon: "kotlin" },
+	{ name: "Python", icon: "python" },
+	{ name: "CSS", icon: "css" },
+	{ name: "Typescript", icon: "typescript" },
+	{ name: "Go", icon: "go" },
+	{ name: "Rust", icon: "rust" },
+	{ name: "Dockerfile", icon: "docker" },
+	{ name: "HTML", icon: "html5" },
+];
+
 export { RequestError } from "octokit";
 import type { Endpoints } from "@octokit/types";
 export type Repos = Endpoints["GET /user/repos"]["response"]["data"];

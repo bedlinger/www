@@ -1,11 +1,13 @@
 import { Octokit } from "octokit";
 import {
+	type Language,
 	type PinnedItemsGraphQLResponse,
 	type PinnedRepo,
 	type PinnedRepositoryNode,
 	type Repos,
 	type Starred,
 	type User,
+	LANGUAGE_ICONS,
 	RequestError,
 } from "../types";
 
@@ -41,6 +43,50 @@ export async function getUserRepos() {
 
 		return { data: null, status: 500, error: "Internal Server Error" };
 	}
+}
+
+export async function getUserLanguages() {
+	const { data, status, error } = await getUserRepos();
+	if (error || data == null) {
+		return { data, status, error };
+	}
+
+	const repoLanguages: Record<string, number>[] = [];
+	for (const repo of data) {
+		try {
+			const response = await octokit.request(
+				"GET /repos/{owner}/{repo}/languages",
+				{
+					owner: repo.owner.login,
+					repo: repo.name,
+				},
+			);
+			repoLanguages.push(response.data as Record<string, number>);
+		} catch {
+			continue;
+		}
+	}
+
+	const languages: Language[] = [];
+	for (const repoLanguage of repoLanguages) {
+		for (const [language, value] of Object.entries(repoLanguage)) {
+			const existingLanguage = languages.find((lang) => lang.name === language);
+			if (existingLanguage) {
+				existingLanguage.value += value;
+			} else {
+				const icon = LANGUAGE_ICONS.find(
+					(lang) => lang.name === language,
+				)?.icon;
+				languages.push({ name: language, value, icon });
+			}
+		}
+	}
+
+	if (languages.length === 0) {
+		return { data: null, status: 404, error: "No languages found" };
+	}
+
+	return { data: languages, status: 200, error: null };
 }
 
 export async function getUserStarred() {
