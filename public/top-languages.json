@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-07-13T21:13:45.424Z",
+  "lastUpdated": "2025-07-19T23:16:49.257Z",
   "languages": [
     {
       "name": "C#",
@@ -42,7 +42,7 @@
     },
     {
       "name": "Shell",
-      "value": 36662
+      "value": 38480
     },
     {
       "name": "CSS",
@@ -51,7 +51,7 @@
     },
     {
       "name": "Lua",
-      "value": 26361
+      "value": 26307
     },
     {
       "name": "Go",
