@@ -6,4 +6,8 @@ export default {
     "stylelint-prettier/recommended",
     "stylelint-config-tailwindcss",
   ],
+  rules: {
+    "at-rule-empty-line-before": "never",
+    "at-rule-no-deprecated": false,
+  },
 };

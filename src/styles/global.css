@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 @import "tailwindcss";
-
 @theme {
 	--color-primary-50: #f4f7f9;
 	--color-primary-100: #ebf0f4;
@@ -14,7 +13,6 @@
 	--color-primary-900: #4a5365;
 	--color-primary-950: #2b303b;
 }
-
 @layer base {
 	html,
 	body,
