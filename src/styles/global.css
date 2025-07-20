@@ -20,7 +20,7 @@
 	body,
 	#app {
 		font-family: Figtree, monospace, Arial, Helvetica, sans-serif;
-		@apply text-white;
+		@apply bg-primary-950 text-white;
 	}
 
 	h1 {
@@ -77,10 +77,10 @@
 	}
 
 	section:nth-of-type(even) {
-		@apply bg-primary-950;
+		@apply bg-primary-900/20;
 	}
 
 	section:nth-of-type(odd) {
-		@apply bg-primary-800;
+		@apply bg-primary-950/20;
 	}
 }
