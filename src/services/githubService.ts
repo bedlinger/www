@@ -7,7 +7,6 @@ import {
 	type Repos,
 	type Starred,
 	type User,
-	LANGUAGE_ICONS,
 	RequestError,
 } from "../types";
 
@@ -74,10 +73,7 @@ export async function getUserLanguages() {
 			if (existingLanguage) {
 				existingLanguage.value += value;
 			} else {
-				const icon = LANGUAGE_ICONS.find(
-					(lang) => lang.name === language,
-				)?.icon;
-				languages.push({ name: language, value, icon });
+				languages.push({ name: language, value });
 			}
 		}
 	}

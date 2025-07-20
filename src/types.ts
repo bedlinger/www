@@ -32,7 +32,6 @@ export type Starred = Endpoints["GET /user/starred"]["response"]["data"];
 export interface Language {
 	name: string;
 	value: number;
-	icon?: string;
 }
 
 export interface PrimaryLanguage {
