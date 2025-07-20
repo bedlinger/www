@@ -2,17 +2,17 @@
 @import "tailwindcss";
 
 @theme {
-	--color-primary-50: #fdf3f3;
-	--color-primary-100: #fae9e9;
-	--color-primary-200: #f6d5d7;
-	--color-primary-300: #eeb3b7;
-	--color-primary-400: #e3898f;
-	--color-primary-500: #d55e6a;
-	--color-primary-600: #bf3f52;
-	--color-primary-700: #a03043;
-	--color-primary-800: #8f2d41;
-	--color-primary-900: #742739;
-	--color-primary-950: #40111b;
+	--color-primary-50: #f4f7f9;
+	--color-primary-100: #ebf0f4;
+	--color-primary-200: #dae3eb;
+	--color-primary-300: #c3d1de;
+	--color-primary-400: #a9bcd0;
+	--color-primary-500: #99aac4;
+	--color-primary-600: #7c8caf;
+	--color-primary-700: #6a7898;
+	--color-primary-800: #57637c;
+	--color-primary-900: #4a5365;
+	--color-primary-950: #2b303b;
 }
 
 @layer base {
@@ -20,6 +20,7 @@
 	body,
 	#app {
 		font-family: Figtree, monospace, Arial, Helvetica, sans-serif;
+		@apply text-white;
 	}
 
 	h1 {
@@ -76,10 +77,10 @@
 	}
 
 	section:nth-of-type(even) {
-		@apply bg-primary-100;
+		@apply bg-primary-950;
 	}
 
-	section:nth-of-type(uneven) {
-		@apply bg-primary-50;
+	section:nth-of-type(odd) {
+		@apply bg-primary-800;
 	}
 }
