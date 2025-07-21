@@ -7,22 +7,35 @@ import logo from "../assets/logo.png";
 <header class="sticky top-0 z-10 h-16 w-full bg-transparent p-5 px-15 text-lg">
 	<div class="flex flex-row items-center justify-between">
 		<a href="/"><Image src={logo} alt="Logo" width="50" height="50" /></a>
-		<div class="relative select-none">
-			<input id="menu-toggle" type="checkbox" class="peer hidden" />
-
-			<label
-				for="menu-toggle"
+		<div class="group relative select-none">
+			<button
 				class="hover:text-primary-800 hover:border-primary-800 border-primary-600 text-primary-500 flex cursor-pointer flex-row items-center gap-1 rounded-3xl border-3 p-2 no-underline"
 			>
 				<span class="pl-1.5">MENU</span><Icon name="dots-vertical" />
-			</label>
+			</button>
 
-			<div class="absolute hidden peer-checked:block">
-				<div class="px-2 pt-2 pb-4">
-					<ul class="list-none pl-0">
-						<li><a href="/about" class="no-underline">About</a></li>
-						<li><a href="/projects" class="no-underline">Projects</a></li>
-						<li><a href="/github" class="no-underline">Github</a></li>
+			<div
+				class="invisible absolute right-0 mt-2 origin-top-right scale-95 transform opacity-0 transition-all duration-200 ease-in-out group-focus-within:visible group-focus-within:scale-100 group-focus-within:opacity-100"
+			>
+				<div
+					class="border-primary-800 decoration-primary-800 rounded-md border-2 p-2 text-center underline"
+				>
+					<ul class="mx-1 mb-0 list-none pl-0">
+						<li class="hover:bg-primary-950 rounded px-2 py-1">
+							<a href="/about" class="hover:text-primary-600 no-underline"
+								>About</a
+							>
+						</li>
+						<li class="hover:bg-primary-950 rounded px-2 py-1">
+							<a href="/projects" class="hover:text-primary-600 no-underline"
+								>Projects</a
+							>
+						</li>
+						<li class="hover:bg-primary-950 mb-0 rounded px-2 py-1">
+							<a href="/github" class="hover:text-primary-600 no-underline"
+								>Github</a
+							>
+						</li>
 					</ul>
 				</div>
 			</div>
