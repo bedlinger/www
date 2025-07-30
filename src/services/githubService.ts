@@ -82,7 +82,17 @@ export async function getUserLanguages() {
 		return { data: null, status: 404, error: "No languages found" };
 	}
 
-	return { data: languages, status: 200, error: null };
+	const sortedLanguages: Language[] = languages.sort((l1, l2) => {
+		if (l1.value > l2.value) {
+			return -1;
+		}
+		if (l1.value < l2.value) {
+			return 1;
+		}
+		return 0;
+	});
+
+	return { data: sortedLanguages, status: 200, error: null };
 }
 
 export async function getUserStarred() {
