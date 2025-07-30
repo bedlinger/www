@@ -76,10 +76,10 @@
 	}
 
 	section:nth-of-type(even) {
-		@apply bg-primary-900/20;
+		@apply bg-black/60;
 	}
 
 	section:nth-of-type(odd) {
-		@apply bg-primary-950/20;
+		@apply bg-black/40;
 	}
 }
