@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+import profileImage from "../assets/profile.jpeg";
 ---
 
 <Layout>
@@ -10,15 +13,48 @@ import Layout from "../layouts/Layout.astro";
 		</div>
 		<div class="z-1 flex flex-col items-center justify-center">
 			<h1 class="mb-4 text-4xl sm:text-6xl lg:text-8xl">Hi, I am Benjamin!</h1>
-			<p class="text-primary-500/80 text-md w-1/2 text-center lg:text-xl">
+			<p class="text-primary-500/80 text-md text-center lg:text-xl">
 				I'm a full-stack developer specializing in creating elegant,
-				high-performance digital experiences. I turn complex problems into clean
-				and intuitive solutions.
+				high-performance digital experiences.
 			</p>
 		</div>
 	</section>
 	<section id="about">
-		<h1>Hello, World</h1>
+		<div class="m-4 flex max-w-lg flex-col justify-center gap-6">
+			<div class="flex flex-row justify-center gap-12">
+				<Image
+					src={profileImage}
+					alt="Profile picture showing me"
+					class="h-28 w-28 rounded-4xl md:h-48 md:w-48"
+				/>
+				<div class="flex flex-col justify-center gap-0">
+					<h2 class="mb-0">Benjamin Edlinger</h2>
+					<p class="text-primary-600">Developer | Spillern, Austria</p>
+				</div>
+			</div>
+			<p>
+				I'm a 19-year-old developer who brings innovative ideas to life with
+				clean code and a user-focused mindset. I thrive on building applications
+				that are not only functional and performant but also intuitive to use.
+			</p>
+			<div>
+				<h3>Key Achievements</h3>
+				<ul>
+					<li>
+						<span class="font-bold">Graduated with Distinction:</span> Completed
+						my technical education with highest honors from the prestigious TGM Vienna.
+					</li>
+					<li>
+						<span class="font-bold">3rd Place, Jugend Innovativ:</span> Awarded for
+						my diploma project, sustAIanbleEducation, an AI-powered learning platform.
+					</li>
+					<li>
+						<span class="font-bold">Academic Author:</span> Co-authored a research
+						paper on our project's findings for the upcoming ICL 2025 conference.
+					</li>
+				</ul>
+			</div>
+		</div>
 	</section>
 	<section id="projects">
 		<h1>Hello, World</h1>
