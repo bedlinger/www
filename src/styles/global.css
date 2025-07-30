@@ -18,6 +18,7 @@
 	body,
 	#app {
 		font-family: Figtree, monospace, Arial, Helvetica, sans-serif;
+		scroll-behavior: smooth;
 		@apply bg-primary-950 text-white;
 	}
 
