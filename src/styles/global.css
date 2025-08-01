@@ -23,31 +23,31 @@
 	}
 
 	h1 {
-		@apply mb-4 text-4xl font-bold;
+		@apply text-4xl font-bold sm:text-6xl lg:text-8xl;
 	}
 
 	h2 {
-		@apply mb-3 text-3xl font-semibold;
+		@apply mb-3 text-3xl font-semibold sm:text-5xl lg:text-7xl;
 	}
 
 	h3 {
-		@apply mb-2 text-2xl font-semibold;
+		@apply mb-2 text-2xl font-semibold sm:text-4xl lg:text-6xl;
 	}
 
 	h4 {
-		@apply mb-2 text-xl font-medium;
+		@apply mb-2 text-xl font-medium sm:text-3xl lg:text-5xl;
 	}
 
 	h5 {
-		@apply mb-1 text-lg font-medium;
+		@apply mb-1 text-lg font-medium sm:text-2xl lg:text-4xl;
 	}
 
 	h6 {
-		@apply mb-1 text-base font-medium;
+		@apply mb-1 text-base font-medium sm:text-xl lg:text-3xl;
 	}
 
 	p {
-		@apply mb-1 leading-relaxed;
+		@apply text-xs sm:text-lg lg:text-2xl;
 	}
 
 	a {
