@@ -4,11 +4,13 @@ import logo from "../assets/logo.png";
 ---
 
 <nav class="sticky top-0 z-10 h-16 w-full bg-transparent p-5 px-15">
-	<div class="flex flex-row items-center justify-between">
-		<a href="#"><Image src={logo} alt="Logo" width="50" height="50" /></a>
+	<div class="flex flex-row items-center justify-center md:justify-between">
+		<a class="hidden md:inline-block" href="#"
+			><Image src={logo} alt="Logo" width="50" height="50" /></a
+		>
 
 		<div
-			class="bg-primary-900 flex flex-row items-center rounded-4xl px-1 py-2 text-base sm:text-lg lg:text-xl"
+			class="bg-primary-950 flex flex-row items-center rounded-4xl border-2 border-white px-1 py-2 text-xs sm:text-lg lg:text-xl"
 		>
 			<a
 				href="#"
