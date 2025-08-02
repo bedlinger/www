@@ -148,7 +148,7 @@
 	}
 
 	a {
-		@apply text-primary-600 hover:text-primary-800 underline;
+		@apply text-primary-600 hover:text-primary-800 underline transition-colors;
 	}
 
 	ul,
