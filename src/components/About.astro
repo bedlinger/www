@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import profileImage from "../assets/profile.jpeg";
+---
+
+<section id="about">
+	<div
+		class="flex max-w-9/12 flex-col items-center justify-between gap-12 xl:flex-row xl:gap-20"
+	>
+		<div class="flex flex-col items-start justify-center gap-4 xl:max-w-6/12">
+			<div class="flex flex-row justify-center gap-6 md:gap-12">
+				<Image
+					src={profileImage}
+					alt="Profile picture showing me"
+					class="h-24 w-24 rounded-3xl sm:h-28 sm:w-28 md:h-36 md:w-36 lg:h-48 lg:w-48"
+				/>
+				<div class="flex flex-col items-start justify-center gap-1">
+					<h2 class="mb-0 whitespace-nowrap md:whitespace-normal">
+						Benjamin Edlinger
+					</h2>
+					<p class="text-primary-600">
+						Developer | <span class="hidden xl:inline-block"
+							>Spillern,&nbsp;
+						</span>Austria
+					</p>
+				</div>
+			</div>
+			<p class="text-primary-100/90 xl:max-w-11/12">
+				I'm a 19-year-old developer who brings innovative ideas to life with
+				clean code and a user-focused mindset. I thrive on building applications
+				that are not only functional and performant but also intuitive to use.
+			</p>
+		</div>
+		<div>
+			<h3 class="whitespace-nowrap">Key Achievements</h3>
+			<ul class="text-primary-100/90">
+				<li>
+					<p>
+						<span class="font-bold text-white">Graduated with Distinction:</span
+						> Completed my technical education with highest honors from the prestigious
+						TGM Vienna.
+					</p>
+				</li>
+				<li>
+					<p>
+						<span class="font-bold text-white"
+							>3rd Place, Jugend Innovativ:</span
+						> Led and co-developed my diploma project, sustAIanbleEducation. Our
+						work on this AI-powered learning platform was recognized for its innovation
+						and impact.
+					</p>
+				</li>
+				<li>
+					<p>
+						<span class="font-bold text-white">Academic Author:</span> Co-authored
+						a research paper on our project's findings for the upcoming ICL 2025
+						conference.
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
