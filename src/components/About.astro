@@ -2,65 +2,80 @@
 import { Image } from "astro:assets";
 import profileImage from "../assets/profile.jpeg";
 
+interface Props {
+	age: number;
+}
+const { age = 0 } = Astro.props;
+
 const achievements = [
 	{
 		title: "Graduated with Distinction",
 		description:
-			"Completed my technical education with highest honors from the prestigious TGM Vienna.",
+			"Achieved the highest honors from the prestigious TGM Vienna, recognizing outstanding performance in my technical IT education and final diploma project.",
 	},
 	{
 		title: "3rd Place, Jugend Innovativ",
 		description:
-			"Led and co-developed my diploma project, sustAIanbleEducation. Our work on this AI-powered learning platform was recognized for its innovation and impact.",
+			"Earned national recognition by leading the development of sustAIanbleEducation, an AI-powered platform that secured third place for its innovative impact.",
 	},
 	{
 		title: "Academic Author",
 		description:
-			"Co-authored a research paper on our project's findings for the upcoming ICL 2025 conference.",
+			"Co-authored a formal research paper on our project's technical findings and educational impact, which was accepted for publication at the ICL 2025 conference.",
+	},
+];
+
+const skills = [
+	"Agile Project Management",
+	"Full-Stack Development",
+	"UI/UX Design",
+];
+
+const toolkit = [
+	{
+		type: "Frontend",
+		tools: ["HTML", "CSS", "Tailwind", "Javascript/Typescript", "Vue", "Astro"],
+	},
+	{
+		type: "Backend",
+		tools: ["Python", "C#", "Java"],
 	},
 ];
 ---
 
 <section id="about">
-	<div class="grid max-w-11/12 grid-cols-1 items-center gap-12 xl:max-w-6/12">
-		<div class="flex flex-col items-start justify-center gap-4">
-			<div class="flex flex-row justify-center gap-6 md:gap-12">
-				<Image
-					src={profileImage}
-					alt="Profile picture showing me"
-					class="h-24 w-24 rounded-3xl sm:h-28 sm:w-28 md:h-36 md:w-36 lg:h-48 lg:w-48"
-				/>
-				<div class="flex flex-col items-start justify-center gap-1">
-					<h2 class="mb-0 whitespace-nowrap md:whitespace-normal">
-						Benjamin Edlinger
-					</h2>
-					<p class="text-primary-600">
-						Developer | <span class="hidden xl:inline-block"
-							>Spillern,&nbsp;
-						</span>Austria
-					</p>
-				</div>
+	<div class="grid max-w-11/12 grid-cols-1 items-center gap-12 xl:max-w-7/12">
+		<div class="flex flex-row items-center justify-start gap-6 md:gap-12">
+			<Image
+				src={profileImage}
+				alt="Profile picture showing me"
+				class="h-24 w-24 rounded-3xl sm:h-28 sm:w-28 md:h-36 md:w-36 lg:h-48 lg:w-48"
+			/>
+			<div class="flex flex-col items-start justify-center gap-1">
+				<h2 class="mb-0 whitespace-nowrap md:whitespace-normal">
+					Benjamin Edlinger
+				</h2>
+				<p class="text-primary-600">
+					Developer | <span class="hidden xl:inline-block"
+						>Spillern,&nbsp;
+					</span>Austria | {age}
+				</p>
 			</div>
-			<p class="text-primary-100/90">
-				I'm a 19-year-old developer who brings innovative ideas to life with
-				clean code and a user-focused mindset. I thrive on building applications
-				that are not only functional and performant but also intuitive to use.
-			</p>
 		</div>
 		<div>
-			<h3>Key Achievements</h3>
-			<ul class="text-primary-100/90">
+			<h3 class="mb-3">Key Achievements</h3>
+			<div
+				class="flex flex-col items-start justify-around gap-6 xl:flex-row xl:gap-12"
+			>
 				{
 					achievements.map((achievement) => (
-						<li>
-							<p>
-								<span class="font-bold text-white">{achievement.title}:</span>
-								{achievement.description}
-							</p>
-						</li>
+						<div class="border-primary-100/90 rounded-2xl border-2 px-6 py-4 xl:max-w-1/3">
+							<h4 class="mb-3">{achievement.title}</h4>
+							<p class="text-primary-100/90">{achievement.description}</p>
+						</div>
 					))
 				}
-			</ul>
+			</div>
 		</div>
 	</div>
 </section>

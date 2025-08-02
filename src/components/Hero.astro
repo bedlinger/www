@@ -1,3 +1,10 @@
+---
+interface Props {
+	age: number;
+}
+const { age = 0 } = Astro.props;
+---
+
 <section
 	class="relative mt-[-4rem] bg-[url(../assets/background.jpg)] bg-cover bg-center"
 >
@@ -7,9 +14,9 @@
 		<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
 			Hi, I am Benjamin!
 		</h1>
-		<p class="text-primary-500/80 mx-12 text-center">
-			Full-stack developer specializing in creating elegant, high-performance
-			digital experiences.
+		<p class="text-primary-500/80 mx-2 text-center xl:max-w-7/12">
+			I'm a {age}-year-old developer who brings innovative ideas to life with
+			clean code and a user-focused mindset.
 		</p>
 	</div>
 </section>
