@@ -5,6 +5,7 @@ export interface Icon {
 
 export interface Social extends Icon {
 	link: string;
+	label: string;
 }
 
 export const LANGUAGE_ICONS: Icon[] = [
