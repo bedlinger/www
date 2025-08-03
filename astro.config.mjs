@@ -17,6 +17,11 @@ export default defineConfig({
 
 	site: "https://bedlinger.at",
 
+	i18n: {
+		locales: ["en", "de"],
+		defaultLocale: "de",
+	},
+
 	integrations: [
 		sitemap(),
 		icon({
