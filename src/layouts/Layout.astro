@@ -4,11 +4,23 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { SEO, type SEOProps } from "astro-seo";
 
-const headItems: SEOProps = {
+interface Props {
+	lang?: string;
+	title?: string;
+	description?: string;
+}
+
+const {
+	lang = "en",
+	title = "bedlinger",
+	description = "This is my online portfolio",
+} = Astro.props;
+
+const seo: SEOProps = {
 	charset: "UTF-8",
-	title: "bedlinger",
+	title: title,
 	titleTemplate: "%s | My Portfolio site",
-	description: "This is my online portfolio",
+	description: description,
 	extend: {
 		meta: [
 			{ name: "generator", content: Astro.generator },
@@ -31,14 +43,14 @@ const headItems: SEOProps = {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
-		<SEO {...headItems} />
+		<SEO {...seo} />
 	</head>
 	<body>
 		<div class="relative flex min-h-screen flex-col">
 			<Header />
-			<main class="flex-1">
+			<main class="mt-[-4rem] flex-1">
 				<slot />
 			</main>
 			<Footer />

@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout title="404 Not Found">
+	<section>
+		<div class="flex flex-col items-center justify-center gap-1 px-4">
+			<Icon
+				name="mood-sad-squint"
+				class="lg-h-55 h-25 w-25 sm:h-35 sm:w-35 md:h-45 md:w-45 lg:w-55"
+			/>
+			<h1>404</h1>
+			<h2 class="text-primary-500/80">Page not found</h2>
+			<a href="/" aria-label="Homepage" class="button">Home</a>
+		</div>
+	</section>
+</Layout>
