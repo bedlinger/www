@@ -124,10 +124,6 @@ export const en: UI = {
 			},
 		},
 	},
-	error404: {
-		text: "Page not found",
-		button: "Home",
-	},
 	footer: {
 		language: {
 			text: "Deutsch",

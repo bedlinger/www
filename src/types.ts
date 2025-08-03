@@ -24,7 +24,7 @@ export interface UI {
 			};
 		};
 	};
-	error404: {
+	error404?: {
 		text: string;
 		button: string;
 	};
