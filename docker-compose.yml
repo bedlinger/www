@@ -2,7 +2,7 @@ services:
   portfolio:
     build: .
     ports:
-      - "80:80"
+      - "4321:4321"
     container_name: "portfolio"
     restart: "unless-stopped"
     environment:
