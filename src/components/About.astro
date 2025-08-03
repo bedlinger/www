@@ -2,35 +2,12 @@
 import SocialLinks from "./SocialLinks.astro";
 import { Image } from "astro:assets";
 import profileImage from "../assets/profile.jpeg";
+import type { UI } from "../types";
 
 interface Props {
-	age: number;
+	about: UI["index"]["about"];
 }
-const { age = 0 } = Astro.props;
-
-const achievements = [
-	{
-		title: "Graduated with Distinction",
-		description:
-			"Achieved the highest honors from the prestigious TGM Vienna, recognizing outstanding performance in my technical IT education and final diploma project.",
-	},
-	{
-		title: "3rd Place, Jugend Innovativ",
-		description:
-			"Earned national recognition by leading the development of sustAIanbleEducation, an AI-powered platform that secured third place for its innovative impact.",
-	},
-	{
-		title: "Academic Author",
-		description:
-			"Co-authored a formal research paper on our project's technical findings and educational impact, which was accepted for publication at the ICL 2025 conference.",
-	},
-];
-
-const skills = [
-	"Agile Project Management",
-	"Full-Stack Development",
-	"UI/UX Design",
-];
+const { about } = Astro.props;
 ---
 
 <section id="about">
@@ -38,7 +15,7 @@ const skills = [
 		<div class="flex flex-row items-center justify-start gap-6 md:gap-12">
 			<Image
 				src={profileImage}
-				alt="Profile picture showing me"
+				alt="Headshot Benjamin Edlinger"
 				class="h-24 w-24 rounded-3xl sm:h-28 sm:w-28 md:h-36 md:w-36 lg:h-48 lg:w-48"
 			/>
 			<div class="flex flex-col items-start justify-center gap-1">
@@ -48,15 +25,15 @@ const skills = [
 				<p class="text-primary-500/80">
 					Developer | <span class="hidden xl:inline-block"
 						>Spillern,&nbsp;
-					</span>Austria | {age}
+					</span>{about.country} | {about.age}
 				</p>
 			</div>
 		</div>
 		<div>
-			<h3 class="mb-3">Core Skills</h3>
+			<h3 class="mb-3">{about.skills.heading}</h3>
 			<div class="grid grid-rows-1 gap-6 xl:grid-cols-3 xl:gap-10">
 				{
-					skills.map((skill) => (
+					about.skills.skills.map((skill) => (
 						<div class="border-primary-500/80 flex h-full w-full flex-col justify-center rounded-2xl border-3 px-6 py-6">
 							<h4 class="text-center">{skill}</h4>
 						</div>
@@ -65,10 +42,10 @@ const skills = [
 			</div>
 		</div>
 		<div>
-			<h3 class="mb-3">Key Achievements</h3>
+			<h3 class="mb-3">{about.achievements.heading}</h3>
 			<div class="grid grid-rows-1 gap-6 xl:grid-cols-3 xl:gap-10">
 				{
-					achievements.map((achievement) => (
+					about.achievements.achievements.map((achievement) => (
 						<div class="border-primary-500/80 h-full w-full rounded-2xl border-3 px-6 py-6">
 							<h4 class="xl:mb-3">{achievement.title}</h4>
 							<p class="text-primary-500/80">{achievement.description}</p>
@@ -78,16 +55,13 @@ const skills = [
 			</div>
 		</div>
 		<div>
-			<h3 class="mb-3">Beyond the Code</h3>
-			<p class="text-primary-500/80">
-				When I'm away from the keyboard, I apply the same focus and discipline
-				to my hobbies, whether I'm on the golf course, running, or at the gym.
-			</p>
+			<h3 class="mb-3">{about.hobbies.heading}</h3>
+			<p class="text-primary-500/80">{about.hobbies.text}</p>
 		</div>
 		<div class="flex flex-col">
-			<h3 class="mb-3">Let's Build Something Together</h3>
+			<h3 class="mb-3">{about.connect.heading}</h3>
 			<p class="text-primary-500/80 mb-1">
-				Have a project in mind or just want to connect? Feel free to reach out.
+				{about.connect.text}
 			</p>
 			<SocialLinks />
 		</div>

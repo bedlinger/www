@@ -1,9 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import { en } from "../i18n";
 ---
 
-<Layout lang="en" title="404 Not Found">
+<Layout
+	lang={en.lang}
+	title="404 Not Found"
+	header={en.header}
+	footer={en.footer}
+>
 	<section>
 		<div class="flex flex-col items-center justify-center gap-1 px-4">
 			<Icon
@@ -11,7 +17,7 @@ import { Icon } from "astro-icon/components";
 				class="lg-h-55 h-25 w-25 sm:h-35 sm:w-35 md:h-45 md:w-45 lg:w-55"
 			/>
 			<h1>404</h1>
-			<h2 class="text-primary-500/80">Page not found</h2>
+			<h2 class="text-primary-500/80">{en.error404.text}</h2>
 			<a href="/" aria-label="Homepage" class="button">Home</a>
 		</div>
 	</section>

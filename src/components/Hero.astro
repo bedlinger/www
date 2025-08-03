@@ -1,8 +1,10 @@
 ---
+import type { UI } from "../types";
+
 interface Props {
-	age: number;
+	hero: UI["index"]["hero"];
 }
-const { age = 0 } = Astro.props;
+const { hero } = Astro.props;
 ---
 
 <section class="relative bg-[url(../assets/background.jpg)] bg-cover bg-center">
@@ -10,11 +12,10 @@ const { age = 0 } = Astro.props;
 	</div>
 	<div class="z-1 flex flex-col items-center justify-center">
 		<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-			Hi, I am Benjamin!
+			{hero.title}
 		</h1>
 		<p class="text-primary-500/80 mx-2 text-center xl:max-w-7/12">
-			I'm a {age}-year-old developer who brings innovative ideas to life with
-			clean code and a user-focused mindset.
+			{hero.text}
 		</p>
 	</div>
 </section>

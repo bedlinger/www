@@ -2,11 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
-
-const age = new Date().getFullYear() - 2006;
+import { en } from "../i18n";
 ---
 
-<Layout lang="en">
-	<Hero age={age} />
-	<About age={age} />
+<Layout lang={en.lang} header={en.header} footer={en.footer}>
+	<Hero hero={en.index.hero} />
+	<About about={en.index.about} />
 </Layout>

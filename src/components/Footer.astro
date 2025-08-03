@@ -1,7 +1,13 @@
 ---
+import type { UI } from "../types";
 import SocialLinks from "./SocialLinks.astro";
 
 const currentYear = new Date().getFullYear();
+
+interface Props {
+	footer: UI["footer"];
+}
+const { footer } = Astro.props;
 ---
 
 <footer class="bg-primary-950 p-6">
@@ -15,7 +21,7 @@ const currentYear = new Date().getFullYear();
 				class="text-primary-300 no-underline transition-colors hover:text-white"
 				href="#"
 			>
-				Back to top
+				{footer.backToTop}
 			</a>
 
 			<SocialLinks />
@@ -23,7 +29,7 @@ const currentYear = new Date().getFullYear();
 
 		<div class="border-primary-700 mt-8 flex border-t pt-4">
 			<p class="text-primary-300 w-full text-center text-sm">
-				&copy; {currentYear} Benjamin Edlinger. All rights reserved.
+				&copy; {currentYear} Benjamin Edlinger. {footer.legal}.
 			</p>
 		</div>
 	</div>
