@@ -5,13 +5,13 @@ import Header from "../components/Header.astro";
 import { SEO, type SEOProps } from "astro-seo";
 
 interface Props {
-	lang?: string;
+	lang: string;
 	title?: string;
 	description?: string;
 }
 
 const {
-	lang = "en",
+	lang,
 	title = "bedlinger",
 	description = "This is my online portfolio",
 } = Astro.props;
