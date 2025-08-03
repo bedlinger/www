@@ -4,6 +4,7 @@ This repository contains the source code for my personal portfolio website. I've
 
 - **Modern Tech Stack**: Built with Astro optimal performance
 - **Responsive Design**: Fully responsive interface using TailwindCSS for a seamless experience on all devices
+- **Multiple Languages**: My Portfolio is available in both [German](https://bedlinger.at) and [English](https://bedlinger.at/en)
 
 ## 🛠️ Technology Stack
 
@@ -21,6 +22,7 @@ This repository contains the source code for my personal portfolio website. I've
 - `services/`: API and external service integrations
 - `styles/`: Custom styles and theme
 - `types.ts`: TypeScript type definitions
+- `i18n.ts`: Translation provider
 
 ## 📋 Getting Started
 
