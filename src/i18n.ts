@@ -1,5 +1,69 @@
 import type { UI } from "./types";
 
+const de: UI = {
+	lang: "de",
+	header: {
+		nav: [
+			{ name: "Startseite", href: "/#" },
+			{ name: "Über mich", href: "/#about" },
+		],
+	},
+	index: {
+		hero: {
+			title: "Hi, ich bin Benjamin!",
+			text: "Ich bin ein 19-jähriger Developer, der innovative Ideen mit Clean Code und einem nutzerzentrierten Ansatz zum Leben erweckt.",
+		},
+		about: {
+			country: "Österreich",
+			age: new Date().getFullYear() - 2006,
+			skills: {
+				heading: "Kernkompetenzen",
+				skills: [
+					"Agiles Projektmanagement",
+					"Full-Stack Entwicklung",
+					"UI/UX Design",
+				],
+			},
+			achievements: {
+				heading: "Wichtigste Erfolge",
+				achievements: [
+					{
+						title: "Abschluss mit Auszeichnung",
+						description:
+							"Meinen Abschluss am renommierten TGM Wien habe ich für herausragende Leistungen in der IT-Ausbildung und meinem Diplomprojekt mit Auszeichnung erhalten.",
+					},
+					{
+						title: "3. Platz, Jugend Innovativ",
+						description:
+							"Nationale Anerkennung für die Leitung und Entwicklung von sustAIanbleEducation, einer KI-Plattform, die für ihre innovative Wirkung den dritten Platz sicherte.",
+					},
+					{
+						title: "Akademischer Autor",
+						description:
+							"Mitautor eines wissenschaftlichen Artikels über die technischen Ergebnisse und den pädagogischen Nutzen unseres Projekts, angenommen für die ICL 2025 Konferenz.",
+					},
+				],
+			},
+			hobbies: {
+				heading: "Abseits des Codes",
+				text: "Auch abseits der Tastatur verfolge ich meine Ziele mit Fokus und Disziplin, sei es auf dem Golfplatz, beim Laufen oder im Fitnessstudio.",
+			},
+			connect: {
+				heading: "Lass uns etwas Gemeinsames schaffen",
+				text: "Hast du ein Projekt im Sinn oder möchtest dich einfach vernetzen? Melde dich gerne bei mir.",
+			},
+		},
+	},
+	error404: {
+		text: "Seite nicht gefunden",
+		button: "Startseite",
+	},
+	footer: {
+		backToTop: "Nach oben",
+		legal: "Alle Rechte vorbehalten",
+	},
+};
+
 export const en: UI = {
 	lang: "en",
 	header: {
@@ -56,6 +120,7 @@ export const en: UI = {
 	},
 	error404: {
 		text: "Page not found",
+		button: "Home",
 	},
 	footer: {
 		backToTop: "Back to top",

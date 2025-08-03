@@ -26,6 +26,7 @@ export interface UI {
 	};
 	error404: {
 		text: string;
+		button: string;
 	};
 	footer: {
 		backToTop: string;
