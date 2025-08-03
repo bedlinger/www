@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import About from "../../components/About.astro";
+import { en } from "../../i18n";
+---
+
+<Layout lang={en.lang} header={en.header} footer={en.footer}>
+	<Hero hero={en.index.hero} />
+	<About about={en.index.about} />
+</Layout>

@@ -1,6 +1,6 @@
 export interface UI {
 	lang: string;
-	header: { nav: { name: string; href: string }[] };
+	header: { logo: { href: string }; nav: { name: string; href: string }[] };
 	index: {
 		hero: { title: string; text: string };
 		about: {

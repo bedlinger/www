@@ -1,8 +1,9 @@
 import type { UI } from "./types";
 
-const de: UI = {
+export const de: UI = {
 	lang: "de",
 	header: {
+		logo: { href: "/" },
 		nav: [
 			{ name: "Startseite", href: "/#" },
 			{ name: "Über mich", href: "/#about" },
@@ -67,9 +68,10 @@ const de: UI = {
 export const en: UI = {
 	lang: "en",
 	header: {
+		logo: { href: "/en" },
 		nav: [
-			{ name: "Home", href: "/#" },
-			{ name: "About", href: "/#about" },
+			{ name: "Home", href: "/en#" },
+			{ name: "About", href: "/en#about" },
 		],
 	},
 	index: {
