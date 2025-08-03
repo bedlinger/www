@@ -31,6 +31,10 @@ export interface UI {
 	footer: {
 		backToTop: string;
 		legal: string;
+		language: {
+			text: string;
+			href: string;
+		};
 	};
 }
 

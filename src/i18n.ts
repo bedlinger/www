@@ -60,6 +60,10 @@ export const de: UI = {
 		button: "Startseite",
 	},
 	footer: {
+		language: {
+			text: "English",
+			href: "/en",
+		},
 		backToTop: "Nach oben",
 		legal: "Alle Rechte vorbehalten",
 	},
@@ -125,6 +129,10 @@ export const en: UI = {
 		button: "Home",
 	},
 	footer: {
+		language: {
+			text: "Deutsch",
+			href: "/",
+		},
 		backToTop: "Back to top",
 		legal: "All rights reserved",
 	},
