@@ -1,0 +1,39 @@
+---
+import { Icon } from "astro-icon/components";
+import type { Social } from "../types.ts";
+
+interface Props {
+	isHorizontal?: boolean;
+	iconSize?: number;
+}
+const { isHorizontal = true, iconSize = 40 } = Astro.props;
+
+const socials: Social[] = [
+	{
+		icon: "linkedin",
+		link: "https://www.linkedin.com/in/bedlinger",
+		name: "LinkedIn",
+	},
+	{ icon: "github", link: "https://github.com/bedlinger", name: "GitHub" },
+	{
+		icon: "mail",
+		link: "mailto:beni.edlinger+portfolio@gmail.com",
+		name: "Email",
+	},
+];
+---
+
+<div
+	class:list={[
+		"flex",
+		{ "flex-row gap-6": isHorizontal, "flex-col": !isHorizontal },
+	]}
+>
+	{
+		socials.map((s: Social) => (
+			<a href={s.link} target="_blank" rel="noopener noreferrer">
+				<Icon name={s.icon} size={iconSize} desc={s.name} />
+			</a>
+		))
+	}
+</div>

@@ -1,19 +1,12 @@
-FROM node:lts-alpine3.20
-
+FROM node:lts AS runtime
 WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm install
 
 COPY . .
 
+RUN npm install
 RUN npm run build
 
-FROM nginx:stable-perl
-
-COPY --from=0 /app/dist /usr/share/nginx/html
-
+ENV HOST=0.0.0.0
+ENV PORT=80
 EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD node ./dist/server/entry.mjs

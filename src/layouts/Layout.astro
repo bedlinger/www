@@ -1,0 +1,47 @@
+---
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SEO, type SEOProps } from "astro-seo";
+
+const headItems: SEOProps = {
+	charset: "UTF-8",
+	title: "bedlinger",
+	titleTemplate: "%s | My Portfolio site",
+	description: "This is my online portfolio",
+	extend: {
+		meta: [
+			{ name: "generator", content: Astro.generator },
+			{ name: "viewport", content: "width=device-width" },
+		],
+		link: [
+			{ rel: "icon", type: "image/svg+xml", href: "/favicon.ico" },
+			{ rel: "sitemap", href: "/sitemap-index.xml" },
+		],
+	},
+	openGraph: {
+		basic: {
+			title: "Portfolio of Benjamin Edlinger",
+			type: "Website",
+			image: "https://avatars.githubusercontent.com/u/98826378?v=4",
+			url: "https://bedlinger.at/",
+		},
+	},
+};
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<SEO {...headItems} />
+	</head>
+	<body>
+		<div class="relative flex min-h-screen flex-col">
+			<Header />
+			<main class="flex-1">
+				<slot />
+			</main>
+			<Footer />
+		</div>
+	</body>
+</html>
