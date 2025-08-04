@@ -1,12 +1,13 @@
+import { getRelativeLocaleUrl } from "astro:i18n";
 import type { UI } from "./types";
 
 export const de: UI = {
 	lang: "de",
 	header: {
-		logo: { href: "/" },
+		logo: { href: getRelativeLocaleUrl("de") },
 		nav: [
-			{ name: "Startseite", href: "/#" },
-			{ name: "Über mich", href: "/#about" },
+			{ name: "Startseite", href: getRelativeLocaleUrl("de") + "#" },
+			{ name: "Über mich", href: getRelativeLocaleUrl("de") + "#about" },
 		],
 	},
 	index: {
@@ -62,7 +63,7 @@ export const de: UI = {
 	footer: {
 		language: {
 			text: "English",
-			href: "/en",
+			href: getRelativeLocaleUrl("en"),
 		},
 		backToTop: "Nach oben",
 		legal: "Alle Rechte vorbehalten",
@@ -72,10 +73,10 @@ export const de: UI = {
 export const en: UI = {
 	lang: "en",
 	header: {
-		logo: { href: "/en" },
+		logo: { href: getRelativeLocaleUrl("en") },
 		nav: [
-			{ name: "Home", href: "/en#" },
-			{ name: "About", href: "/en#about" },
+			{ name: "Home", href: getRelativeLocaleUrl("en") + "#" },
+			{ name: "About", href: getRelativeLocaleUrl("en") + "#about" },
 		],
 	},
 	index: {
@@ -127,7 +128,7 @@ export const en: UI = {
 	footer: {
 		language: {
 			text: "Deutsch",
-			href: "/",
+			href: getRelativeLocaleUrl("de"),
 		},
 		backToTop: "Back to top",
 		legal: "All rights reserved",
