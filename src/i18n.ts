@@ -3,6 +3,9 @@ import type { UI } from "./types";
 
 export const de: UI = {
 	lang: "de",
+	title: "Benjamin Edlinger",
+	description:
+		"Benjamin Edlinger, ein 19-jähriger Full-Stack-Entwickler und Projektmanager aus Österreich, ist auf die Entwicklung innovativer Webanwendungen spezialisiert.",
 	header: {
 		logo: { href: getRelativeLocaleUrl("de") },
 		nav: [
@@ -72,6 +75,9 @@ export const de: UI = {
 
 export const en: UI = {
 	lang: "en",
+	title: "Benjamin Edlinger",
+	description:
+		"Benjamin Edlinger, a 19-year-old full-stack developer and project manager from Austria, specializes in the development of innovative web applications.",
 	header: {
 		logo: { href: getRelativeLocaleUrl("en") },
 		nav: [

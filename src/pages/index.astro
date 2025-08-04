@@ -5,7 +5,13 @@ import About from "../components/About.astro";
 import { de } from "../i18n";
 ---
 
-<Layout lang={de.lang} header={de.header} footer={de.footer}>
+<Layout
+	lang={de.lang}
+	title={de.title}
+	description={de.description}
+	header={de.header}
+	footer={de.footer}
+>
 	<Hero hero={de.index.hero} />
 	<About about={de.index.about} />
 </Layout>

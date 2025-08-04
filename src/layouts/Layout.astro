@@ -8,19 +8,13 @@ import { de, en } from "../i18n";
 import type { UI } from "../types";
 
 interface Props {
-	lang: string;
-	title?: string;
-	description?: string;
+	lang: UI["lang"];
+	title: UI["title"];
+	description: UI["description"];
 	header: UI["header"];
 	footer: UI["footer"];
 }
-const {
-	lang,
-	title = "Benjamin Edlinger",
-	description = "Learn about Benjamin Edlinger, a 19-year-old full-stack developer and project manager from Austria specializing in creating innovative web applications.",
-	header,
-	footer,
-} = Astro.props;
+const { lang, title, description, header, footer } = Astro.props;
 
 const seo: SEOProps = {
 	charset: "UTF-8",
@@ -38,7 +32,7 @@ const seo: SEOProps = {
 	],
 	openGraph: {
 		basic: {
-			title: "Portfolio of Benjamin Edlinger",
+			title: "Portfolio Benjamin Edlinger",
 			type: "website",
 			image:
 				"https://raw.githubusercontent.com/bedlinger/www/refs/heads/main/src/assets/logo.png",
