@@ -11,19 +11,19 @@ const { isHorizontal = true, iconSize = 40 } = Astro.props;
 const socials: Social[] = [
 	{
 		icon: "linkedin",
-		link: "https://www.linkedin.com/in/bedlinger",
+		href: "https://www.linkedin.com/in/bedlinger",
 		name: "LinkedIn",
 		label: "Connect via LinkedIn",
 	},
 	{
 		icon: "github",
-		link: "https://github.com/bedlinger",
+		href: "https://github.com/bedlinger",
 		name: "GitHub",
 		label: "Checkout GitHub",
 	},
 	{
 		icon: "mail",
-		link: "mailto:beni.edlinger+portfolio@gmail.com",
+		href: "mailto:beni.edlinger+portfolio@gmail.com",
 		name: "Email",
 		label: "Connect via Email",
 	},
@@ -40,7 +40,7 @@ const socials: Social[] = [
 		socials.map((s: Social) => (
 			<a
 				aria-label={s.label}
-				href={s.link}
+				href={s.href}
 				target="_blank"
 				rel="noopener noreferrer"
 			>
