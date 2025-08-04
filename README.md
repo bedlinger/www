@@ -28,7 +28,7 @@ This repository contains the source code for my personal portfolio website. I've
 
 ### Prerequisites
 
-- Node.js (v16+)
+- Node.js
 - npm
 
 ### Installation
