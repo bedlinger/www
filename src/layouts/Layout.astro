@@ -45,8 +45,8 @@ const seo: SEOProps = {
 			url: Astro.url.href,
 		},
 		optional: {
-			locale: lang == en.lang ? "en_EN" : "de_AT",
-			localeAlternate: [lang == en.lang ? "de_AT" : "en_EN"],
+			locale: lang == en.lang ? "en_GB" : "de_AT",
+			localeAlternate: [lang == en.lang ? "de_AT" : "en_GB"],
 		},
 		image: {
 			alt: "Benjamin Edlinger Logo",
@@ -56,7 +56,7 @@ const seo: SEOProps = {
 		meta: [
 			{ name: "generator", content: Astro.generator },
 			{ name: "viewport", content: "width=device-width, initial-scale=1.0" },
-			{ name: "apple-mobile-web-app-title", content: "bedlinger | Portfolio" },
+			{ name: "apple-mobile-web-app-title", content: "Benjamin Edlinger" },
 		],
 		link: [
 			{
@@ -93,7 +93,7 @@ const seo: SEOProps = {
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang == en.lang ? "en_GB" : "de_AT"}>
 	<head>
 		<SEO {...seo} />
 	</head>
