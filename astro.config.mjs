@@ -26,7 +26,15 @@ export default defineConfig({
 	},
 
 	integrations: [
-		sitemap(),
+		sitemap({
+			i18n: {
+				defaultLocale: "de",
+				locales: {
+					de: "de-AT",
+					en: "en-GB",
+				},
+			},
+		}),
 		icon({
 			iconDir: "src/assets/icons",
 		}),
