@@ -3,17 +3,21 @@ import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { SEO, type SEOProps } from "astro-seo";
+import type { UI } from "../types";
 
 interface Props {
-	lang?: string;
+	lang: string;
 	title?: string;
 	description?: string;
+	header: UI["header"];
+	footer: UI["footer"];
 }
-
 const {
-	lang = "en",
+	lang,
 	title = "bedlinger",
 	description = "This is my online portfolio",
+	header,
+	footer,
 } = Astro.props;
 
 const seo: SEOProps = {
@@ -49,11 +53,11 @@ const seo: SEOProps = {
 	</head>
 	<body>
 		<div class="relative flex min-h-screen flex-col">
-			<Header />
+			<Header header={header} />
 			<main class="mt-[-4rem] flex-1">
 				<slot />
 			</main>
-			<Footer />
+			<Footer footer={footer} />
 		</div>
 	</body>
 </html>

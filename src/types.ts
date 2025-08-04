@@ -1,3 +1,43 @@
+export interface UI {
+	lang: string;
+	header: { logo: { href: string }; nav: { name: string; href: string }[] };
+	index: {
+		hero: { title: string; text: string };
+		about: {
+			country: string;
+			age: number;
+			skills: {
+				heading: string;
+				skills: string[];
+			};
+			achievements: {
+				heading: string;
+				achievements: { title: string; description: string }[];
+			};
+			hobbies: {
+				heading: string;
+				text: string;
+			};
+			connect: {
+				heading: string;
+				text: string;
+			};
+		};
+	};
+	error404?: {
+		text: string;
+		button: string;
+	};
+	footer: {
+		backToTop: string;
+		legal: string;
+		language: {
+			text: string;
+			href: string;
+		};
+	};
+}
+
 export interface Icon {
 	icon: string;
 	name: string;
