@@ -119,6 +119,10 @@
 		@apply bg-primary-950 text-white;
 	}
 
+	main {
+		@apply bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px];
+	}
+
 	h1 {
 		@apply mb-4 text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl;
 	}
