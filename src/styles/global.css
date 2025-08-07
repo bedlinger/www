@@ -189,6 +189,6 @@
 	}
 
 	section:nth-of-type(odd) {
-		@apply bg-black/40;
+		@apply bg-black/55;
 	}
 }
