@@ -60,6 +60,7 @@ export const de: UI = {
 				text: "Hast du ein Projekt im Sinn oder möchtest dich einfach vernetzen? Melde dich gerne bei mir.",
 			},
 		},
+		projects: {},
 	},
 	error404: {
 		text: "Seite nicht gefunden",
@@ -132,6 +133,7 @@ export const en: UI = {
 				text: "Have a project in mind or just want to connect? Feel free to reach out.",
 			},
 		},
+		projects: {},
 	},
 	footer: {
 		language: {

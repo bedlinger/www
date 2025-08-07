@@ -25,6 +25,7 @@ export interface UI {
 				text: string;
 			};
 		};
+		projects: object; // TODO: define content of the projects section
 	};
 	error404?: {
 		text: string;
