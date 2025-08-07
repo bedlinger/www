@@ -13,7 +13,7 @@
     "@astrojs/sitemap": "^3.4.2",
     "@astrojs/ts-plugin": "^1.10.4",
     "@tailwindcss/vite": "^4.1.11",
-    "astro": "^5.12.4",
+    "astro": "^5.12.8",
     "astro-icon": "^1.1.5",
     "astro-seo": "^0.8.4",
     "octokit": "^5.0.3",
