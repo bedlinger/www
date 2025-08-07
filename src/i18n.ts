@@ -13,6 +13,7 @@ export const de: UI = {
 		nav: [
 			{ name: "Startseite", href: getRelativeLocaleUrl("de") + "#" },
 			{ name: "Über mich", href: getRelativeLocaleUrl("de") + "#about" },
+			{ name: "Projekte", href: getRelativeLocaleUrl("de") + "#projects" },
 		],
 	},
 	index: {
@@ -86,6 +87,7 @@ export const en: UI = {
 		nav: [
 			{ name: "Home", href: getRelativeLocaleUrl("en") + "#" },
 			{ name: "About", href: getRelativeLocaleUrl("en") + "#about" },
+			{ name: "Projekte", href: getRelativeLocaleUrl("en") + "#projects" },
 		],
 	},
 	index: {
