@@ -22,7 +22,7 @@ const { about } = Astro.props;
 				<h2 class="mb-0 whitespace-nowrap md:whitespace-normal">
 					Benjamin Edlinger
 				</h2>
-				<p class="text-primary-500/80">
+				<p>
 					Developer | <span class="hidden xl:inline-block"
 						>Spillern,&nbsp;
 					</span>{about.country} | {about.age}
@@ -34,7 +34,7 @@ const { about } = Astro.props;
 			<div class="grid grid-rows-1 gap-6 xl:grid-cols-3 xl:gap-10">
 				{
 					about.skills.skills.map((skill) => (
-						<div class="border-primary-500/80 flex h-full w-full flex-col justify-center rounded-2xl border-3 px-6 py-6">
+						<div class="primary-border flex h-full w-full flex-col justify-center">
 							<h4 class="text-center">{skill}</h4>
 						</div>
 					))
@@ -46,9 +46,9 @@ const { about } = Astro.props;
 			<div class="grid grid-rows-1 gap-6 xl:grid-cols-3 xl:gap-10">
 				{
 					about.achievements.achievements.map((achievement) => (
-						<div class="border-primary-500/80 h-full w-full rounded-2xl border-3 px-6 py-6">
+						<div class="primary-border h-full w-full">
 							<h4 class="xl:mb-3">{achievement.title}</h4>
-							<p class="text-primary-500/80">{achievement.description}</p>
+							<p>{achievement.description}</p>
 						</div>
 					))
 				}
@@ -56,11 +56,11 @@ const { about } = Astro.props;
 		</div>
 		<div>
 			<h3 class="mb-3">{about.hobbies.heading}</h3>
-			<p class="text-primary-500/80">{about.hobbies.text}</p>
+			<p>{about.hobbies.text}</p>
 		</div>
 		<div class="flex flex-col">
 			<h3 class="mb-3">{about.connect.heading}</h3>
-			<p class="text-primary-500/80 mb-1">
+			<p class="mb-1">
 				{about.connect.text}
 			</p>
 			<SocialLinks />

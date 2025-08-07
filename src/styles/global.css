@@ -148,7 +148,7 @@
 	}
 
 	p {
-		@apply text-base sm:text-lg md:text-xl lg:text-2xl;
+		@apply text-primary-500/80 text-base sm:text-lg md:text-xl lg:text-2xl;
 	}
 
 	a {
@@ -161,6 +161,10 @@
 		@apply active:translate-y-0 active:shadow-md;
 		@apply px-4 py-2 md:px-6 md:py-3;
 		@apply text-base font-semibold text-white no-underline sm:text-lg md:text-xl lg:text-2xl;
+	}
+
+	.primary-border {
+		@apply border-primary-500/80 rounded-2xl border-3 px-6 py-6;
 	}
 
 	ul,
