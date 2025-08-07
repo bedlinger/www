@@ -1,6 +1,8 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
 import type { UI } from "./types";
 
+const age = new Date().getFullYear() - 2006;
+
 export const de: UI = {
 	lang: "de",
 	title: "Benjamin Edlinger",
@@ -20,7 +22,7 @@ export const de: UI = {
 		},
 		about: {
 			country: "Österreich",
-			age: new Date().getFullYear() - 2006,
+			age: age,
 			skills: {
 				heading: "Kernkompetenzen",
 				skills: [
@@ -92,7 +94,7 @@ export const en: UI = {
 		},
 		about: {
 			country: "Austria",
-			age: new Date().getFullYear() - 2006,
+			age: age,
 			skills: {
 				heading: "Core Skills",
 				skills: [
