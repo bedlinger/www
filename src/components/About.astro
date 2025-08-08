@@ -1,21 +1,24 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
+import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
-import profileImage from "../assets/profile.jpeg";
 import type { UI } from "../types";
 
 interface Props {
 	about: UI["index"]["about"];
 }
 const { about } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/*.{jpeg,jpg,png,gif}",
+);
 ---
 
 <section id="about">
 	<div class="width-limit grid grid-cols-1 items-center gap-12">
 		<div class="flex flex-row items-center justify-start gap-6 md:gap-12">
 			<Image
-				src={profileImage}
-				alt="Headshot Benjamin Edlinger"
+				src={images[about.headshot.src]()}
+				alt={about.headshot.alt}
 				class="h-24 w-24 rounded-3xl sm:h-28 sm:w-28 md:h-36 md:w-36 lg:h-48 lg:w-48"
 			/>
 			<div class="flex flex-col items-start justify-center gap-1">
