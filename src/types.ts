@@ -34,13 +34,12 @@ export interface UI {
 			projects: {
 				title: string;
 				tagline: string;
-				technologies: string[];
+				technologies: Icon[];
 				github: string;
 				liveUrl?: string;
 				detail: {
 					images: Image[];
 					role: string;
-					techStack: Icon[];
 					challenge: string;
 					process: string;
 				};

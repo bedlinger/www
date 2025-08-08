@@ -78,7 +78,13 @@ export const en: UI = {
 					title: "Characreate",
 					tagline:
 						"An AI-powered persona generator to create realistic user profiles for any project.",
-					technologies: ["Nuxt", "Vue", "Tailwind CSS", "AI"],
+					technologies: [
+						{ name: "Nuxt", icon: "dev/nuxt" },
+						{ name: "TypeScript", icon: "dev/typescript" },
+						{ name: "Tailwind", icon: "dev/tailwind" },
+						{ name: "PrimeVue", icon: "dev/primevue" },
+						{ name: "Qwen 2.5", icon: "dev/qwen" },
+					],
 					github: "https://github.com/bedlinger/characreate",
 					detail: {
 						images: [
@@ -92,21 +98,42 @@ export const en: UI = {
 							},
 							{
 								src: "/src/assets/03_characreate.png",
-								alt: "The export user persona card for Ethan Green.",
+								alt: "The exported user persona card for Ethan Green.",
 							},
 						],
 						role: "Sole Developer & Designer",
-						techStack: [
-							{ name: "Nuxt", icon: "dev/nuxt" },
-							{ name: "Vue", icon: "dev/vue" },
-							{ name: "TypeScript", icon: "dev/typescript" },
-							{ name: "Tailwind CSS", icon: "dev/tailwind" },
-							{ name: "PrimeVue", icon: "dev/primevue" },
-						],
 						challenge:
 							"The primary challenge was securely integrating the DeepInfra API on the server-side to protect credentials and manage rate-limiting. Ensuring a smooth, non-blocking user experience while waiting for the AI to generate detailed personas and images required careful state management on the frontend.",
 						process:
 							"The project began with designing a clean, intuitive UI focused on a simple user flow for defining persona criteria. I developed the frontend using Nuxt and Vue, with PrimeVue for the component library and Tailwind CSS for styling. A dedicated server route was built to handle secure communication with the DeepInfra AI API. Finally, I implemented the html-to-image library to allow users to export the generated personas as PNG files, providing a tangible output.",
+					},
+				},
+				{
+					title: "sustAInableEducation",
+					tagline:
+						"An award-winning diploma project that uses AI to teach sustainability through interactive storytelling.",
+					technologies: [
+						{ name: "Nuxt", icon: "dev/nuxt" },
+						{ name: "TypeScript", icon: "dev/typescript" },
+						{ name: "Tailwind", icon: "dev/tailwind" },
+						{ name: "PrimeVue", icon: "dev/primevue" },
+						{ name: "C#", icon: "dev/csharp" },
+						{ name: ".NET Core", icon: "dev/dotnet" },
+						{ name: "SQL Server", icon: "dev/sqlserver" },
+						{ name: "Llama 4", icon: "dev/llama" },
+					],
+					github:
+						"https://github.com/sustAInableEducation/sustAInableEducation",
+					detail: {
+						images: [
+							"/path/to/sustainable-education-1.jpg", // Replace with actual image paths
+							"/path/to/sustainable-education-2.jpg",
+						],
+						role: "Project Lead & AI Story Developer",
+						challenge:
+							"The main challenge was to create an innovative learning platform that could make the complex topic of sustainability engaging for students. The goal was to develop a system that could generate personalized, gamified, and collaborative educational content using AI, while ensuring the technical foundation was robust and scalable.",
+						process:
+							"As Project Lead, I managed the team using an agile Kanban methodology to ensure an iterative and efficient workflow. My technical focus was on the AI Story module, where I designed and implemented the system for generating interactive narratives using the Llama 3.3 language model. The overall architecture involved a Nuxt.js frontend and an ASP.NET backend with an SQL database. We conducted regular usability tests and feedback sessions with students to continually refine the platform.",
 					},
 				},
 			],
