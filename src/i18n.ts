@@ -84,7 +84,10 @@ export const en: UI = {
 						{ name: "Tailwind", icon: "dev/tailwind" },
 						{ name: "Qwen 2.5", icon: "dev/qwen" },
 					],
-					github: "https://github.com/bedlinger/characreate",
+					github: {
+						buttonText: "View on GitHub",
+						href: "https://github.com/bedlinger/characreate",
+					},
 					images: [
 						{
 							src: "/src/assets/characreate/01_characreate.png",
@@ -126,8 +129,10 @@ export const en: UI = {
 							href: "https://www.linkedin.com/in/leo-m%C3%BChlb%C3%B6ck-1bb5b3229/",
 						},
 					],
-					github:
-						"https://github.com/sustAInableEducation/sustAInableEducation",
+					github: {
+						buttonText: "View on GitHub",
+						href: "https://github.com/sustAInableEducation/sustAInableEducation",
+					},
 					images: [
 						{
 							src: "/src/assets/sustAInableEducation/01_sustAInableEducation.png",
@@ -278,7 +283,10 @@ export const de: UI = {
 						{ name: "Tailwind", icon: "dev/tailwind" },
 						{ name: "Qwen 2.5", icon: "dev/qwen" },
 					],
-					github: "https://github.com/bedlinger/characreate",
+					github: {
+						buttonText: "Auf GitHub anzeigen",
+						href: "https://github.com/bedlinger/characreate",
+					},
 					images: [
 						{
 							src: "/src/assets/characreate/01_characreate.png",
@@ -320,8 +328,10 @@ export const de: UI = {
 							href: "https://www.linkedin.com/in/leo-m%C3%BChlb%C3%B6ck-1bb5b3229/",
 						},
 					],
-					github:
-						"https://github.com/sustAInableEducation/sustAInableEducation",
+					github: {
+						buttonText: "Auf GitHub anzeigen",
+						href: "https://github.com/sustAInableEducation/sustAInableEducation",
+					},
 					images: [
 						{
 							src: "/src/assets/sustAInableEducation/01_sustAInableEducation.png",

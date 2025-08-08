@@ -36,7 +36,10 @@ export interface UI {
 				tagline: string;
 				technologies: Icon[];
 				contributors?: { name: string; href: string }[];
-				github: string;
+				github: {
+					buttonText: string;
+					href: string;
+				};
 				liveUrl?: string;
 				images: Image[];
 				role: string;
