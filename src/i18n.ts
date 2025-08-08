@@ -89,15 +89,15 @@ export const en: UI = {
 					detail: {
 						images: [
 							{
-								src: "/src/assets/01_characreate.png",
+								src: "/src/assets/characreate/01_characreate.png",
 								alt: "Screenshot of Characreate webpage featuring a form for creating a persona. Input fields include project idea, target group, age, gender, and goals.",
 							},
 							{
-								src: "/src/assets/02_characreate.png",
+								src: "/src/assets/characreate/02_characreate.png",
 								alt: "A user persona card for Ethan Green, a 25-year-old environmental science graduate student. It includes his goals, motivations, hobbies, experience, and challenges.",
 							},
 							{
-								src: "/src/assets/03_characreate.png",
+								src: "/src/assets/characreate/03_characreate.png",
 								alt: "The exported user persona card for Ethan Green.",
 							},
 						],
@@ -126,8 +126,54 @@ export const en: UI = {
 						"https://github.com/sustAInableEducation/sustAInableEducation",
 					detail: {
 						images: [
-							"/path/to/sustainable-education-1.jpg", // Replace with actual image paths
-							"/path/to/sustainable-education-2.jpg",
+							{
+								src: "/src/assets/sustAInableEducation/01_sustAInableEducation.png",
+								alt: "The landing page of the sustAInableEducation app, showing a dialog box to join an 'EcoSpace' by entering a 6-digit code.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/02_sustAInableEducation.png",
+								alt: "The detailed overview of a EcoSpace titled 'Nachhaltige Städte und Gemeinden', showing story parts, options, and participants.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/03_sustAInableEducation.jpg",
+								alt: "The EcoSpace creation screen where a user can select a theme based on the Sustainable Development Goals (SDGs).",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/04_sustAInableEducation.jpg",
+								alt: "The configuration settings for creating a new EcoSpace, including fields for decision points, target group, and voting time.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/05_sustAInableEducation.jpg",
+								alt: "An interactive story part within an EcoSpace, showing the beginning of a narrative and four decision options for the user.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/06_sustAInableEducation.jpg",
+								alt: "An AI-generated image within a story, depicting a diverse group of students standing together in a classroom setting.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/07_sustAInableEducation.png",
+								alt: "The results screen of an EcoSpace, summarizing the story's outcome and listing the positive and negative choices made.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/08_sustAInableEducation.png",
+								alt: "The 'Learnings' and 'Discussion Questions' section of the EcoSpace results, designed to encourage reflection.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/09_sustAInableEducation.png",
+								alt: "The first step of the quiz creation process, where the user selects a completed EcoSpace to base the quiz on.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/10_sustAInableEducation.png",
+								alt: "The second step of quiz creation, showing settings for question types and the total number of questions.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/11_sustAInableEducation.png",
+								alt: "A quiz question screen from the sustAInableEducation app, asking how students implemented a sustainability project, with four multiple-choice options.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/12_sustAInableEducation.png",
+								alt: "The user account page in the sustAInableEducation app, displaying the profile picture, username, email, and options to change password or generate a new profile picture.",
+							},
 						],
 						role: "Project Lead & AI Story Developer",
 						challenge:
