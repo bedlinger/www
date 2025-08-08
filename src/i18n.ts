@@ -135,19 +135,19 @@ export const en: UI = {
 								alt: "The detailed overview of a EcoSpace titled 'Nachhaltige Städte und Gemeinden', showing story parts, options, and participants.",
 							},
 							{
-								src: "/src/assets/sustAInableEducation/03_sustAInableEducation.jpg",
+								src: "/src/assets/sustAInableEducation/03_sustAInableEducation.png",
 								alt: "The EcoSpace creation screen where a user can select a theme based on the Sustainable Development Goals (SDGs).",
 							},
 							{
-								src: "/src/assets/sustAInableEducation/04_sustAInableEducation.jpg",
+								src: "/src/assets/sustAInableEducation/04_sustAInableEducation.png",
 								alt: "The configuration settings for creating a new EcoSpace, including fields for decision points, target group, and voting time.",
 							},
 							{
-								src: "/src/assets/sustAInableEducation/05_sustAInableEducation.jpg",
+								src: "/src/assets/sustAInableEducation/05_sustAInableEducation.png",
 								alt: "An interactive story part within an EcoSpace, showing the beginning of a narrative and four decision options for the user.",
 							},
 							{
-								src: "/src/assets/sustAInableEducation/06_sustAInableEducation.jpg",
+								src: "/src/assets/sustAInableEducation/06_sustAInableEducation.png",
 								alt: "An AI-generated image within a story, depicting a diverse group of students standing together in a classroom setting.",
 							},
 							{
@@ -327,19 +327,19 @@ export const de: UI = {
 								alt: "Die Detailansicht eines EcoSpace mit dem Titel 'Nachhaltige Städte und Gemeinden', die Story-Abschnitte, Optionen und Teilnehmer anzeigt.",
 							},
 							{
-								src: "/src/assets/sustAInableEducation/03_sustAInableEducation.jpg",
+								src: "/src/assets/sustAInableEducation/03_sustAInableEducation.png",
 								alt: "Der Erstellungsbildschirm für einen EcoSpace, auf dem ein Benutzer ein Thema basierend auf den Zielen für nachhaltige Entwicklung (SDGs) auswählen kann.",
 							},
 							{
-								src: "/src/assets/sustAInableEducation/04_sustAInableEducation.jpg",
+								src: "/src/assets/sustAInableEducation/04_sustAInableEducation.png",
 								alt: "Die Konfigurationseinstellungen zum Erstellen eines neuen EcoSpace, einschließlich Feldern für Entscheidungspunkte, Zielgruppe und Abstimmungszeit.",
 							},
 							{
-								src: "/src/assets/sustAInableEducation/05_sustAInableEducation.jpg",
+								src: "/src/assets/sustAInableEducation/05_sustAInableEducation.png",
 								alt: "Ein interaktiver Story-Teil innerhalb eines EcoSpace, der den Anfang einer Erzählung und vier Entscheidungsoptionen für den Benutzer zeigt.",
 							},
 							{
-								src: "/src/assets/sustAInableEducation/06_sustAInableEducation.jpg",
+								src: "/src/assets/sustAInableEducation/06_sustAInableEducation.png",
 								alt: "Ein KI-generiertes Bild innerhalb einer Geschichte, das eine vielfältige Gruppe von Schülern in einem Klassenzimmer darstellt.",
 							},
 							{
