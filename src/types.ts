@@ -2,10 +2,14 @@ export interface UI {
 	lang: string;
 	title: string;
 	description: string;
-	header: { logo: { href: string }; nav: { name: string; href: string }[] };
+	header: {
+		logo: { href: string; image: Image };
+		nav: { name: string; href: string }[];
+	};
 	index: {
 		hero: { title: string; text: string };
 		about: {
+			headshot: Image;
 			country: string;
 			age: number;
 			skills: {
@@ -25,7 +29,23 @@ export interface UI {
 				text: string;
 			};
 		};
-		projects: object; // TODO: define content of the projects section
+		projects: {
+			heading: string;
+			projects: {
+				title: string;
+				tagline: string;
+				technologies: string[];
+				github: string;
+				liveUrl?: string;
+				detail: {
+					images: Image[];
+					role: string;
+					techStack: Icon[];
+					challenge: string;
+					process: string;
+				};
+			}[];
+		};
 	};
 	error404?: {
 		text: string;
@@ -39,6 +59,11 @@ export interface UI {
 			href: string;
 		};
 	};
+}
+
+export interface Image {
+	src: string;
+	alt: string;
 }
 
 export interface Icon {
