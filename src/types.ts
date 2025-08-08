@@ -33,7 +33,7 @@ export interface UI {
 			heading: string;
 			projects: {
 				title: string;
-				tagline: string;
+				description: string;
 				technologies: Icon[];
 				contributors?: { name: string; href: string }[];
 				github: {
@@ -45,6 +45,7 @@ export interface UI {
 				role: string;
 				challenge: string;
 				process: string;
+				result: string;
 			}[];
 		};
 	};

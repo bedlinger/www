@@ -76,8 +76,8 @@ export const en: UI = {
 			projects: [
 				{
 					title: "Characreate",
-					tagline:
-						"An AI-powered persona generator to create realistic user profiles for any project.",
+					description:
+						"An AI-powered persona generator designed to streamline the user research phase for developers and designers. By inputting key project criteria, users can generate detailed, realistic user profiles in seconds, complete with demographics, motivations, and pain points, ready to be exported as a PNG.",
 					technologies: [
 						{ name: "Nuxt", icon: "dev/nuxt" },
 						{ name: "TypeScript", icon: "dev/typescript" },
@@ -100,14 +100,16 @@ export const en: UI = {
 					],
 					role: "Sole Developer & Designer",
 					challenge:
-						"The primary challenge was securely integrating the DeepInfra API on the server-side to protect credentials and manage rate-limiting. Ensuring a smooth, non-blocking user experience while waiting for the AI to generate detailed personas and images required careful state management on the frontend.",
+						"The primary challenge was securely integrating the AI API on the server-side to protect credentials and manage rate-limiting. Ensuring a smooth, non-blocking user experience while waiting for the AI to generate detailed personas and images required careful state management on the frontend.",
 					process:
-						"The project began with designing a clean, intuitive UI focused on a simple user flow for defining persona criteria. I developed the frontend using Nuxt and Vue, with PrimeVue for the component library and Tailwind CSS for styling. A dedicated server route was built to handle secure communication with the DeepInfra AI API. Finally, I implemented the html-to-image library to allow users to export the generated personas as PNG files, providing a tangible output.",
+						"The project began with designing a clean, intuitive UI focused on a simple user flow for defining persona criteria. I developed the frontend using Nuxt, with PrimeVue for components and Tailwind CSS for styling. A dedicated server route was built to handle secure communication with the AI API, and the html-to-image library was implemented to allow users to export the generated personas.",
+					result:
+						"The final application is a fast, intuitive tool that significantly cuts down the time required for initial user research. It successfully demonstrates the power of integrating large language models into developer workflows to automate creative and analytical tasks. The ability to export personas as images makes sharing and collaboration within a team seamless.",
 				},
 				{
 					title: "sustAInableEducation",
-					tagline:
-						"An award-winning diploma project that uses AI to teach sustainability through interactive storytelling.",
+					description:
+						"An award-winning educational platform developed as a diploma project to tackle the challenge of teaching sustainability. It uses AI-driven interactive storytelling and quizzes to create personalized, gamified learning experiences for students, making complex topics like the SDGs engaging and accessible.",
 					technologies: [
 						{ name: "Nuxt", icon: "dev/nuxt" },
 						{ name: "TypeScript", icon: "dev/typescript" },
@@ -185,9 +187,11 @@ export const en: UI = {
 					],
 					role: "Project Lead & AI Story Developer",
 					challenge:
-						"The main challenge was to create an innovative learning platform that could make the complex topic of sustainability engaging for students. The goal was to develop a system that could generate personalized, gamified, and collaborative educational content using AI, while ensuring the technical foundation was robust and scalable.",
+						"The main challenge was creating an innovative learning platform to make the complex topic of sustainability engaging for students. The goal was to develop a system that could generate personalized, gamified, and collaborative educational content using AI, while ensuring the technical foundation was robust and scalable for a school environment.",
 					process:
-						"As Project Lead, I managed the team using an agile Kanban methodology to ensure an iterative and efficient workflow. My technical focus was on the AI Story module, where I designed and implemented the system for generating interactive narratives using the Llama 3.3 language model. The overall architecture involved a Nuxt.js frontend and an ASP.NET backend with an SQL database. We conducted regular usability tests and feedback sessions with students to continually refine the platform.",
+						"As Project Lead, I managed the team using an agile Kanban methodology to ensure an iterative and efficient workflow. My technical focus was on the AI Story module, where I designed and implemented the system for generating interactive narratives using the Llama 4 language model. The overall architecture involved a Nuxt.js frontend and an ASP.NET backend with an SQL database, refined through regular usability tests with students.",
+					result:
+						"The project was a resounding success, earning 3rd place at the 'Jugend Innovativ' competition and forming the basis for a published academic paper. The platform proved to be an effective educational tool in usability tests with students, demonstrating high engagement and confirming the pedagogical value of combining AI with gamified learning to foster sustainability awareness.",
 				},
 			],
 		},
@@ -275,8 +279,8 @@ export const de: UI = {
 			projects: [
 				{
 					title: "Characreate",
-					tagline:
-						"Ein KI-gestützter Persona-Generator zur Erstellung realistischer Nutzerprofile für jedes Projekt.",
+					description:
+						"Ein KI-gestützter Persona-Generator, der die User-Research-Phase für Entwickler und Designer optimiert. Durch die Eingabe wichtiger Projektkriterien können Benutzer in Sekundenschnelle detaillierte, realistische Nutzerprofile erstellen, komplett mit Demografie, Motivationen und Problemen, die als PNG exportiert werden können.",
 					technologies: [
 						{ name: "Nuxt", icon: "dev/nuxt" },
 						{ name: "TypeScript", icon: "dev/typescript" },
@@ -284,7 +288,7 @@ export const de: UI = {
 						{ name: "Qwen 2.5", icon: "dev/qwen" },
 					],
 					github: {
-						buttonText: "Auf GitHub anzeigen",
+						buttonText: "Auf GitHub ansehen",
 						href: "https://github.com/bedlinger/characreate",
 					},
 					images: [
@@ -299,14 +303,16 @@ export const de: UI = {
 					],
 					role: "Alleinentwickler & Designer",
 					challenge:
-						"Die größte Herausforderung war die sichere serverseitige Integration der DeepInfra-API, um Zugangsdaten zu schützen und Rate-Limiting zu verwalten. Eine reibungslose, nicht-blockierende Benutzererfahrung während des Wartens auf die KI-generierten Personas und Bilder erforderte ein sorgfältiges State-Management im Frontend.",
+						"Die größte Herausforderung war die sichere serverseitige Integration der KI-API, um Zugangsdaten zu schützen und Rate-Limiting zu verwalten. Eine reibungslose, nicht-blockierende Benutzererfahrung während des Wartens auf die KI-generierten Personas und Bilder erforderte ein sorgfältiges State-Management im Frontend.",
 					process:
-						"Das Projekt begann mit dem Entwurf einer klaren, intuitiven Benutzeroberfläche, die auf einen einfachen User-Flow zur Definition von Persona-Kriterien ausgerichtet war. Ich entwickelte das Frontend mit Nuxt und Vue, nutzte PrimeVue für die Komponentenbibliothek und Tailwind CSS für das Styling. Eine dedizierte Server-Route wurde für die sichere Kommunikation mit der DeepInfra-KI-API erstellt. Schließlich implementierte ich die 'html-to-image'-Bibliothek, um den Export der generierten Personas als PNG-Dateien zu ermöglichen.",
+						"Das Projekt begann mit dem Entwurf einer klaren, intuitiven Benutzeroberfläche, die auf einen einfachen User-Flow zur Definition von Persona-Kriterien ausgerichtet war. Ich entwickelte das Frontend mit Nuxt, nutzte PrimeVue für Komponenten und Tailwind CSS für das Styling. Eine dedizierte Server-Route wurde für die sichere Kommunikation mit der KI-API erstellt und die 'html-to-image'-Bibliothek implementiert, um den Export der generierten Personas zu ermöglichen.",
+					result:
+						"Die fertige Anwendung ist ein schnelles, intuitives Werkzeug, das den Zeitaufwand für die anfängliche User Research erheblich reduziert. Sie demonstriert erfolgreich die Leistungsfähigkeit der Integration von großen Sprachmodellen in Entwickler-Workflows zur Automatisierung kreativer und analytischer Aufgaben. Die Möglichkeit, Personas als Bilder zu exportieren, ermöglicht ein nahtloses Teilen und Zusammenarbeiten im Team.",
 				},
 				{
 					title: "sustAInableEducation",
-					tagline:
-						"Ein preisgekröntes Diplomprojekt, das KI nutzt, um Nachhaltigkeit durch interaktives Storytelling zu vermitteln.",
+					description:
+						"Eine preisgekrönte Lernplattform, die als Diplomarbeit entwickelt wurde, um die Herausforderung der Nachhaltigkeitsvermittlung zu meistern. Sie nutzt KI-gestütztes interaktives Storytelling und Quizze, um personalisierte, spielerische Lernerfahrungen für Schüler zu schaffen und komplexe Themen wie die SDGs spannend und zugänglich zu machen.",
 					technologies: [
 						{ name: "Nuxt", icon: "dev/nuxt" },
 						{ name: "TypeScript", icon: "dev/typescript" },
@@ -329,7 +335,7 @@ export const de: UI = {
 						},
 					],
 					github: {
-						buttonText: "Auf GitHub anzeigen",
+						buttonText: "Auf GitHub ansehen",
 						href: "https://github.com/sustAInableEducation/sustAInableEducation",
 					},
 					images: [
@@ -384,9 +390,11 @@ export const de: UI = {
 					],
 					role: "Projektleitung & KI-Story-Entwickler",
 					challenge:
-						"Die zentrale Herausforderung bestand darin, eine innovative Lernplattform zu schaffen, die das komplexe Thema Nachhaltigkeit für Schüler spannend aufbereitet. Ziel war es, ein System zu entwickeln, das personalisierte, spielerische und kollaborative Lerninhalte mittels KI generiert und gleichzeitig auf einem robusten und skalierbaren technischen Fundament steht.",
+						"Die zentrale Herausforderung bestand darin, eine innovative Lernplattform zu schaffen, um das komplexe Thema Nachhaltigkeit für Schüler spannend aufzubereiten. Ziel war es, ein System zu entwickeln, das personalisierte, spielerische und kollaborative Lerninhalte mittels KI generiert und gleichzeitig auf einem robusten und skalierbaren technischen Fundament für den Schuleinsatz steht.",
 					process:
-						"Als Projektleiter steuerte ich das Team mithilfe der agilen Kanban-Methode, um einen iterativen und effizienten Arbeitsablauf zu gewährleisten. Mein technischer Fokus lag auf dem KI-Story-Modul, für das ich das System zur Generierung interaktiver Erzählungen mit dem Llama 3.3 Sprachmodell konzipierte und implementierte. Die Gesamtarchitektur umfasste ein Nuxt.js-Frontend und ein ASP.NET-Backend mit SQL-Datenbank. Regelmäßige Usability-Tests und Feedback-Runden mit Schülern halfen uns, die Plattform kontinuierlich zu verbessern.",
+						"Als Projektleiter steuerte ich das Team mithilfe der agilen Kanban-Methode, um einen iterativen und effizienten Arbeitsablauf zu gewährleisten. Mein technischer Fokus lag auf dem KI-Story-Modul, für das ich das System zur Generierung interaktiver Erzählungen mit dem Llama 4 Sprachmodell konzipierte und implementierte. Die Gesamtarchitektur umfasste ein Nuxt.js-Frontend und ein ASP.NET-Backend mit SQL-Datenbank, das durch regelmäßige Usability-Tests mit Schülern verfeinert wurde.",
+					result:
+						"Das Projekt war ein voller Erfolg, erreichte den 3. Platz beim Wettbewerb 'Jugend Innovativ' und bildete die Grundlage für eine veröffentlichte wissenschaftliche Arbeit. Die Plattform erwies sich in Usability-Tests mit Schülern als effektives Lehrmittel, zeigte hohes Engagement und bestätigte den pädagogischen Wert der Kombination von KI und spielerischem Lernen zur Förderung des Nachhaltigkeitsbewusstseins.",
 				},
 			],
 		},
