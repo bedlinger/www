@@ -96,10 +96,6 @@ export const en: UI = {
 								src: "/src/assets/characreate/02_characreate.png",
 								alt: "A user persona card for Ethan Green, a 25-year-old environmental science graduate student. It includes his goals, motivations, hobbies, experience, and challenges.",
 							},
-							{
-								src: "/src/assets/characreate/03_characreate.png",
-								alt: "The exported user persona card for Ethan Green.",
-							},
 						],
 						role: "Sole Developer & Designer",
 						challenge:
@@ -287,10 +283,6 @@ export const de: UI = {
 							{
 								src: "/src/assets/characreate/02_characreate.png",
 								alt: "Eine Nutzerpersona-Karte für Ethan Green, einen 25-jährigen Masterstudenten der Umweltwissenschaften. Sie enthält seine Ziele, Motivationen, Hobbys, Erfahrungen und Herausforderungen.",
-							},
-							{
-								src: "/src/assets/characreate/03_characreate.png",
-								alt: "Die exportierte Nutzerpersona-Karte für Ethan Green.",
 							},
 						],
 						role: "Alleinentwickler & Designer",
