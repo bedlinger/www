@@ -116,6 +116,20 @@ export const en: UI = {
 						{ name: "SQL Server", icon: "dev/sqlserver" },
 						{ name: "Llama 4", icon: "dev/llama" },
 					],
+					contributors: [
+						{
+							name: "Kacper Bohaczyk",
+							href: "https://www.linkedin.com/in/kacper-bohaczyk-68127a258/",
+						},
+						{
+							name: "Leander List",
+							href: "https://www.linkedin.com/in/leander-list-424110333/",
+						},
+						{
+							name: "Leo Mühlböck",
+							href: "https://www.linkedin.com/in/leo-m%C3%BChlb%C3%B6ck-1bb5b3229/",
+						},
+					],
 					github:
 						"https://github.com/sustAInableEducation/sustAInableEducation",
 					images: [
@@ -299,6 +313,20 @@ export const de: UI = {
 						{ name: ".NET Core", icon: "dev/dotnet" },
 						{ name: "SQL Server", icon: "dev/sqlserver" },
 						{ name: "Llama 4", icon: "dev/llama" },
+					],
+					contributors: [
+						{
+							name: "Kacper Bohaczyk",
+							href: "https://www.linkedin.com/in/kacper-bohaczyk-68127a258/",
+						},
+						{
+							name: "Leander List",
+							href: "https://www.linkedin.com/in/leander-list-424110333/",
+						},
+						{
+							name: "Leo Mühlböck",
+							href: "https://www.linkedin.com/in/leo-m%C3%BChlb%C3%B6ck-1bb5b3229/",
+						},
 					],
 					github:
 						"https://github.com/sustAInableEducation/sustAInableEducation",
