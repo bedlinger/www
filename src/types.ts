@@ -37,12 +37,10 @@ export interface UI {
 				technologies: Icon[];
 				github: string;
 				liveUrl?: string;
-				detail: {
-					images: Image[];
-					role: string;
-					challenge: string;
-					process: string;
-				};
+				images: Image[];
+				role: string;
+				challenge: string;
+				process: string;
 			}[];
 		};
 	};
