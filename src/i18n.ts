@@ -263,7 +263,119 @@ export const de: UI = {
 				text: "Hast du ein Projekt im Sinn oder möchtest dich einfach vernetzen? Melde dich gerne bei mir.",
 			},
 		},
-		projects: {},
+		projects: {
+			heading: "Meine Projekte",
+			projects: [
+				{
+					title: "Characreate",
+					tagline:
+						"Ein KI-gestützter Persona-Generator zur Erstellung realistischer Nutzerprofile für jedes Projekt.",
+					technologies: [
+						{ name: "Nuxt", icon: "dev/nuxt" },
+						{ name: "TypeScript", icon: "dev/typescript" },
+						{ name: "Tailwind", icon: "dev/tailwind" },
+						{ name: "PrimeVue", icon: "dev/primevue" },
+						{ name: "Qwen 2.5", icon: "dev/qwen" },
+					],
+					github: "https://github.com/bedlinger/characreate",
+					detail: {
+						images: [
+							{
+								src: "/src/assets/characreate/01_characreate.png",
+								alt: "Screenshot der Characreate-Webseite mit einem Formular zur Erstellung einer Persona. Die Eingabefelder umfassen Projektidee, Zielgruppe, Alter, Geschlecht und Ziele.",
+							},
+							{
+								src: "/src/assets/characreate/02_characreate.png",
+								alt: "Eine Nutzerpersona-Karte für Ethan Green, einen 25-jährigen Masterstudenten der Umweltwissenschaften. Sie enthält seine Ziele, Motivationen, Hobbys, Erfahrungen und Herausforderungen.",
+							},
+							{
+								src: "/src/assets/characreate/03_characreate.png",
+								alt: "Die exportierte Nutzerpersona-Karte für Ethan Green.",
+							},
+						],
+						role: "Alleinentwickler & Designer",
+						challenge:
+							"Die größte Herausforderung war die sichere serverseitige Integration der DeepInfra-API, um Zugangsdaten zu schützen und Rate-Limiting zu verwalten. Eine reibungslose, nicht-blockierende Benutzererfahrung während des Wartens auf die KI-generierten Personas und Bilder erforderte ein sorgfältiges State-Management im Frontend.",
+						process:
+							"Das Projekt begann mit dem Entwurf einer klaren, intuitiven Benutzeroberfläche, die auf einen einfachen User-Flow zur Definition von Persona-Kriterien ausgerichtet war. Ich entwickelte das Frontend mit Nuxt und Vue, nutzte PrimeVue für die Komponentenbibliothek und Tailwind CSS für das Styling. Eine dedizierte Server-Route wurde für die sichere Kommunikation mit der DeepInfra-KI-API erstellt. Schließlich implementierte ich die 'html-to-image'-Bibliothek, um den Export der generierten Personas als PNG-Dateien zu ermöglichen.",
+					},
+				},
+				{
+					title: "sustAInableEducation",
+					tagline:
+						"Ein preisgekröntes Diplomprojekt, das KI nutzt, um Nachhaltigkeit durch interaktives Storytelling zu vermitteln.",
+					technologies: [
+						{ name: "Nuxt", icon: "dev/nuxt" },
+						{ name: "TypeScript", icon: "dev/typescript" },
+						{ name: "Tailwind", icon: "dev/tailwind" },
+						{ name: "PrimeVue", icon: "dev/primevue" },
+						{ name: "C#", icon: "dev/csharp" },
+						{ name: ".NET Core", icon: "dev/dotnet" },
+						{ name: "SQL Server", icon: "dev/sqlserver" },
+						{ name: "Llama 4", icon: "dev/llama" },
+					],
+					github:
+						"https://github.com/sustAInableEducation/sustAInableEducation",
+					detail: {
+						images: [
+							{
+								src: "/src/assets/sustAInableEducation/01_sustAInableEducation.png",
+								alt: "Die Startseite der sustAInableEducation-App, die ein Dialogfeld zur Teilnahme an einem 'EcoSpace' durch Eingabe eines 6-stelligen Codes anzeigt.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/02_sustAInableEducation.png",
+								alt: "Die Detailansicht eines EcoSpace mit dem Titel 'Nachhaltige Städte und Gemeinden', die Story-Abschnitte, Optionen und Teilnehmer anzeigt.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/03_sustAInableEducation.jpg",
+								alt: "Der Erstellungsbildschirm für einen EcoSpace, auf dem ein Benutzer ein Thema basierend auf den Zielen für nachhaltige Entwicklung (SDGs) auswählen kann.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/04_sustAInableEducation.jpg",
+								alt: "Die Konfigurationseinstellungen zum Erstellen eines neuen EcoSpace, einschließlich Feldern für Entscheidungspunkte, Zielgruppe und Abstimmungszeit.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/05_sustAInableEducation.jpg",
+								alt: "Ein interaktiver Story-Teil innerhalb eines EcoSpace, der den Anfang einer Erzählung und vier Entscheidungsoptionen für den Benutzer zeigt.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/06_sustAInableEducation.jpg",
+								alt: "Ein KI-generiertes Bild innerhalb einer Geschichte, das eine vielfältige Gruppe von Schülern in einem Klassenzimmer darstellt.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/07_sustAInableEducation.png",
+								alt: "Der Ergebnisbildschirm eines EcoSpace, der das Ergebnis der Geschichte zusammenfasst und die getroffenen positiven und negativen Entscheidungen auflistet.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/08_sustAInableEducation.png",
+								alt: "Der Abschnitt 'Erkenntnisse' und 'Diskussionsfragen' der EcoSpace-Ergebnisse, der zur Reflexion anregen soll.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/09_sustAInableEducation.png",
+								alt: "Der erste Schritt der Quiz-Erstellung, bei dem der Benutzer einen abgeschlossenen EcoSpace als Grundlage für das Quiz auswählt.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/10_sustAInableEducation.png",
+								alt: "Der zweite Schritt der Quiz-Erstellung, der Einstellungen für Fragetypen und die Gesamtzahl der Fragen anzeigt.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/11_sustAInableEducation.png",
+								alt: "Ein Quiz-Fragebildschirm aus der sustAInableEducation-App, der fragt, wie Schüler ein Nachhaltigkeitsprojekt umgesetzt haben, mit vier Multiple-Choice-Optionen.",
+							},
+							{
+								src: "/src/assets/sustAInableEducation/12_sustAInableEducation.png",
+								alt: "Die Benutzerkontoseite in der sustAInableEducation-App, die Profilbild, Benutzername, E-Mail und Optionen zum Ändern des Passworts oder zum Generieren eines neuen Profilbilds anzeigt.",
+							},
+						],
+						role: "Projektleitung & KI-Story-Entwickler",
+						challenge:
+							"Die zentrale Herausforderung bestand darin, eine innovative Lernplattform zu schaffen, die das komplexe Thema Nachhaltigkeit für Schüler spannend aufbereitet. Ziel war es, ein System zu entwickeln, das personalisierte, spielerische und kollaborative Lerninhalte mittels KI generiert und gleichzeitig auf einem robusten und skalierbaren technischen Fundament steht.",
+						process:
+							"Als Projektleiter steuerte ich das Team mithilfe der agilen Kanban-Methode, um einen iterativen und effizienten Arbeitsablauf zu gewährleisten. Mein technischer Fokus lag auf dem KI-Story-Modul, für das ich das System zur Generierung interaktiver Erzählungen mit dem Llama 3.3 Sprachmodell konzipierte und implementierte. Die Gesamtarchitektur umfasste ein Nuxt.js-Frontend und ein ASP.NET-Backend mit SQL-Datenbank. Regelmäßige Usability-Tests und Feedback-Runden mit Schülern halfen uns, die Plattform kontinuierlich zu verbessern.",
+					},
+				},
+			],
+		},
 	},
 	error404: {
 		text: "Seite nicht gefunden",
