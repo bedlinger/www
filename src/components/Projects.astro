@@ -29,7 +29,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 						<div class="flex flex-col items-start justify-center gap-2">
 							<h3 class="mb-0">{project.title}</h3>
 							<p>{project.description}</p>
-							<div class="flex flex-row flex-wrap items-center gap-3 lg:gap-7">
+							<div class="flex flex-row flex-wrap items-center gap-x-3 gap-y-2 lg:gap-x-7">
 								{project.technologies.map((technology) => (
 									<div class="bg-primary-900 flex flex-row items-center justify-evenly gap-2.5 rounded-3xl px-4 py-1.5">
 										<Icon
