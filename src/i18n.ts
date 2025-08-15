@@ -19,7 +19,7 @@ export const en: UI = {
 		nav: [
 			{ name: "Home", href: getRelativeLocaleUrl("en") + "#" },
 			{ name: "About", href: getRelativeLocaleUrl("en") + "#about" },
-			{ name: "Projekte", href: getRelativeLocaleUrl("en") + "#projects" },
+			{ name: "Projects", href: getRelativeLocaleUrl("en") + "#projects" },
 		],
 	},
 	index: {
