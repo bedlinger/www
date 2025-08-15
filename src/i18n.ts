@@ -109,7 +109,7 @@ export const en: UI = {
 				{
 					title: "sustAInableEducation",
 					description:
-						"An award-winning educational platform developed as a diploma project to tackle the challenge of teaching sustainability. It uses AI-driven interactive storytelling and quizzes to create personalized, gamified learning experiences for students, making complex topics like the SDGs engaging and accessible.",
+						"My educational platform developed as a diploma project to tackle the challenge of teaching sustainability. It uses AI-driven interactive storytelling and quizzes to create personalized, gamified learning experiences for students, making complex topics like the SDGs engaging and accessible.",
 					technologies: [
 						{ name: "Nuxt", icon: "dev/nuxt" },
 						{ name: "TypeScript", icon: "dev/typescript" },
@@ -312,7 +312,7 @@ export const de: UI = {
 				{
 					title: "sustAInableEducation",
 					description:
-						"Eine preisgekrönte Lernplattform, die als Diplomarbeit entwickelt wurde, um die Herausforderung der Nachhaltigkeitsvermittlung zu meistern. Sie nutzt KI-gestütztes interaktives Storytelling und Quizze, um personalisierte, spielerische Lernerfahrungen für Schüler zu schaffen und komplexe Themen wie die SDGs spannend und zugänglich zu machen.",
+						"Meine Lernplattform, die als Diplomarbeit entwickelt wurde, um die Herausforderung der Nachhaltigkeitsvermittlung zu meistern. Sie nutzt KI-gestütztes interaktives Storytelling und Quizze, um personalisierte, spielerische Lernerfahrungen für Schüler zu schaffen und komplexe Themen wie die SDGs spannend und zugänglich zu machen.",
 					technologies: [
 						{ name: "Nuxt", icon: "dev/nuxt" },
 						{ name: "TypeScript", icon: "dev/typescript" },

@@ -198,7 +198,7 @@
 	}
 
 	section {
-		@apply flex h-max min-h-screen min-w-full items-center justify-center px-2 py-8;
+		@apply flex h-max min-h-screen min-w-full items-center justify-center px-2 py-16 md:py-24;
 	}
 
 	section:nth-of-type(even) {
