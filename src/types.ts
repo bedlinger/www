@@ -2,10 +2,14 @@ export interface UI {
 	lang: string;
 	title: string;
 	description: string;
-	header: { logo: { href: string }; nav: { name: string; href: string }[] };
+	header: {
+		logo: { href: string; image: Image };
+		nav: { name: string; href: string }[];
+	};
 	index: {
 		hero: { title: string; text: string };
 		about: {
+			headshot: Image;
 			country: string;
 			age: number;
 			skills: {
@@ -25,6 +29,25 @@ export interface UI {
 				text: string;
 			};
 		};
+		projects: {
+			heading: string;
+			projects: {
+				title: string;
+				description: string;
+				technologies: Icon[];
+				contributors?: { name: string; href: string }[];
+				github: {
+					buttonText: string;
+					href: string;
+				};
+				liveUrl?: string;
+				images: Image[];
+				role: string;
+				challenge: string;
+				process: string;
+				result: string;
+			}[];
+		};
 	};
 	error404?: {
 		text: string;
@@ -38,6 +61,11 @@ export interface UI {
 			href: string;
 		};
 	};
+}
+
+export interface Image {
+	src: string;
+	alt: string;
 }
 
 export interface Icon {

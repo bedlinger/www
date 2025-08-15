@@ -1,28 +1,31 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
+import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
-import profileImage from "../assets/profile.jpeg";
 import type { UI } from "../types";
 
 interface Props {
 	about: UI["index"]["about"];
 }
 const { about } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/*.{jpeg,jpg,png,gif}",
+);
 ---
 
 <section id="about">
-	<div class="grid max-w-11/12 grid-cols-1 items-center gap-12 xl:max-w-9/12">
+	<div class="width-limit grid grid-cols-1 items-center gap-12">
 		<div class="flex flex-row items-center justify-start gap-6 md:gap-12">
 			<Image
-				src={profileImage}
-				alt="Headshot Benjamin Edlinger"
+				src={images[about.headshot.src]()}
+				alt={about.headshot.alt}
 				class="h-24 w-24 rounded-3xl sm:h-28 sm:w-28 md:h-36 md:w-36 lg:h-48 lg:w-48"
 			/>
 			<div class="flex flex-col items-start justify-center gap-1">
 				<h2 class="mb-0 whitespace-nowrap md:whitespace-normal">
 					Benjamin Edlinger
 				</h2>
-				<p class="text-primary-500/80">
+				<p>
 					Developer | <span class="hidden xl:inline-block"
 						>Spillern,&nbsp;
 					</span>{about.country} | {about.age}
@@ -34,7 +37,7 @@ const { about } = Astro.props;
 			<div class="grid grid-rows-1 gap-6 xl:grid-cols-3 xl:gap-10">
 				{
 					about.skills.skills.map((skill) => (
-						<div class="border-primary-500/80 flex h-full w-full flex-col justify-center rounded-2xl border-3 px-6 py-6">
+						<div class="primary-border flex h-full w-full flex-col justify-center">
 							<h4 class="text-center">{skill}</h4>
 						</div>
 					))
@@ -46,9 +49,9 @@ const { about } = Astro.props;
 			<div class="grid grid-rows-1 gap-6 xl:grid-cols-3 xl:gap-10">
 				{
 					about.achievements.achievements.map((achievement) => (
-						<div class="border-primary-500/80 h-full w-full rounded-2xl border-3 px-6 py-6">
+						<div class="primary-border h-full w-full">
 							<h4 class="xl:mb-3">{achievement.title}</h4>
-							<p class="text-primary-500/80">{achievement.description}</p>
+							<p>{achievement.description}</p>
 						</div>
 					))
 				}
@@ -56,11 +59,11 @@ const { about } = Astro.props;
 		</div>
 		<div>
 			<h3 class="mb-3">{about.hobbies.heading}</h3>
-			<p class="text-primary-500/80">{about.hobbies.text}</p>
+			<p>{about.hobbies.text}</p>
 		</div>
 		<div class="flex flex-col">
 			<h3 class="mb-3">{about.connect.heading}</h3>
-			<p class="text-primary-500/80 mb-1">
+			<p class="mb-1">
 				{about.connect.text}
 			</p>
 			<SocialLinks />

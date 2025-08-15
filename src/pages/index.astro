@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
+import Projects from "../components/Projects.astro";
 import { de } from "../i18n";
 ---
 
@@ -14,4 +15,5 @@ import { de } from "../i18n";
 >
 	<Hero hero={de.index.hero} />
 	<About about={de.index.about} />
+	<Projects projects={de.index.projects} />
 </Layout>

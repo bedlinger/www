@@ -1,0 +1,120 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import type { Image as ImageType } from "../types";
+
+interface Props {
+	images: ImageType[];
+	class?: string;
+}
+const { images, class: className } = Astro.props;
+
+const allImages = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/**/*.{jpeg,jpg,png,gif,webp}",
+);
+---
+
+<div
+	class:list={["carousel-container group relative", className]}
+	data-carousel
+>
+	<div
+		class="carousel-wrapper scrollbar-hide flex snap-x snap-mandatory overflow-x-auto scroll-smooth"
+		data-carousel-wrapper
+	>
+		{
+			images.map((image) => {
+				if (!allImages[image.src])
+					throw new Error(
+						`"${image.src}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`,
+					);
+				return (
+					<div class="carousel-item w-full flex-shrink-0 snap-center snap-always">
+						<Image
+							src={allImages[image.src]()}
+							alt={image.alt}
+							class="h-full w-full"
+						/>
+					</div>
+				);
+			})
+		}
+	</div>
+
+	<div
+		class="absolute inset-y-0 left-0 flex items-center justify-start pl-6 opacity-0 transition-opacity group-hover:opacity-100"
+	>
+		<button
+			class="carousel-control bg-primary-950/50 hover:bg-primary-950/75 rounded-full p-2 text-white focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+			data-carousel-button="prev"
+		>
+			<Icon name="arrow-left" class="text-primary-200 h-6 w-6" />
+		</button>
+	</div>
+
+	<div
+		class="absolute inset-y-0 right-0 flex items-center justify-end pr-6 opacity-0 transition-opacity group-hover:opacity-100"
+	>
+		<button
+			class="carousel-control bg-primary-950/50 hover:bg-primary-950/75 rounded-full p-2 text-white focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+			data-carousel-button="next"
+		>
+			<Icon name="arrow-right" class="text-primary-200 h-6 w-6" />
+		</button>
+	</div>
+</div>
+
+<style>
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none;
+	}
+	.scrollbar-hide {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+</style>
+
+<script>
+	document.querySelectorAll("[data-carousel]").forEach((carouselContainer) => {
+		const wrapper = carouselContainer.querySelector(
+			"[data-carousel-wrapper]",
+		) as HTMLElement | null;
+		const prevButton = carouselContainer.querySelector(
+			"[data-carousel-button='prev']",
+		) as HTMLButtonElement | null;
+		const nextButton = carouselContainer.querySelector(
+			"[data-carousel-button='next']",
+		) as HTMLButtonElement | null;
+
+		if (!wrapper || !prevButton || !nextButton) return;
+
+		const updateButtons = () => {
+			const tolerance = 1;
+			const isAtStart = wrapper.scrollLeft <= tolerance;
+			const isAtEnd =
+				wrapper.scrollLeft + wrapper.clientWidth >=
+				wrapper.scrollWidth - tolerance;
+
+			prevButton.disabled = isAtStart;
+			nextButton.disabled = isAtEnd;
+		};
+
+		prevButton.addEventListener("click", () => {
+			wrapper.scrollBy({
+				left: -wrapper.clientWidth,
+				behavior: "smooth",
+			});
+		});
+
+		nextButton.addEventListener("click", () => {
+			wrapper.scrollBy({
+				left: wrapper.clientWidth,
+				behavior: "smooth",
+			});
+		});
+
+		wrapper.addEventListener("scroll", updateButtons);
+		updateButtons();
+	});
+</script>
