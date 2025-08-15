@@ -137,51 +137,51 @@ export const en: UI = {
 					},
 					images: [
 						{
-							src: "/src/assets/sustAInableEducation/01_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/01_sustAInableEducation.png",
 							alt: "The landing page of the sustAInableEducation app, showing a dialog box to join an 'EcoSpace' by entering a 6-digit code.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/02_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/02_sustAInableEducation.png",
 							alt: "The detailed overview of a EcoSpace titled 'Nachhaltige Städte und Gemeinden', showing story parts, options, and participants.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/03_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/03_sustAInableEducation.png",
 							alt: "The EcoSpace creation screen where a user can select a theme based on the Sustainable Development Goals (SDGs).",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/04_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/04_sustAInableEducation.png",
 							alt: "The configuration settings for creating a new EcoSpace, including fields for decision points, target group, and voting time.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/05_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/05_sustAInableEducation.png",
 							alt: "An interactive story part within an EcoSpace, showing the beginning of a narrative and four decision options for the user.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/06_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/06_sustAInableEducation.png",
 							alt: "An AI-generated image within a story, depicting a diverse group of students standing together in a classroom setting.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/07_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/07_sustAInableEducation.png",
 							alt: "The results screen of an EcoSpace, summarizing the story's outcome and listing the positive and negative choices made.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/08_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/08_sustAInableEducation.png",
 							alt: "The 'Learnings' and 'Discussion Questions' section of the EcoSpace results, designed to encourage reflection.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/09_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/09_sustAInableEducation.png",
 							alt: "The first step of the quiz creation process, where the user selects a completed EcoSpace to base the quiz on.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/10_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/10_sustAInableEducation.png",
 							alt: "The second step of quiz creation, showing settings for question types and the total number of questions.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/11_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/11_sustAInableEducation.png",
 							alt: "A quiz question screen from the sustAInableEducation app, asking how students implemented a sustainability project, with four multiple-choice options.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/12_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/12_sustAInableEducation.png",
 							alt: "The user account page in the sustAInableEducation app, displaying the profile picture, username, email, and options to change password or generate a new profile picture.",
 						},
 					],
@@ -340,51 +340,51 @@ export const de: UI = {
 					},
 					images: [
 						{
-							src: "/src/assets/sustAInableEducation/01_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/01_sustAInableEducation.png",
 							alt: "Die Startseite der sustAInableEducation-App, die ein Dialogfeld zur Teilnahme an einem 'EcoSpace' durch Eingabe eines 6-stelligen Codes anzeigt.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/02_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/02_sustAInableEducation.png",
 							alt: "Die Detailansicht eines EcoSpace mit dem Titel 'Nachhaltige Städte und Gemeinden', die Story-Abschnitte, Optionen und Teilnehmer anzeigt.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/03_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/03_sustAInableEducation.png",
 							alt: "Der Erstellungsbildschirm für einen EcoSpace, auf dem ein Benutzer ein Thema basierend auf den Zielen für nachhaltige Entwicklung (SDGs) auswählen kann.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/04_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/04_sustAInableEducation.png",
 							alt: "Die Konfigurationseinstellungen zum Erstellen eines neuen EcoSpace, einschließlich Feldern für Entscheidungspunkte, Zielgruppe und Abstimmungszeit.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/05_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/05_sustAInableEducation.png",
 							alt: "Ein interaktiver Story-Teil innerhalb eines EcoSpace, der den Anfang einer Erzählung und vier Entscheidungsoptionen für den Benutzer zeigt.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/06_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/06_sustAInableEducation.png",
 							alt: "Ein KI-generiertes Bild innerhalb einer Geschichte, das eine vielfältige Gruppe von Schülern in einem Klassenzimmer darstellt.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/07_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/07_sustAInableEducation.png",
 							alt: "Der Ergebnisbildschirm eines EcoSpace, der das Ergebnis der Geschichte zusammenfasst und die getroffenen positiven und negativen Entscheidungen auflistet.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/08_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/08_sustAInableEducation.png",
 							alt: "Der Abschnitt 'Erkenntnisse' und 'Diskussionsfragen' der EcoSpace-Ergebnisse, der zur Reflexion anregen soll.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/09_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/09_sustAInableEducation.png",
 							alt: "Der erste Schritt der Quiz-Erstellung, bei dem der Benutzer einen abgeschlossenen EcoSpace als Grundlage für das Quiz auswählt.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/10_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/10_sustAInableEducation.png",
 							alt: "Der zweite Schritt der Quiz-Erstellung, der Einstellungen für Fragetypen und die Gesamtzahl der Fragen anzeigt.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/11_sustAInableEducation.png",
-							alt: "Ein Quiz-Fragebildschirm aus der sustAInableEducation-App, der fragt, wie Schüler ein Nachhaltigkeitsprojekt umgesetzt haben, mit vier Multiple-Choice-Optionen.",
+							src: "/src/assets/sustainableeducation/11_sustAInableEducation.png",
+							alt: "Ein Quiz-Fragebildschirm aus der sustainableeducation-App, der fragt, wie Schüler ein Nachhaltigkeitsprojekt umgesetzt haben, mit vier Multiple-Choice-Optionen.",
 						},
 						{
-							src: "/src/assets/sustAInableEducation/12_sustAInableEducation.png",
+							src: "/src/assets/sustainableeducation/12_sustAInableEducation.png",
 							alt: "Die Benutzerkontoseite in der sustAInableEducation-App, die Profilbild, Benutzername, E-Mail und Optionen zum Ändern des Passworts oder zum Generieren eines neuen Profilbilds anzeigt.",
 						},
 					],
