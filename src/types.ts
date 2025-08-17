@@ -48,9 +48,9 @@ export interface UI {
 					href: string;
 				};
 				images: Image[];
-				role: {
+				roles: {
 					heading: string;
-					role: string;
+					roles?: string[];
 				};
 			}[];
 		};

@@ -98,9 +98,9 @@ export const en: UI = {
 							alt: "A user persona card for Ethan Green, a 25-year-old environmental science graduate student. It includes his goals, motivations, hobbies, experience, and challenges.",
 						},
 					],
-					role: {
-						heading: "Role",
-						role: "Sole Developer & Designer",
+					roles: {
+						heading: "Roles",
+						roles: ["Sole Developer", "Designer"],
 					},
 				},
 				{
@@ -185,9 +185,9 @@ export const en: UI = {
 							alt: "The user account page in the sustAInableEducation app, displaying the profile picture, username, email, and options to change password or generate a new profile picture.",
 						},
 					],
-					role: {
-						heading: "Role",
-						role: "Project Lead & AI Story Developer",
+					roles: {
+						heading: "Roles",
+						roles: ["Project Lead", "AI Story Developer"],
 					},
 				},
 			],
@@ -298,9 +298,9 @@ export const de: UI = {
 							alt: "Eine Nutzerpersona-Karte für Ethan Green, einen 25-jährigen Masterstudenten der Umweltwissenschaften. Sie enthält seine Ziele, Motivationen, Hobbys, Erfahrungen und Herausforderungen.",
 						},
 					],
-					role: {
-						heading: "Rolle",
-						role: "Entwickler & Designer",
+					roles: {
+						heading: "Rollen",
+						roles: ["Entwickler", "Designer"],
 					},
 				},
 				{
@@ -385,9 +385,9 @@ export const de: UI = {
 							alt: "Die Benutzerkontoseite in der sustAInableEducation-App, die Profilbild, Benutzername, E-Mail und Optionen zum Ändern des Passworts oder zum Generieren eines neuen Profilbilds anzeigt.",
 						},
 					],
-					role: {
-						heading: "Rolle",
-						role: "Projektleitung & KI-Story-Entwickler",
+					roles: {
+						heading: "Rollen",
+						roles: ["Projektleitung", "KI-Story-Entwickler"],
 					},
 				},
 			],
