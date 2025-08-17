@@ -306,7 +306,7 @@ export const de: UI = {
 				{
 					title: "sustAInableEducation",
 					description:
-						"Meine Lernplattform, die als Diplomarbeit entwickelt wurde, um die Herausforderung der Nachhaltigkeitsvermittlung zu meistern. Sie nutzt KI-gestütztes interaktives Storytelling und Quizze, um personalisierte, spielerische Lernerfahrungen für Schüler zu schaffen und komplexe Themen wie die SDGs spannend und zugänglich zu machen.",
+						"Eine Lernplattform, die als Diplomarbeit entwickelt wurde, um die Herausforderung der Nachhaltigkeitsvermittlung zu meistern. Sie nutzt KI-gestütztes interaktives Storytelling und Quizze, um personalisierte, spielerische Lernerfahrungen für Schüler zu schaffen und komplexe Themen wie die SDGs spannend und zugänglich zu machen.",
 					technologies: [
 						{ name: "Nuxt", icon: "dev/nuxt" },
 						{ name: "TypeScript", icon: "dev/typescript" },
