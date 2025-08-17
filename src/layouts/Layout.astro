@@ -3,7 +3,7 @@ import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { SEO, type SEOProps } from "astro-seo";
-import { getRelativeLocaleUrl } from "astro:i18n";
+import { getAbsoluteLocaleUrl } from "astro:i18n";
 import { de, en } from "../i18n";
 import type { UI } from "../types";
 
@@ -25,8 +25,8 @@ const seo: SEOProps = {
 		{
 			href:
 				lang == en.lang
-					? getRelativeLocaleUrl(de.lang)
-					: getRelativeLocaleUrl(en.lang),
+					? getAbsoluteLocaleUrl(de.lang)
+					: getAbsoluteLocaleUrl(en.lang),
 			hrefLang: lang == en.lang ? de.lang : en.lang,
 		},
 	],
