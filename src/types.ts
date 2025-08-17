@@ -35,9 +35,9 @@ export interface UI {
 				title: string;
 				description: string;
 				technologies: Icon[];
-				contributors?: {
+				members?: {
 					heading: string;
-					contributors: { name: string; href: string }[];
+					members: { name: string; href: string }[];
 				};
 				github: {
 					buttonText: string;

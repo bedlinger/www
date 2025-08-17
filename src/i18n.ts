@@ -114,9 +114,9 @@ export const en: UI = {
 						{ name: ".NET Core", icon: "dev/dotnet" },
 						{ name: "Llama 4", icon: "dev/llama" },
 					],
-					contributors: {
+					members: {
 						heading: "Contributors",
-						contributors: [
+						members: [
 							{
 								name: "Kacper Bohaczyk",
 								href: "https://www.linkedin.com/in/kacper-bohaczyk-68127a258/",
@@ -314,9 +314,9 @@ export const de: UI = {
 						{ name: ".NET Core", icon: "dev/dotnet" },
 						{ name: "Llama 4", icon: "dev/llama" },
 					],
-					contributors: {
+					members: {
 						heading: "Contributors",
-						contributors: [
+						members: [
 							{
 								name: "Kacper Bohaczyk",
 								href: "https://www.linkedin.com/in/kacper-bohaczyk-68127a258/",
