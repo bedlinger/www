@@ -40,7 +40,10 @@ export interface UI {
 					buttonText: string;
 					href: string;
 				};
-				liveUrl?: string;
+				liveUrl?: {
+					buttonText: string;
+					href: string;
+				};
 				images: Image[];
 				role: string;
 			}[];
