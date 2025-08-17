@@ -115,7 +115,7 @@ export const en: UI = {
 						{ name: "Llama 4", icon: "dev/llama" },
 					],
 					members: {
-						heading: "Contributors",
+						heading: "Team Members",
 						members: [
 							{
 								name: "Kacper Bohaczyk",
@@ -315,7 +315,7 @@ export const de: UI = {
 						{ name: "Llama 4", icon: "dev/llama" },
 					],
 					members: {
-						heading: "Contributors",
+						heading: "Teammitglieder",
 						members: [
 							{
 								name: "Kacper Bohaczyk",
