@@ -15,30 +15,58 @@ const { projects } = Astro.props;
 			{projects.heading}
 		</h2>
 
-		<div class="flex flex-col gap-16 lg:gap-24">
+		<div class="flex flex-col gap-20 lg:gap-24">
 			{
 				projects.projects.map((project) => (
-					<div class="grid grid-cols-1 items-center gap-8 2xl:grid-cols-2 2xl:gap-12">
+					<div class="grid grid-cols-1 items-center gap-4 2xl:grid-cols-2 2xl:gap-12">
 						<ImageCarousel images={project.images} class="rounded-xl" />
 						<div class="flex flex-col items-start gap-4">
 							<h3>{project.title}</h3>
 							<p>{project.description}</p>
 
-							<div class="mt-2 flex flex-row flex-wrap items-center gap-3">
+							<div class="flex flex-row flex-wrap items-center gap-x-4 gap-y-2">
+								<h4 class="sr-only">Technologies</h4>
 								{project.technologies.map((technology) => (
 									<div class="bg-primary-700/45 flex flex-row items-center justify-evenly gap-2.5 rounded-3xl px-4 py-1.5">
 										<Icon
 											name={technology.icon}
 											class="h-5 w-5 text-white lg:h-7 lg:w-7"
 										/>
-										<p class="text-base/tight text-white md:text-lg lg:text-xl">
-											{technology.name}
-										</p>
+										<p class="text-white lg:text-lg">{technology.name}</p>
 									</div>
 								))}
 							</div>
+							<div class="flex flex-row flex-wrap items-center gap-x-4 gap-y-2">
+								<h4>{project.roles.heading}:</h4>
+								{project.roles.roles?.map((role) => (
+									<p class="bg-primary-700/45 text-primary-300 rounded-3xl px-3 py-1 lg:text-lg">
+										{role}
+									</p>
+								))}
+							</div>
+							{project.members && (
+								<div class="flex flex-row flex-wrap items-center gap-x-4 gap-y-2">
+									<h4>{project.members.heading}:</h4>
+									{project.members.members.map((member) => (
+										<a
+											target="_blank"
+											rel="noopener noreferrer"
+											href={member.href}
+											class="bg-primary-700/45 text-primary-300 hover:bg-primary-700 rounded-3xl px-3 py-1 no-underline transition-colors hover:text-white lg:text-lg"
+										>
+											<div class="flex flex-row items-center gap-1.5 md:gap-2.5 lg:gap-2">
+												<Icon
+													name="link"
+													class="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7"
+												/>
+												{member.name}
+											</div>
+										</a>
+									))}
+								</div>
+							)}
 
-							<div class="mt-6 flex flex-row items-center justify-start gap-4">
+							<div class="mt-5 flex flex-row items-center justify-start gap-4">
 								<a
 									class="button-small"
 									target="_blank"
@@ -48,11 +76,29 @@ const { projects } = Astro.props;
 									<div class="flex flex-row items-center gap-1.5 md:gap-2.5 lg:gap-2">
 										<Icon
 											name="github"
-											class="md:lg-7 h-6 w-6 md:h-7 lg:h-8 lg:w-8"
+											class="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7"
 										/>
 										<span class="text-white">{project.github.buttonText}</span>
 									</div>
 								</a>
+								{project.liveUrl && (
+									<a
+										class="button-small"
+										target="_blank"
+										rel="noopener noreferrer"
+										href={project.liveUrl.href}
+									>
+										<div class="flex flex-row items-center gap-1.5 md:gap-2.5 lg:gap-2">
+											<Icon
+												name="demo"
+												class="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7"
+											/>
+											<span class="text-white">
+												{project.liveUrl.buttonText}
+											</span>
+										</div>
+									</a>
+								)}
 							</div>
 						</div>
 					</div>
