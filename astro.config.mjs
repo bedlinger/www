@@ -9,6 +9,8 @@ import icon from "astro-icon";
 
 import node from "@astrojs/node";
 
+import playformCompress from "@playform/compress";
+
 // https://astro.build/config
 export default defineConfig({
 	vite: {
@@ -38,6 +40,7 @@ export default defineConfig({
 		icon({
 			iconDir: "src/assets/icons",
 		}),
+		playformCompress(),
 	],
 
 	adapter: node({

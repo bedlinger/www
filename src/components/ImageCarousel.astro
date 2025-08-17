@@ -48,6 +48,7 @@ const allImages = import.meta.glob<{ default: ImageMetadata }>(
 		<button
 			class="carousel-control bg-primary-950/50 hover:bg-primary-950/75 rounded-full p-2 text-white focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
 			data-carousel-button="prev"
+			aria-label="Previous Image"
 		>
 			<Icon name="arrow-left" class="text-primary-200 h-6 w-6" />
 		</button>
@@ -59,6 +60,7 @@ const allImages = import.meta.glob<{ default: ImageMetadata }>(
 		<button
 			class="carousel-control bg-primary-950/50 hover:bg-primary-950/75 rounded-full p-2 text-white focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
 			data-carousel-button="next"
+			aria-label="Next Image"
 		>
 			<Icon name="arrow-right" class="text-primary-200 h-6 w-6" />
 		</button>

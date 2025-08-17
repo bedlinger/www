@@ -157,8 +157,8 @@
 
 	.button,
 	.button-small {
-		@apply bg-primary-700 rounded-xl shadow-md;
-		@apply hover:bg-primary-800 transition hover:-translate-y-0.5 hover:text-white hover:shadow-lg;
+		@apply bg-primary-900 rounded-xl shadow-md;
+		@apply hover:bg-primary-900/90 transition hover:-translate-y-0.5 hover:text-white hover:shadow-lg;
 		@apply active:translate-y-0 active:shadow-md;
 	}
 
