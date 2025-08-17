@@ -17,24 +17,43 @@ const allImages = import.meta.glob<{ default: ImageMetadata }>(
 
 <div
 	class:list={["carousel-container group relative", className]}
+	role="region"
+	aria-label="Image Carousel"
+	aria-roledescription="carousel"
 	data-carousel
 >
+	<div
+		class="sr-only"
+		aria-live="polite"
+		aria-atomic="true"
+		data-carousel-status
+	>
+		Item 1 of {images.length}
+	</div>
+
 	<div
 		class="carousel-wrapper scrollbar-hide flex snap-x snap-mandatory overflow-x-auto scroll-smooth"
 		data-carousel-wrapper
 	>
 		{
-			images.map((image) => {
-				if (!allImages[image.src])
-					throw new Error(
-						`"${image.src}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`,
-					);
+			images.map((image, index) => {
+				if (!allImages[image.src]) {
+					throw new Error(`Image not found: "${image.src}"`);
+				}
 				return (
-					<div class="carousel-item w-full flex-shrink-0 snap-center snap-always">
+					<div
+						class="carousel-item w-full flex-shrink-0 snap-center snap-always"
+						role="group"
+						aria-roledescription="slide"
+						aria-label={`Item ${index + 1} of ${images.length}`}
+					>
 						<Image
 							src={allImages[image.src]()}
 							alt={image.alt}
-							class="h-full w-full"
+							class="w-full"
+							decoding="async"
+							widths={[400, 800, 1200]}
+							sizes="(max-width: 800px) 100vw, 800px"
 						/>
 					</div>
 				);
@@ -43,10 +62,10 @@ const allImages = import.meta.glob<{ default: ImageMetadata }>(
 	</div>
 
 	<div
-		class="absolute inset-y-0 left-0 flex items-center justify-start pl-6 opacity-0 transition-opacity group-hover:opacity-100"
+		class="absolute inset-y-0 left-0 flex items-center justify-start pl-4 opacity-0 transition-opacity group-hover:opacity-100 md:pl-6"
 	>
 		<button
-			class="carousel-control bg-primary-950/50 hover:bg-primary-950/75 rounded-full p-2 text-white focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+			class="carousel-control bg-primary-950/50 hover:bg-primary-950/75 rounded-full p-2 text-white transition focus:outline-none disabled:cursor-not-allowed disabled:opacity-30"
 			data-carousel-button="prev"
 			aria-label="Previous Image"
 		>
@@ -55,15 +74,30 @@ const allImages = import.meta.glob<{ default: ImageMetadata }>(
 	</div>
 
 	<div
-		class="absolute inset-y-0 right-0 flex items-center justify-end pr-6 opacity-0 transition-opacity group-hover:opacity-100"
+		class="absolute inset-y-0 right-0 flex items-center justify-end pr-4 opacity-0 transition-opacity group-hover:opacity-100 md:pr-6"
 	>
 		<button
-			class="carousel-control bg-primary-950/50 hover:bg-primary-950/75 rounded-full p-2 text-white focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+			class="carousel-control bg-primary-950/50 hover:bg-primary-950/75 rounded-full p-2 text-white transition focus:outline-none disabled:cursor-not-allowed disabled:opacity-30"
 			data-carousel-button="next"
 			aria-label="Next Image"
 		>
 			<Icon name="arrow-right" class="text-primary-200 h-6 w-6" />
 		</button>
+	</div>
+
+	<div
+		class="absolute -bottom-5 left-1/2 flex -translate-x-1/2 space-x-2"
+		data-carousel-dots
+	>
+		{
+			images.map((_, index) => (
+				<button
+					class="bg-primary-200/50 hover:bg-primary-200 h-3 w-3 rounded-full transition"
+					data-carousel-dot={index}
+					aria-label={`Go to slide ${index + 1}`}
+				/>
+			))
+		}
 	</div>
 </div>
 
@@ -79,44 +113,98 @@ const allImages = import.meta.glob<{ default: ImageMetadata }>(
 
 <script>
 	document.querySelectorAll("[data-carousel]").forEach((carouselContainer) => {
-		const wrapper = carouselContainer.querySelector(
+		const wrapper = carouselContainer.querySelector<HTMLElement>(
 			"[data-carousel-wrapper]",
-		) as HTMLElement | null;
-		const prevButton = carouselContainer.querySelector(
+		);
+		const prevButton = carouselContainer.querySelector<HTMLButtonElement>(
 			"[data-carousel-button='prev']",
-		) as HTMLButtonElement | null;
-		const nextButton = carouselContainer.querySelector(
+		);
+		const nextButton = carouselContainer.querySelector<HTMLButtonElement>(
 			"[data-carousel-button='next']",
-		) as HTMLButtonElement | null;
+		);
+		const dotsContainer = carouselContainer.querySelector<HTMLElement>(
+			"[data-carousel-dots]",
+		);
+		const statusElement = carouselContainer.querySelector<HTMLElement>(
+			"[data-carousel-status]",
+		);
+		const slides = Array.from(wrapper?.children || []) as HTMLElement[];
+		const totalSlides = slides.length;
 
-		if (!wrapper || !prevButton || !nextButton) return;
+		if (
+			!wrapper ||
+			!prevButton ||
+			!nextButton ||
+			!dotsContainer ||
+			!statusElement
+		)
+			return;
 
-		const updateButtons = () => {
-			const tolerance = 1;
-			const isAtStart = wrapper.scrollLeft <= tolerance;
-			const isAtEnd =
-				wrapper.scrollLeft + wrapper.clientWidth >=
-				wrapper.scrollWidth - tolerance;
+		let currentIndex = 0;
 
-			prevButton.disabled = isAtStart;
-			nextButton.disabled = isAtEnd;
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						const index = slides.indexOf(entry.target as HTMLElement);
+						currentIndex = index;
+						updateUI();
+					}
+				});
+			},
+			{
+				root: wrapper,
+				threshold: 0.5,
+			},
+		);
+
+		slides.forEach((slide) => observer.observe(slide));
+
+		const updateUI = () => {
+			prevButton.disabled = currentIndex === 0;
+			nextButton.disabled = currentIndex === totalSlides - 1;
+
+			statusElement.textContent = `Item ${currentIndex + 1} of ${totalSlides}`;
+
+			dotsContainer.querySelectorAll("button").forEach((dot, index) => {
+				if (index === currentIndex) {
+					dot.classList.add("bg-primary-200");
+					dot.classList.remove("bg-primary-200/50");
+				} else {
+					dot.classList.remove("bg-primary-200");
+					dot.classList.add("bg-primary-200/50");
+				}
+			});
 		};
 
 		prevButton.addEventListener("click", () => {
-			wrapper.scrollBy({
-				left: -wrapper.clientWidth,
+			const prevSlideIndex = Math.max(0, currentIndex - 1);
+			slides[prevSlideIndex]?.scrollIntoView({
 				behavior: "smooth",
+				block: "nearest",
+				inline: "start",
 			});
 		});
 
 		nextButton.addEventListener("click", () => {
-			wrapper.scrollBy({
-				left: wrapper.clientWidth,
+			const nextSlideIndex = Math.min(totalSlides - 1, currentIndex + 1);
+			slides[nextSlideIndex]?.scrollIntoView({
 				behavior: "smooth",
+				block: "nearest",
+				inline: "start",
 			});
 		});
 
-		wrapper.addEventListener("scroll", updateButtons);
-		updateButtons();
+		dotsContainer.querySelectorAll("button").forEach((dot, index) => {
+			dot.addEventListener("click", () => {
+				slides[index]?.scrollIntoView({
+					behavior: "smooth",
+					block: "nearest",
+					inline: "start",
+				});
+			});
+		});
+
+		updateUI();
 	});
 </script>
