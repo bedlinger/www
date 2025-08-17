@@ -98,7 +98,10 @@ export const en: UI = {
 							alt: "A user persona card for Ethan Green, a 25-year-old environmental science graduate student. It includes his goals, motivations, hobbies, experience, and challenges.",
 						},
 					],
-					role: "Sole Developer & Designer",
+					role: {
+						heading: "Role",
+						role: "Sole Developer & Designer",
+					},
 				},
 				{
 					title: "sustAInableEducation",
@@ -111,20 +114,23 @@ export const en: UI = {
 						{ name: ".NET Core", icon: "dev/dotnet" },
 						{ name: "Llama 4", icon: "dev/llama" },
 					],
-					contributors: [
-						{
-							name: "Kacper Bohaczyk",
-							href: "https://www.linkedin.com/in/kacper-bohaczyk-68127a258/",
-						},
-						{
-							name: "Leander List",
-							href: "https://www.linkedin.com/in/leander-list-424110333/",
-						},
-						{
-							name: "Leo Mühlböck",
-							href: "https://www.linkedin.com/in/leo-m%C3%BChlb%C3%B6ck-1bb5b3229/",
-						},
-					],
+					contributors: {
+						heading: "Contributors",
+						contributors: [
+							{
+								name: "Kacper Bohaczyk",
+								href: "https://www.linkedin.com/in/kacper-bohaczyk-68127a258/",
+							},
+							{
+								name: "Leander List",
+								href: "https://www.linkedin.com/in/leander-list-424110333/",
+							},
+							{
+								name: "Leo Mühlböck",
+								href: "https://www.linkedin.com/in/leo-m%C3%BChlb%C3%B6ck-1bb5b3229/",
+							},
+						],
+					},
 					github: {
 						buttonText: "View on GitHub",
 						href: "https://github.com/sustAInableEducation/sustAInableEducation",
@@ -179,7 +185,10 @@ export const en: UI = {
 							alt: "The user account page in the sustAInableEducation app, displaying the profile picture, username, email, and options to change password or generate a new profile picture.",
 						},
 					],
-					role: "Project Lead & AI Story Developer",
+					role: {
+						heading: "Role",
+						role: "Project Lead & AI Story Developer",
+					},
 				},
 			],
 		},
@@ -289,7 +298,10 @@ export const de: UI = {
 							alt: "Eine Nutzerpersona-Karte für Ethan Green, einen 25-jährigen Masterstudenten der Umweltwissenschaften. Sie enthält seine Ziele, Motivationen, Hobbys, Erfahrungen und Herausforderungen.",
 						},
 					],
-					role: "Entwickler & Designer",
+					role: {
+						heading: "Rolle",
+						role: "Entwickler & Designer",
+					},
 				},
 				{
 					title: "sustAInableEducation",
@@ -302,20 +314,23 @@ export const de: UI = {
 						{ name: ".NET Core", icon: "dev/dotnet" },
 						{ name: "Llama 4", icon: "dev/llama" },
 					],
-					contributors: [
-						{
-							name: "Kacper Bohaczyk",
-							href: "https://www.linkedin.com/in/kacper-bohaczyk-68127a258/",
-						},
-						{
-							name: "Leander List",
-							href: "https://www.linkedin.com/in/leander-list-424110333/",
-						},
-						{
-							name: "Leo Mühlböck",
-							href: "https://www.linkedin.com/in/leo-m%C3%BChlb%C3%B6ck-1bb5b3229/",
-						},
-					],
+					contributors: {
+						heading: "Contributors",
+						contributors: [
+							{
+								name: "Kacper Bohaczyk",
+								href: "https://www.linkedin.com/in/kacper-bohaczyk-68127a258/",
+							},
+							{
+								name: "Leander List",
+								href: "https://www.linkedin.com/in/leander-list-424110333/",
+							},
+							{
+								name: "Leo Mühlböck",
+								href: "https://www.linkedin.com/in/leo-m%C3%BChlb%C3%B6ck-1bb5b3229/",
+							},
+						],
+					},
 					github: {
 						buttonText: "Auf GitHub ansehen",
 						href: "https://github.com/sustAInableEducation/sustAInableEducation",
@@ -370,7 +385,10 @@ export const de: UI = {
 							alt: "Die Benutzerkontoseite in der sustAInableEducation-App, die Profilbild, Benutzername, E-Mail und Optionen zum Ändern des Passworts oder zum Generieren eines neuen Profilbilds anzeigt.",
 						},
 					],
-					role: "Projektleitung & KI-Story-Entwickler",
+					role: {
+						heading: "Rolle",
+						role: "Projektleitung & KI-Story-Entwickler",
+					},
 				},
 			],
 		},

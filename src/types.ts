@@ -35,7 +35,10 @@ export interface UI {
 				title: string;
 				description: string;
 				technologies: Icon[];
-				contributors?: { name: string; href: string }[];
+				contributors?: {
+					heading: string;
+					contributors: { name: string; href: string }[];
+				};
 				github: {
 					buttonText: string;
 					href: string;
@@ -45,7 +48,10 @@ export interface UI {
 					href: string;
 				};
 				images: Image[];
-				role: string;
+				role: {
+					heading: string;
+					role: string;
+				};
 			}[];
 		};
 	};
