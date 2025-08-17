@@ -43,9 +43,6 @@ export interface UI {
 				liveUrl?: string;
 				images: Image[];
 				role: string;
-				challenge: string;
-				process: string;
-				result: string;
 			}[];
 		};
 	};
