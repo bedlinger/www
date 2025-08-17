@@ -48,17 +48,17 @@ export const en: UI = {
 					{
 						title: "Graduated with Distinction",
 						description:
-							"Achieved the highest honors from the prestigious TGM Vienna, recognizing outstanding performance in my technical IT education and final diploma project.",
+							"I graduated with distinction from the renowned TGM in Vienna. This top-tier result is a reflection of both my consistent academic performance and the successful development and defense of my comprehensive diploma thesis.",
 					},
 					{
 						title: "3rd Place, Jugend Innovativ",
 						description:
-							"Earned national recognition by leading the development of sustAIanbleEducation, an AI-powered platform that secured third place for its innovative impact.",
+							"My leadership in the development of sustAIanbleEducation, an innovative AI-powered learning platform, earned national recognition. Our project was awarded third place, a testament to its significant impact and successful implementation.",
 					},
 					{
 						title: "Academic Author",
 						description:
-							"Co-authored a formal research paper on our project's technical findings and educational impact, which was accepted for publication at the ICL 2025 conference.",
+							"I co-authored a scientific paper that was accepted at the ICL 2025 conference. The article details the technical findings and educational benefits of my diploma project, contributing our research to the academic community.",
 					},
 				],
 			},
@@ -251,17 +251,17 @@ export const de: UI = {
 					{
 						title: "Abschluss mit Auszeichnung",
 						description:
-							"Meinen Abschluss am renommierten TGM Wien habe ich für herausragende Leistungen in der IT-Ausbildung und meinem Diplomprojekt mit Auszeichnung erhalten.",
+							"Ich habe meine Matura am renommierten TGM in Wien mit ausgezeichnetem Erfolg abgeschlossen. Dieses Ergebnis spiegelt sowohl meine schulischen Leistungen als auch die erfolgreiche Entwicklung und Verteidigung meiner gesamten Diplomarbeit wider.",
 					},
 					{
 						title: "3. Platz, Jugend Innovativ",
 						description:
-							"Nationale Anerkennung für die Leitung und Entwicklung von sustAIanbleEducation, einer KI-Plattform, die für ihre innovative Wirkung den dritten Platz sicherte.",
+							"Meine Führungsrolle bei der Entwicklung von sustAIanbleEducation, einer innovativen KI-gestützten Lernplattform, wurde national anerkannt. Unser Projekt wurde mit dem dritten Platz ausgezeichnet, was seine bedeutende Wirkung und erfolgreiche Umsetzung belegt.",
 					},
 					{
 						title: "Akademischer Autor",
 						description:
-							"Mitautor eines wissenschaftlichen Artikels über die technischen Ergebnisse und den pädagogischen Nutzen unseres Projekts, angenommen für die ICL 2025 Konferenz.",
+							"Ich war Mitautor einer wissenschaftlichen Arbeit, die auf der ICL 2025-Konferenz angenommen wurde. Der Artikel beschreibt die technischen Erkenntnisse und pädagogischen Vorteile unseres Diplomprojekts und leistet damit einen Beitrag zur akademischen Gemeinschaft.",
 					},
 				],
 			},
