@@ -73,10 +73,8 @@ const formatLabel = (
 						<Image
 							src={allImages[image.src]()}
 							alt={image.alt}
-							class="w-full"
-							decoding="async"
-							widths={[400, 800, 1200]}
-							sizes="(max-width: 800px) 100vw, 800px"
+							class="rounded-xl"
+							quality="high"
 						/>
 					</div>
 				);
