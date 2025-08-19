@@ -7,6 +7,8 @@ interface Props {
 	projects: UI["index"]["projects"];
 }
 const { projects } = Astro.props;
+
+// TODO: Edit size of images and crop them
 ---
 
 <section id="projects">
@@ -19,7 +21,10 @@ const { projects } = Astro.props;
 			{
 				projects.projects.map((project) => (
 					<div class="grid grid-cols-1 items-center gap-12 2xl:grid-cols-2">
-						<ImageCarousel images={project.images} class="rounded-xl" />
+						<ImageCarousel
+							images={project.images}
+							imageCarouselLabels={projects.imageCarouselLabels}
+						/>
 						<div class="flex flex-col items-start gap-4">
 							<h3>{project.title}</h3>
 							<p>{project.description}</p>

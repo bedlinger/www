@@ -191,6 +191,13 @@ export const en: UI = {
 					},
 				},
 			],
+			imageCarouselLabels: {
+				carouselLabel: "Image Carousel",
+				imageLabel: "Image {image} of {max}",
+				previousImageLabel: "Previous Image",
+				nextImageLabel: "Next Image",
+				goToLabel: "Go to image {image}",
+			},
 		},
 	},
 	footer: {
@@ -391,6 +398,13 @@ export const de: UI = {
 					},
 				},
 			],
+			imageCarouselLabels: {
+				carouselLabel: "Bilder Carousel",
+				imageLabel: "Bild {image} von {max}",
+				previousImageLabel: "Vorheriges Bild",
+				nextImageLabel: "Nächstes Bild",
+				goToLabel: "Gehe zu Bild {image}",
+			},
 		},
 	},
 	error404: {

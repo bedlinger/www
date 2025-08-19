@@ -180,6 +180,15 @@
 		@apply max-w-11/12 xl:max-w-9/12;
 	}
 
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none;
+	}
+
+	.scrollbar-hide {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
 	ul,
 	ol {
 		@apply mb-4 pl-5;

@@ -35,6 +35,10 @@ export interface UI {
 				title: string;
 				description: string;
 				technologies: Icon[];
+				roles: {
+					heading: string;
+					roles?: string[];
+				};
 				members?: {
 					heading: string;
 					members: { name: string; href: string }[];
@@ -48,11 +52,14 @@ export interface UI {
 					href: string;
 				};
 				images: Image[];
-				roles: {
-					heading: string;
-					roles?: string[];
-				};
 			}[];
+			imageCarouselLabels: {
+				carouselLabel: string;
+				imageLabel: string;
+				previousImageLabel: string;
+				nextImageLabel: string;
+				goToLabel: string;
+			};
 		};
 	};
 	error404?: {
@@ -68,6 +75,18 @@ export interface UI {
 		};
 	};
 }
+
+type CreateUnion<
+	Max extends number,
+	Accumulator extends number[] = [],
+> = Accumulator["length"] extends Max
+	? Accumulator[number]
+	: CreateUnion<Max, [...Accumulator, Accumulator["length"]]>;
+
+export type IntRange<Min extends number, Max extends number> = Exclude<
+	CreateUnion<Max>,
+	CreateUnion<Min>
+>;
 
 export interface Image {
 	src: string;
