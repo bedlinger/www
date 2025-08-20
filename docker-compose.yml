@@ -1,16 +1,14 @@
 services:
   portfolio:
     build: .
-    expose:
-      - 80
-    container_name: "portfolio"
-    restart: "unless-stopped"
+    container_name: portfolio
+    restart: unless-stopped
     environment:
       VIRTUAL_HOST: "bedlinger.at,www.bedlinger.at"
       LETSENCRYPT_HOST: "bedlinger.at,www.bedlinger.at"
       GITHUB_PAT: ${PAT_HERE:-default}
     networks:
-      - "web"
+      - web
 
 networks:
   web:
