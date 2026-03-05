@@ -1,13 +1,20 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
 import type { UI } from "./types";
 
-const age = new Date().getFullYear() - 2006;
+const currentDate = new Date();
+const birthdate = new Date(2006, 4, 5); // date uses 0-indexed months so 4 = may
+const age = currentDate.getFullYear() - birthdate.getFullYear();
+const hasBirthdayPassedThisYear =
+	currentDate.getMonth() > birthdate.getMonth() ||
+	(currentDate.getMonth() === birthdate.getMonth() &&
+		currentDate.getDate() >= birthdate.getDate());
+
+const correctedAge = hasBirthdayPassedThisYear ? age : age - 1;
 
 export const en: UI = {
 	lang: "en",
 	title: "Benjamin Edlinger",
-	description:
-		"Benjamin Edlinger, a 19-year-old full-stack developer and project manager from Austria, specializes in the development of innovative web applications.",
+	description: `Benjamin Edlinger, a ${correctedAge}-year-old full-stack developer and project manager from Austria, specializes in the development of innovative web applications.`,
 	header: {
 		logo: {
 			href: getRelativeLocaleUrl("en"),
@@ -25,7 +32,7 @@ export const en: UI = {
 	index: {
 		hero: {
 			title: "Hi, I am Benjamin!",
-			text: "I'm a 19-year-old developer who brings innovative ideas to life with clean code and a user-focused mindset.",
+			text: `I'm a ${correctedAge}-year-old developer who brings innovative ideas to life with clean code and a user-focused mindset.`,
 		},
 		about: {
 			headshot: {
@@ -33,7 +40,7 @@ export const en: UI = {
 				alt: "Headshot Benjamin Edlinger",
 			},
 			country: "Austria",
-			age: age,
+			age: correctedAge,
 			skills: {
 				heading: "Core Skills",
 				skills: [
@@ -213,8 +220,7 @@ export const en: UI = {
 export const de: UI = {
 	lang: "de",
 	title: "Benjamin Edlinger",
-	description:
-		"Benjamin Edlinger, ein 19-jähriger Full-Stack-Entwickler und Projektmanager aus Österreich, ist auf die Entwicklung innovativer Webanwendungen spezialisiert.",
+	description: `Benjamin Edlinger, ein ${correctedAge}-jähriger Full-Stack-Entwickler und Projektmanager aus Österreich, ist auf die Entwicklung innovativer Webanwendungen spezialisiert.`,
 	header: {
 		logo: {
 			href: getRelativeLocaleUrl("de"),
@@ -232,7 +238,7 @@ export const de: UI = {
 	index: {
 		hero: {
 			title: "Hi, ich bin Benjamin!",
-			text: "Ich bin ein 19-jähriger Developer, der innovative Ideen mit Clean Code und einem nutzerzentrierten Ansatz zum Leben erweckt.",
+			text: `Ich bin ein ${correctedAge}-jähriger Developer, der innovative Ideen mit Clean Code und einem nutzerzentrierten Ansatz zum Leben erweckt.`,
 		},
 		about: {
 			headshot: {
@@ -240,7 +246,7 @@ export const de: UI = {
 				alt: "Profilbild Benjamin Edlinger",
 			},
 			country: "Österreich",
-			age: age,
+			age: correctedAge,
 			skills: {
 				heading: "Kernkompetenzen",
 				skills: [
