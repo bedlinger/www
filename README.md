@@ -57,4 +57,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-© 2025 Benjamin Edlinger. All rights reserved.
+© 2026 Benjamin Edlinger. All rights reserved.
