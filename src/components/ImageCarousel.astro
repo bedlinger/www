@@ -26,16 +26,36 @@ const formatLabel = (
 	}
 	return formatted;
 };
+
+const imageMetaList = await Promise.all(
+	images.map(async (image) => {
+		if (!allImages[image.src]) {
+			throw new Error(`Image not found: "${image.src}"`);
+		}
+		const mod = await allImages[image.src]();
+		const meta = mod.default;
+		const isPortrait = meta.height > meta.width;
+		return { image, meta, isPortrait };
+	}),
+);
+
+const portraitCount = imageMetaList.filter((i) => i.isPortrait).length;
+const isPortraitCarousel = portraitCount > images.length / 2;
 ---
 
 <div
-	class:list={["carousel-container group relative", className]}
+	class:list={[
+		"carousel-container group relative",
+		isPortraitCarousel ? "portrait-carousel" : "landscape-carousel",
+		className,
+	]}
 	role="region"
 	aria-label={imageCarouselLabels.carouselLabel}
 	aria-roledescription="carousel"
 	data-carousel
 	data-label-image={imageCarouselLabels.imageLabel}
 	data-label-goto={imageCarouselLabels.goToLabel}
+	data-portrait={isPortraitCarousel ? "true" : "false"}
 >
 	<div
 		class="sr-only"
@@ -52,36 +72,44 @@ const formatLabel = (
 	</div>
 
 	<div
-		class="carousel-wrapper scrollbar-hide flex snap-x snap-mandatory overflow-x-auto scroll-smooth"
+		class:list={[
+			"carousel-wrapper scrollbar-hide snap-x snap-mandatory overflow-x-auto scroll-smooth",
+			isPortraitCarousel ? "flex items-center gap-3 px-4 py-2" : "flex",
+		]}
 		data-carousel-wrapper
 	>
 		{
-			images.map((image, index) => {
-				if (!allImages[image.src]) {
-					throw new Error(`Image not found: "${image.src}"`);
-				}
-				return (
-					<div
-						class="carousel-item w-full flex-shrink-0 snap-center snap-always"
-						role="group"
-						aria-roledescription="slide"
-						aria-label={formatLabel(imageCarouselLabels.imageLabel, {
-							image: index + 1,
-							max: images.length,
-						})}
-					>
-						<Image
-							src={allImages[image.src]()}
-							alt={image.alt}
-							class="rounded-xl"
-							quality="high"
-						/>
-					</div>
-				);
-			})
+			imageMetaList.map(({ image, isPortrait }, index) => (
+				<div
+					class:list={[
+						"carousel-item flex-shrink-0 snap-center snap-always",
+						isPortraitCarousel ? "portrait-item" : "w-full",
+					]}
+					role="group"
+					aria-roledescription="slide"
+					aria-label={formatLabel(imageCarouselLabels.imageLabel, {
+						image: index + 1,
+						max: images.length,
+					})}
+					data-portrait-item={isPortrait ? "true" : "false"}
+				>
+					<Image
+						src={allImages[image.src]()}
+						alt={image.alt}
+						class:list={[
+							"rounded-xl object-contain",
+							isPortraitCarousel
+								? "portrait-image mx-auto h-full w-auto shadow-lg"
+								: "w-full",
+						]}
+						quality="high"
+					/>
+				</div>
+			))
 		}
 	</div>
 
+	<!-- Left arrow -->
 	<div
 		class="absolute inset-y-0 left-0 flex items-center justify-start pl-4 opacity-0 transition-opacity group-hover:opacity-100 md:pl-6"
 	>
@@ -94,6 +122,7 @@ const formatLabel = (
 		</button>
 	</div>
 
+	<!-- Right arrow -->
 	<div
 		class="absolute inset-y-0 right-0 flex items-center justify-end pr-4 opacity-0 transition-opacity group-hover:opacity-100 md:pr-6"
 	>
@@ -106,6 +135,7 @@ const formatLabel = (
 		</button>
 	</div>
 
+	<!-- Dots -->
 	<div
 		class="absolute -bottom-5 left-1/2 flex -translate-x-1/2 space-x-5"
 		data-carousel-dots
@@ -123,6 +153,39 @@ const formatLabel = (
 		}
 	</div>
 </div>
+
+<style>
+	.portrait-carousel {
+		--portrait-height: 520px;
+	}
+
+	.portrait-carousel .carousel-wrapper {
+		height: var(--portrait-height);
+		justify-content: flex-start;
+	}
+
+	.portrait-carousel .portrait-item {
+		height: 100%;
+		width: auto;
+		min-width: 200px;
+	}
+
+	.portrait-carousel .portrait-image {
+		height: 100%;
+		width: auto;
+		max-width: 100%;
+	}
+
+	/* landscape carousel unchanged full-width behaviour */
+	.landscape-carousel .carousel-wrapper {
+	}
+
+	@media (max-width: 640px) {
+		.portrait-carousel {
+			--portrait-height: 400px;
+		}
+	}
+</style>
 
 <script>
 	document.querySelectorAll("[data-carousel]").forEach((carouselContainer) => {
@@ -143,6 +206,8 @@ const formatLabel = (
 		const totalSlides = slides.length;
 		const { labelImage, labelGoto } = (carouselContainer as HTMLElement)
 			.dataset;
+		const isPortrait =
+			(carouselContainer as HTMLElement).dataset.portrait === "true";
 
 		if (
 			!wrapper ||
@@ -157,23 +222,50 @@ const formatLabel = (
 
 		let currentIndex = 0;
 
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						const index = slides.indexOf(entry.target as HTMLElement);
-						currentIndex = index;
-						updateUI();
-					}
-				});
-			},
-			{
-				root: wrapper,
-				threshold: 0.5,
-			},
-		);
+		const getClosestSlideIndex = (): number => {
+			const wrapperEl = wrapper as HTMLElement;
+			const wrapperCenter = wrapperEl.scrollLeft + wrapperEl.clientWidth / 2;
+			let closest = 0;
+			let closestDist = Infinity;
+			slides.forEach((slide, index) => {
+				const el = slide as HTMLElement;
+				const slideCenter = el.offsetLeft + el.offsetWidth / 2;
+				const dist = Math.abs(slideCenter - wrapperCenter);
+				if (dist < closestDist) {
+					closestDist = dist;
+					closest = index;
+				}
+			});
+			return closest;
+		};
 
-		slides.forEach((slide) => observer.observe(slide));
+		if (isPortrait) {
+			let scrollTimer: ReturnType<typeof setTimeout>;
+			wrapper.addEventListener("scroll", () => {
+				clearTimeout(scrollTimer);
+				scrollTimer = setTimeout(() => {
+					currentIndex = getClosestSlideIndex();
+					updateUI();
+				}, 50);
+			});
+		} else {
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							const index = slides.indexOf(entry.target as HTMLElement);
+							currentIndex = index;
+							updateUI();
+						}
+					});
+				},
+				{
+					root: wrapper,
+					threshold: 0.5,
+				},
+			);
+			slides.forEach((slide) => observer.observe(slide));
+		}
 
 		const updateUI = () => {
 			if (!prevButton || !nextButton || !dotsContainer || !statusElement)
@@ -198,31 +290,33 @@ const formatLabel = (
 			});
 		};
 
-		prevButton.addEventListener("click", () => {
-			const prevSlideIndex = Math.max(0, currentIndex - 1);
-			slides[prevSlideIndex]?.scrollIntoView({
-				behavior: "smooth",
-				block: "nearest",
-				inline: "start",
-			});
-		});
-
-		nextButton.addEventListener("click", () => {
-			const nextSlideIndex = Math.min(totalSlides - 1, currentIndex + 1);
-			slides[nextSlideIndex]?.scrollIntoView({
-				behavior: "smooth",
-				block: "nearest",
-				inline: "start",
-			});
-		});
-
-		dotsContainer.querySelectorAll("button").forEach((dot, index) => {
-			dot.addEventListener("click", () => {
+		const scrollToSlide = (index: number) => {
+			if (isPortrait) {
 				slides[index]?.scrollIntoView({
 					behavior: "smooth",
 					block: "nearest",
 					inline: "start",
 				});
+			} else {
+				slides[index]?.scrollIntoView({
+					behavior: "smooth",
+					block: "nearest",
+					inline: "start",
+				});
+			}
+		};
+
+		prevButton.addEventListener("click", () => {
+			scrollToSlide(Math.max(0, currentIndex - 1));
+		});
+
+		nextButton.addEventListener("click", () => {
+			scrollToSlide(Math.min(totalSlides - 1, currentIndex + 1));
+		});
+
+		dotsContainer.querySelectorAll("button").forEach((dot, index) => {
+			dot.addEventListener("click", () => {
+				scrollToSlide(index);
 			});
 		});
 
