@@ -197,6 +197,59 @@ export const en: UI = {
 						roles: ["Project Lead", "AI Story Developer"],
 					},
 				},
+				{
+					title: "WLS-Android",
+					description:
+						"A native Android app for viewing live and historical service disruptions for Wiener Linien, Vienna's public transport system. Features a real-time disruption feed, historical search by line or date, push notifications for subscribed lines, and a clean Material Design UI built with Jetpack Compose.",
+					technologies: [
+						{ name: "Kotlin", icon: "dev/kotlin" },
+						{ name: "Jetpack Compose", icon: "dev/jetpackcompose" },
+						{ name: "Android", icon: "dev/android" },
+					],
+					members: {
+						heading: "Created with",
+						members: [
+							{
+								name: "Leander List",
+								href: "https://www.linkedin.com/in/leander-list-424110333/",
+							},
+						],
+					},
+					github: {
+						buttonText: "View on GitHub",
+						href: "https://github.com/leanderlist/wls-android",
+					},
+					images: [
+						{
+							src: "/src/assets/wls-android/01_wls-android.png",
+							alt: "The main disruption feed of the WLS Android app, showing a list of current and recent service disruptions across various Wiener Linien lines including trams, buses, and U-Bahn.",
+						},
+						{
+							src: "/src/assets/wls-android/02_wls-android.png",
+							alt: "The detail view of a disruption on line N31, showing a description of a Falschparker incident and an update about irregular intervals.",
+						},
+						{
+							src: "/src/assets/wls-android/03_wls-android.png",
+							alt: "The filter screen allowing users to narrow disruptions by open status, sort order, date range, disruption type, and individual lines grouped by U-Bahn, Straßenbahnen, Busse, and Nachtlinien.",
+						},
+						{
+							src: "/src/assets/wls-android/04_wls-android.png",
+							alt: "The settings screen where users can configure the base API URL, select lines for push notifications, and choose between Standard and Dynamic app themes.",
+						},
+						{
+							src: "/src/assets/wls-android/05_wls-android.png",
+							alt: "An Android push notification from the WLS app announcing a new disruption on line 6, with a short description of irregular intervals.",
+						},
+						{
+							src: "/src/assets/wls-android/06_wls-android.png",
+							alt: "The disruption detail bottom sheet for a Schadhaftes Fahrzeug incident on line 6, shown over the disruption list.",
+						},
+					],
+					roles: {
+						heading: "Role",
+						roles: ["Co-Developer"],
+					},
+				},
 			],
 			imageCarouselLabels: {
 				carouselLabel: "Image Carousel",
@@ -401,6 +454,59 @@ export const de: UI = {
 					roles: {
 						heading: "Rollen",
 						roles: ["Projektleitung", "KI-Story-Entwickler"],
+					},
+				},
+				{
+					title: "WLS-Android",
+					description:
+						"Eine native Android-App zur Anzeige aktueller und vergangener Betriebsstörungen der Wiener Linien. Bietet einen Echtzeit-Störungsfeed, eine Suche nach Linie oder Datum, Push-Benachrichtigungen für abonnierte Linien und eine übersichtliche Material-Design-Oberfläche, entwickelt mit Jetpack Compose.",
+					technologies: [
+						{ name: "Kotlin", icon: "dev/kotlin" },
+						{ name: "Jetpack Compose", icon: "dev/jetpackcompose" },
+						{ name: "Android", icon: "dev/android" },
+					],
+					members: {
+						heading: "Erstellt zusammen mit",
+						members: [
+							{
+								name: "Leander List",
+								href: "https://www.linkedin.com/in/leander-list-424110333/",
+							},
+						],
+					},
+					github: {
+						buttonText: "Auf GitHub ansehen",
+						href: "https://github.com/leanderlist/wls-android",
+					},
+					images: [
+						{
+							src: "/src/assets/wls-android/01_wls-android.png",
+							alt: "Der Störungsfeed der WLS-Android-App, der eine Liste aktueller und vergangener Betriebsstörungen verschiedener Wiener Linien zeigt, darunter Straßenbahnen, Busse und U-Bahnen.",
+						},
+						{
+							src: "/src/assets/wls-android/02_wls-android.png",
+							alt: "Die Detailansicht einer Störung auf der Linie N31 mit einer Beschreibung eines Falschparker-Vorfalls und einem Update über unregelmäßige Intervalle.",
+						},
+						{
+							src: "/src/assets/wls-android/03_wls-android.png",
+							alt: "Der Filterbildschirm, mit dem Störungen nach offenem Status, Sortierreihenfolge, Zeitraum, Störungstyp und einzelnen Linien gefiltert werden können, gruppiert nach U-Bahnen, Straßenbahnen, Bussen und Nachtlinien.",
+						},
+						{
+							src: "/src/assets/wls-android/04_wls-android.png",
+							alt: "Der Einstellungsbildschirm, auf dem die Basis-API-URL konfiguriert, Linien für Push-Benachrichtigungen ausgewählt und zwischen Standard- und Dynamic-Theme gewechselt werden kann.",
+						},
+						{
+							src: "/src/assets/wls-android/05_wls-android.png",
+							alt: "Eine Android-Push-Benachrichtigung der WLS-App, die eine neue Störung auf der Linie 6 mit einer kurzen Beschreibung unregelmäßiger Intervalle ankündigt.",
+						},
+						{
+							src: "/src/assets/wls-android/06_wls-android.png",
+							alt: "Das Detailblatt einer Störung vom Typ 'Schadhaftes Fahrzeug' auf der Linie 6, eingeblendet über der Störungsliste.",
+						},
+					],
+					roles: {
+						heading: "Rolle",
+						roles: ["Co-Entwickler"],
 					},
 				},
 			],
